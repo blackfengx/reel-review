@@ -1,7 +1,5 @@
-<p align="center">
-<font size =7> **Movies** </font>
-</p>
-<br>
+<font size =20> **Movies**</font>
+
 <font size =5> **Get list of Movies**</font>
  * Endpoint path: /movies
  * Endpoint method: GET
@@ -22,10 +20,7 @@
  * Response: Details of a Specific Movie
  * Response Example:
 
-<p align="center">
-<font size =7> **Review** </font>
-</p>
-<br>
+<font size =20> **Review** </font>
 
 <font size =5> **Create a Review**</font>
  * Endpoint path: /reviews
@@ -77,10 +72,8 @@
  * Response: Gets a single Review
  * Response Example:
 
- <p align="center">
 <font size =7> **Account** </font>
-</p>
-<br>
+
 <font size =5> **Log In** </font>
  * Endpoint path: /token
  * Endpoint method: POST
@@ -101,9 +94,8 @@
  * Response: Logs the user out of their account removing access from features that require token
  * Response Example:
 
- <p align="center">
 <font size =7> **Profile** </font>
-</p>
+
 <font size =5> **Edit Profile** </font>
  * Endpoint path: /profile/{id}
  * Endpoint method: PUT

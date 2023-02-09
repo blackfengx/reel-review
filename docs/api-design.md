@@ -67,4 +67,59 @@
  * Response: Gets a list of reviews
  * Response Example:
 
- <font size =5>
+ <font size =5> **Get a Review** </font>
+ * Endpoint path: /review/{id}
+ * Endpoint path: GET
+
+ * Headers:
+    * Authorization: Bearer token
+
+ * Response: Gets a single Review
+ * Response Example:
+
+ <p align="center">
+<font size =7> **Account** </font>
+</p>
+<br>
+<font size =5> **Log In** </font>
+ * Endpoint path: /token
+ * Endpoint method: POST
+
+ * Headers:
+    * Authorization: Bearer token
+
+ * Response: Logs the user in allowing access to features requiring token
+ * Response Example:
+
+<font size =5> **Log Out** </font>
+  * Endpoint path: /token
+ * Endpoint method: DELETE
+
+ * Headers:
+    * Authorization: Bearer token
+
+ * Response: Logs the user out of their account removing access from features that require token
+ * Response Example:
+
+ <p align="center">
+<font size =7> **Profile** </font>
+</p>
+<font size =5> **Edit Profile** </font>
+ * Endpoint path: /profile/{id}
+ * Endpoint method: PUT
+
+ * Headers:
+    * Authorization: Bearer token
+
+ * Response: Update/edit field/fields on profile
+ * Response Example:
+
+<font size =5> **Delete Profile** </font>
+ * Endpoint path: /profile/{id}
+ * Endpoint method: DELETE
+
+ * Headers:
+    * Authorization: Bearer token
+
+ * Response: Delete/Deactivate Account
+ * Response Example:

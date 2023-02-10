@@ -1,4 +1,4 @@
-<p style="font-size:20px">**Movies**</p
+<p style="font-size:20px">**Movies**</p>
 
 <font size =5>**Get list of Movies**</font>
  * Endpoint path: /movies

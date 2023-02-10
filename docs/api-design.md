@@ -1,7 +1,7 @@
 
-## Movies<br>
+## **Movies**
 
-**Get list of Movies**
+### **Get list of Movies**
  * Endpoint path: /movies
  * Endpoint method: GET
  * Headers:
@@ -16,7 +16,7 @@
  * Response: Details of a Specific Movie
 
 
-## Review<br>
+## Review
 
 **Create a Review**
  * Endpoint path: /reviews
@@ -56,7 +56,7 @@
  * Response: Gets a single Review
 
 
-## Account<br>
+## Account
 
 **Log In**
  * Endpoint path: /token
@@ -100,7 +100,7 @@
  * Response Example:
 
 
-## Profile<br>
+## Profile
 
 **Edit Profile**
  * Endpoint path: /profile/{id}

@@ -88,7 +88,6 @@
  * Request Shape (JSON):
    ```
    {
-      "id": int,
       "movie": string,
       "display_name": string,
       "rating": float,
@@ -206,15 +205,11 @@
  * Response Shape (JSON):
    ```
    {
-      "token_type": "Bearer",
-      "access_token": str,
-      "account": {
-         "id": int
-         "name": str,
-         "username": str,
-         "password": str,
-         "email": str,
-      }
+      "id": int
+      "name": str,
+      "username": str,
+      "password": str,
+      "email": str,
    }
 
 

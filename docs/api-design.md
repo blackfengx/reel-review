@@ -1,4 +1,4 @@
-<font size =10>**Movies**</font>
+<p style="font-size:20px">**Movies**</p
 
 <font size =5>**Get list of Movies**</font>
  * Endpoint path: /movies
@@ -10,7 +10,7 @@
  * Response: A list of movies
  * Response Example:
 
-<font size =5>**Movie Details**</font>
+<font size =5>**Detail of a Movie**</font>
  * Endpoint path: movies/{id}
  * Endpoint method: GET
 
@@ -72,7 +72,7 @@
  * Response: Gets a single Review
  * Response Example:
 
-<font size =7>**Account**</font>
+<font size =10>**Account**</font>
 
 <font size =5>**Log In**</font>
  * Endpoint path: /token
@@ -94,7 +94,27 @@
  * Response: Logs the user out of their account removing access from features that require token
  * Response Example:
 
-<font size =7>**Profile**</font>
+ <font size =5>**Get Profile Details**</font>
+  * Endpoint path: /token
+ * Endpoint method: GET
+
+ * Headers:
+    * Authorization: Bearer token
+
+ * Response: Display the logged in users deatails on the page.
+ * Response Example:
+
+ <font size =5>**Sign Up**</font>
+ * Endpoint path: /accounts
+ * Endpoint method: POST
+
+ * Headers:
+    * Authorization: Bearer token
+
+ * Response: Creates a new account
+ * Response Example:
+
+<font size =10>**Profile**</font>
 
 <font size =5>**Edit Profile**</font>
  * Endpoint path: /profile/{id}

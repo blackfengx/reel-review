@@ -151,7 +151,7 @@
  * Response shape (JSON):
    ```
    {
-      
+
    }
 
 ### **Delete Profile**
@@ -163,5 +163,5 @@
  * Response shape (JSON):
    ```
    {
-      "message": "Token has been successfully deleted and user has been logged out. t"
+      "message": "Token has been successfully deleted and user has been logged out."
    }

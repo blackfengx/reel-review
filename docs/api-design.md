@@ -6,16 +6,47 @@
  * Endpoint method: GET
  * Headers:
     * Authorization: Bearer token
+* Request Shape (JSON):
+   ```
+   {
+      "id": int,
+   }
  * Response: A list of movies
  * Response Shape (JSON):
+   ```
+   {
+      "id": int,
+      "title": string,
+      "poster_path": string,
+      "runtime": int,
+      "vote_average": int,
+      "overview": string,
+      "genre": string,
+   }
 
 ### **Detail of a Movie**
  * Endpoint path: movies/{id}
  * Endpoint method: GET
  * Headers:
     * Authorization: Bearer token
+* Response Shape (JSON):
+   ```
+   {
+      "id": int,
+      "title": string
+   }
  * Response: Details of a Specific Movie
  * Response Shape (JSON):
+   ```
+   {
+      "id": int,
+      "title": string,
+      "poster_path": jpeg,
+      "runtime": int,
+      "vote_average": int,
+      "overview": string,
+      "genre": string
+   }
 
 # Review
 
@@ -25,25 +56,47 @@
  * Request Shape (JSON):
    ```
    {
-
+      "movie": string,
+      "display_name": string,
+      "rating": float,
+      "comments" string
    }
  * Headers:
     * Authorization: Bearer token
  * Response: Creates a review
  * Response Shape (JSON):
-
+   ```
+   {
+      "id": int,
+      "movie": string,
+      "display_name": string,
+      "rating": float,
+      "comments" string
+   }
 ### **Update a Review**
  * Endpoint path: /reviews/{id}
  * Endpoint method: PUT
  * Request Shape (JSON):
    ```
    {
-
+      "id": int,
+      "movie": string,
+      "display_name": string,
+      "rating": float,
+      "comments" string
    }
  * Headers:
     * Authorization: Bearer token
  * Response: Updates field/fields of a review
  * Response Shape (JSON):
+   ```
+   {
+      "id": int,
+      "movie": string,
+      "display_name": string,
+      "rating": float,
+      "comments" string
+   }
 
 ### **Delete a Review**
  * Endpoint path: /reviews/{id}
@@ -64,6 +117,11 @@
     * Authorization: Bearer token
  * Response: Gets a list of reviews
  * Response Shape (JSON):
+   ```
+   {
+      "id": int,
+      "movie": string,
+   }
 
 ### *Get a Review**
  * Endpoint path: /review/{id}
@@ -72,6 +130,14 @@
     * Authorization: Bearer token
  * Response: Gets a single Review
  * Response Shape (JSON):
+   ```
+   {
+      "id": int,
+      "movie": string,
+      "display_name": string,
+      "rating": float,
+      "comments" string
+   }
 
 
 # Account
@@ -82,8 +148,8 @@
  * Request Shape (JSON):
    ```
    {
-    username: str
-    password: str
+    username: str,
+    password: str,
    }
 
  * Headers:
@@ -92,7 +158,7 @@
  * Response Shape (JSON):
    ```
    {
-
+      "token": str
    }
 
 ### **Log Out**
@@ -122,15 +188,24 @@
  * Request Shape (JSON):
    ```
    {
-
+      "name": str,
+      "username": str,
+      "password": str,
+      "email": str
    }
- * Headers:
-    * Authorization: Bearer token
  * Response: Creates a new account
  * Response Shape (JSON):
    ```
    {
-
+      "token_type": "Bearer",
+      "access_token": str,
+      "account": {
+         "id": int
+         "name": str,
+         "username": str,
+         "password": str,
+         "email": str,
+      }
    }
 
 
@@ -142,7 +217,10 @@
  * Request Shape (JSON):
    ```
    {
-
+      "name": str,
+      "username": str,
+      "password": str,
+      "email": str
    }
  * Headers:
     * Authorization: Bearer token
@@ -151,7 +229,11 @@
  * Response shape (JSON):
    ```
    {
-
+      "id": int,
+      "name": str,
+      "username": str,
+      "password": str,
+      "email": str
    }
 
 ### **Delete Profile**

@@ -6,16 +6,47 @@
  * Endpoint method: GET
  * Headers:
     * Authorization: Bearer token
+* Request Shape (JSON):
+   ```
+   {
+      "id": int,
+   }
  * Response: A list of movies
  * Response Shape (JSON):
+   ```
+   {
+      "id": int,
+      "title": string,
+      "poster_path": string,
+      "runtime": int,
+      "vote_average": int,
+      "overview": string,
+      "genre": string,
+   }
 
 ### **Detail of a Movie**
  * Endpoint path: movies/{id}
  * Endpoint method: GET
  * Headers:
     * Authorization: Bearer token
+* Response Shape (JSON):
+   ```
+   {
+      "id": int,
+      "title": string
+   }
  * Response: Details of a Specific Movie
  * Response Shape (JSON):
+   ```
+   {
+      "id": int,
+      "title": string,
+      "poster_path": jpeg,
+      "runtime": int,
+      "vote_average": int,
+      "overview": string,
+      "genre": string
+   }
 
 # Review
 
@@ -48,7 +79,7 @@
  * Request Shape (JSON):
    ```
    {
-      "id": int
+      "id": int,
       "movie": string,
       "display_name": string,
       "rating": float,
@@ -60,7 +91,7 @@
  * Response Shape (JSON):
    ```
    {
-      "id": int
+      "id": int,
       "movie": string,
       "display_name": string,
       "rating": float,
@@ -117,8 +148,8 @@
  * Request Shape (JSON):
    ```
    {
-    username: str
-    password: str
+    username: str,
+    password: str,
    }
 
  * Headers:

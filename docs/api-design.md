@@ -22,7 +22,7 @@
 ### **Create a Review**
  * Endpoint path: /reviews
  * Endpoint method: POST
- * Request Shape:
+ * Request Shape (JSON):
    ```
    {
 
@@ -35,7 +35,7 @@
 ### **Update a Review**
  * Endpoint path: /reviews/{id}
  * Endpoint method: PUT
- * Request Shape:
+ * Request Shape (JSON):
    ```
    {
 
@@ -119,10 +119,10 @@
 ### **Sign Up**
  * Endpoint path: /accounts
  * Endpoint method: POST
- * Request Shape:
+ * Request Shape (JSON):
    ```
    {
-      
+
    }
  * Headers:
     * Authorization: Bearer token
@@ -139,7 +139,7 @@
 ### **Edit Profile**
  * Endpoint path: /profile/{id}
  * Endpoint method: PUT
- * Request Shape:
+ * Request Shape (JSON):
    ```
    {
 
@@ -149,6 +149,10 @@
  * Response: Update/edit field/fields on profile
  * Response Example:
  * Response shape (JSON):
+   ```
+   {
+      
+   }
 
 ### **Delete Profile**
  * Endpoint path: /profile/{id}

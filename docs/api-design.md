@@ -50,7 +50,7 @@
    {
       "id": int,
       "title": string,
-      "poster_path": jpeg,
+      "poster_path": string,
       "runtime": int,
       "vote_average": int,
       "overview": string,

@@ -1,5 +1,5 @@
 
-## Movies
+## Movies<br>
 
 **Get list of Movies**
  * Endpoint path: /movies
@@ -16,7 +16,7 @@
  * Response: Details of a Specific Movie
 
 
-## Review
+## Review<br>
 
 **Create a Review**
  * Endpoint path: /reviews
@@ -56,7 +56,7 @@
  * Response: Gets a single Review
 
 
-## Account
+## Account<br>
 
 **Log In**
  * Endpoint path: /token
@@ -100,7 +100,7 @@
  * Response Example:
 
 
-## Profile
+## Profile<br>
 
 **Edit Profile**
  * Endpoint path: /profile/{id}

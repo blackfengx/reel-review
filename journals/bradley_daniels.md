@@ -5,4 +5,4 @@ project have been semi-difficult since my brain wants to associate the modelling
 will be a different beast. I plan to watch more videos to get a better grasp and deeper understanding.
 
 # **February 10th, 2023:**
-Woke up this morning and decided to study some FastAPI/Postgres videos before class, I plan to continue to fix the API Design .md file during our allotted time in class though. 
+Woke up this morning and decided to study some FastAPI/Postgres videos before class, I plan to continue to fix the API Design .md file during our allotted time in class though. All explorations for Back-end and Front-end were released today and we decided to finish our endpoints, get them approved by Jimmy, and then study the explorations into the weekend. I have a general idea of how to get route handlers established, however, I believe these videos will solidify my knowledge and allow me and the group to come back on Monday ready to confidently code.

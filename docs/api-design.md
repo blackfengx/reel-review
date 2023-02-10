@@ -131,5 +131,5 @@
  * Response shape (JSON):
  ```
  {
-   "message": "Token has been successfully deleted and user has been logged out."
+   "message": "Token has been successfully deleted and user has been logged out. t"
  }

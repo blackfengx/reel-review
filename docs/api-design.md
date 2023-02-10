@@ -10,13 +10,33 @@
  * Response Shape (JSON):
    ```
    {
-      "id": int,
-      "title": string,
-      "poster_path": string,
-      "runtime": int,
-      "vote_average": int,
-      "overview": string,
-      "genre": string,
+      "movies": {
+         "id": int,
+         "title": string,
+         "poster_path": string,
+         "runtime": int,
+         "vote_average": int,
+         "overview": string,
+         "genre": string,
+      }
+      {
+         "id": int,
+         "title": string,
+         "poster_path": string,
+         "runtime": int,
+         "vote_average": int,
+         "overview": string,
+         "genre": string,
+      }
+      {
+         "id": int,
+         "title": string,
+         "poster_path": string,
+         "runtime": int,
+         "vote_average": int,
+         "overview": string,
+         "genre": string,
+      }
    }
 
 ### **Detail of a Movie**
@@ -30,7 +50,7 @@
    {
       "id": int,
       "title": string,
-      "poster_path": jpeg,
+      "poster_path": string,
       "runtime": int,
       "vote_average": int,
       "overview": string,

@@ -6,11 +6,6 @@
  * Endpoint method: GET
  * Headers:
     * Authorization: Bearer token
-* Request Shape (JSON):
-   ```
-   {
-      "id": int,
-   }
  * Response: A list of movies
  * Response Shape (JSON):
    ```
@@ -29,12 +24,6 @@
  * Endpoint method: GET
  * Headers:
     * Authorization: Bearer token
-* Response Shape (JSON):
-   ```
-   {
-      "id": int,
-      "title": string
-   }
  * Response: Details of a Specific Movie
  * Response Shape (JSON):
    ```
@@ -79,7 +68,6 @@
  * Request Shape (JSON):
    ```
    {
-      "id": int,
       "movie": string,
       "display_name": string,
       "rating": float,
@@ -197,15 +185,11 @@
  * Response Shape (JSON):
    ```
    {
-      "token_type": "Bearer",
-      "access_token": str,
-      "account": {
-         "id": int
-         "name": str,
-         "username": str,
-         "password": str,
-         "email": str,
-      }
+      "id": int
+      "name": str,
+      "username": str,
+      "password": str,
+      "email": str,
    }
 
 

@@ -1,3 +1,4 @@
+
 ## Movies
 
 **Get list of Movies**
@@ -19,6 +20,7 @@
 
  * Response: Details of a Specific Movie
  * Response Example:
+
 
 ## Review
 
@@ -72,6 +74,7 @@
  * Response: Gets a single Review
  * Response Example:
 
+
 ## Account
 
 **Log In**
@@ -113,6 +116,7 @@
 
  * Response: Creates a new account
  * Response Example:
+
 
 ## Profile
 

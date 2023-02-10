@@ -111,9 +111,9 @@
    }
 
 
-## Profile
+# Profile
 
-**Edit Profile**
+### **Edit Profile**
  * Endpoint path: /profile/{id}
  * Endpoint method: PUT
  * Headers:
@@ -122,7 +122,7 @@
  * Response Example:
  * Response shape (JSON):
 
-**Delete Profile**
+### **Delete Profile**
  * Endpoint path: /profile/{id}
  * Endpoint method: DELETE
  * Headers:

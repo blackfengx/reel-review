@@ -1,5 +1,5 @@
 
-## **Movies**
+# **Movies**
 
 ### **Get list of Movies**
  * Endpoint path: /movies
@@ -8,7 +8,7 @@
     * Authorization: Bearer token
  * Response: A list of movies
 
-**Detail of a Movie**
+### **Detail of a Movie**
  * Endpoint path: movies/{id}
  * Endpoint method: GET
  * Headers:
@@ -16,9 +16,9 @@
  * Response: Details of a Specific Movie
 
 
-## Review
+# Review
 
-**Create a Review**
+### **Create a Review**
  * Endpoint path: /reviews
  * Endpoint method: POST
  * Headers:
@@ -26,7 +26,7 @@
  * Response: Creates a review
  * Response Example:
 
-**Update a Review**
+### **Update a Review**
  * Endpoint path: /reviews/{id}
  * Endpoint method: PUT
  * Headers:
@@ -34,21 +34,21 @@
  * Response: Updates field/fields of a review
  * Response Example:
 
-**Delete a Review**
+### **Delete a Review**
  * Endpoint path: /reviews/{id}
  * Endpoint method: DELETE
  * Headers:
     * Authorization: Bearer token
  * Response: Deletes a Review
 
-**Get a list of Reviews**
+### **Get a list of Reviews**
  * Endpoint path: /review
  * Endpoint method: GET
  * Headers:
     * Authorization: Bearer token
  * Response: Gets a list of reviews
 
-**Get a Review**
+### *Get a Review**
  * Endpoint path: /review/{id}
  * Endpoint path: GET
  * Headers:
@@ -56,9 +56,9 @@
  * Response: Gets a single Review
 
 
-## Account
+# Account
 
-**Log In**
+### **Log In**
  * Endpoint path: /token
  * Endpoint method: POST
  * Request shape (JSON):
@@ -77,21 +77,21 @@
 
    }
 
-**Log Out**
+### **Log Out**
  * Endpoint path: /token
  * Endpoint method: DELETE
  * Headers:
     * Authorization: Bearer token
  * Response: Logs the user out of their account removing access from features that require token
 
-**Get Profile Details**
+### **Get Profile Details**
  * Endpoint path: /token
  * Endpoint method: GET
  * Headers:
     * Authorization: Bearer token
  * Response: Display the logged in users deatails on the page.
 
-**Sign Up**
+### **Sign Up**
  * Endpoint path: /accounts
  * Endpoint method: POST
  * Headers:

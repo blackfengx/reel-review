@@ -1,6 +1,6 @@
 ## Movies
 
-<font size =5>**Get list of Movies**</font>
+**Get list of Movies**
  * Endpoint path: /movies
  * Endpoint method: GET
 
@@ -10,7 +10,7 @@
  * Response: A list of movies
  * Response Example:
 
-<font size =5>**Detail of a Movie**</font>
+**Detail of a Movie**
  * Endpoint path: movies/{id}
  * Endpoint method: GET
 
@@ -20,9 +20,9 @@
  * Response: Details of a Specific Movie
  * Response Example:
 
-<font size =10>**Review** </font>
+## Review
 
-<font size =5>**Create a Review**</font>
+**Create a Review**
  * Endpoint path: /reviews
  * Endpoint method: POST
 
@@ -32,7 +32,7 @@
  * Response: Creates a review
  * Response Example:
 
-<font size =5>**Update a Review**</font>
+**Update a Review**
  * Endpoint path: /reviews/{id}
  * Endpoint method: PUT
 
@@ -42,7 +42,7 @@
  * Response: Updates field/fields of a review
  * Response Example:
 
-<font size =5>**Delete a Review**</font>
+**Delete a Review**
  * Endpoint path: /reviews/{id}
  * Endpoint method: DELETE
 
@@ -52,7 +52,7 @@
  * Response: Deletes a Review
  * Response Example:
 
-<font size =5>**Get a list of Reviews**</font>
+**Get a list of Reviews**
  * Endpoint path: /review
  * Endpoint method: GET
 
@@ -62,7 +62,7 @@
  * Response: Gets a list of reviews
  * Response Example:
 
- <font size =5>**Get a Review**</font>
+**Get a Review**
  * Endpoint path: /review/{id}
  * Endpoint path: GET
 
@@ -72,9 +72,9 @@
  * Response: Gets a single Review
  * Response Example:
 
-<font size =10>**Account**</font>
+## Account
 
-<font size =5>**Log In**</font>
+**Log In**
  * Endpoint path: /token
  * Endpoint method: POST
 
@@ -84,7 +84,7 @@
  * Response: Logs the user in allowing access to features requiring token
  * Response Example:
 
-<font size =5>**Log Out**</font>
+**Log Out**
   * Endpoint path: /token
  * Endpoint method: DELETE
 
@@ -94,7 +94,7 @@
  * Response: Logs the user out of their account removing access from features that require token
  * Response Example:
 
- <font size =5>**Get Profile Details**</font>
+**Get Profile Details**
   * Endpoint path: /token
  * Endpoint method: GET
 
@@ -104,7 +104,7 @@
  * Response: Display the logged in users deatails on the page.
  * Response Example:
 
- <font size =5>**Sign Up**</font>
+**Sign Up**
  * Endpoint path: /accounts
  * Endpoint method: POST
 
@@ -114,9 +114,9 @@
  * Response: Creates a new account
  * Response Example:
 
-<font size =10>**Profile**</font>
+## Profile
 
-<font size =5>**Edit Profile**</font>
+**Edit Profile**
  * Endpoint path: /profile/{id}
  * Endpoint method: PUT
 
@@ -126,7 +126,7 @@
  * Response: Update/edit field/fields on profile
  * Response Example:
 
-<font size =5>**Delete Profile**</font>
+**Delete Profile**
  * Endpoint path: /profile/{id}
  * Endpoint method: DELETE
 

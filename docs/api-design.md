@@ -62,18 +62,20 @@
  * Endpoint path: /token
  * Endpoint method: POST
  * Request shape (JSON):
-   ```{
+   ```
+   {
     username: str
     password: str
-   }```
+   }
 
  * Headers:
     * Authorization: Bearer token
  * Response: Logs the user in allowing access to features requiring token
  * Response Example:
-   ```{
+   ```
+   {
 
-   }```
+   }
 
 **Log Out**
  * Endpoint path: /token

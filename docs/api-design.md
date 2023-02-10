@@ -186,7 +186,11 @@
  * Request Shape (JSON):
    ```
    {
-
+      "id": int,
+      "name": str,
+      "username": str,
+      "password": str,
+      "email": str
    }
  * Headers:
     * Authorization: Bearer token
@@ -195,7 +199,11 @@
  * Response shape (JSON):
    ```
    {
-
+      "id": int,
+      "name": str,
+      "username": str,
+      "password": str,
+      "email": str
    }
 
 ### **Delete Profile**

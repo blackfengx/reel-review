@@ -2,6 +2,18 @@ volumes:
     postgres-data:
         external: true
 services:
+  reel_review:
+    build:
+        context: ./reel_review
+        dockerfile: ./Dockerfile.dev
+    ports:
+        - "8000:8000"
+    volumes:
+        - ./reel_review:/app
+    environment:
+      DATABASE_URL: postgresql://reel_review:password@postgres/movies
+      WAIT_HOSTS: postgres:5432
+
   postgres:
       build:
           context: ./relational-data

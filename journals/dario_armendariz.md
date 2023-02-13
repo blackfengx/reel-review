@@ -3,3 +3,6 @@
 
 # **February 10th, 2023:**
 Today we learned an idea of how the Token works. We fine tuned our API endpoints and better learned/understood how they are to be represented to both the user side and the dev side. We presented our endpoint mapping. This weekend I will focus on the basics of FastAPI and PostgresSQL for the start of our backend.
+
+# **February 13th, 2023:**
+Over the weekend, I viewd some instructional videos on setting up and establishing FastAPI basic as well as data through SQL. Today, I viewed and started to understand the authentication process for starting our project. 

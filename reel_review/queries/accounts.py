@@ -10,7 +10,7 @@ class DuplicateAccountError(ValueError):
 class AccountsIn(BaseModel):
     first_name: Optional[str]
     last_name: Optional[str]
-    user_name: str
+    username: str
     email: Optional[str]
     password: str
 
@@ -19,7 +19,7 @@ class AccountsOut(BaseModel):
     id: int
     first_name: Optional[str]
     last_name: Optional[str]
-    user_name: str
+    username: str
     email: Optional[str]
 
 
@@ -28,7 +28,39 @@ class AccountsOutWithPassword(AccountsOut):
 
 
 class AccountsRepository:
-    def create(AccountsIn: AccountsOut):
-        with pool.connection() as conn:
-            with conn.cursor() as cur:
-                cur.execute()
+    def create(self, account: AccountsIn, hashed_password: str) -> AccountsOutWithPassword:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as cur:
+                    result = cur.execute(
+                        """
+                        INSERT INTO accounts (
+                            first_name
+                            , last_name
+                            , username
+                            , email
+                            , hashed_password
+                        )
+                        VALUES (%s, %s, %s, %s, %s)
+                        RETURNING id
+                        """,
+                        [
+                            account.first_name,
+                            account.last_name,
+                            account.username,
+                            account.email,
+                            hashed_password
+                        ]
+                    )
+                    id = result.fetchone()[0]
+                    return AccountsOutWithPassword(
+                        id=id,
+                        first_name=account.first_name,
+                        last_name=account.last_name,
+                        username=account.username,
+                        email=account.email,
+                        hashed_password=hashed_password,
+                    )
+        except Exception as e:
+            print(e)
+            return None

@@ -33,10 +33,11 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_MULTIPLE_DATABASES=movies
-      - POSTGRES_PASSWORD=test-databases
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: reel_review
+      POSTGRES_DB: movies
     ports:
-      - 5432:5432
+      - 15432:5432
 
   # fastapi:
   #   build:

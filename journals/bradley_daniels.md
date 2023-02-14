@@ -11,3 +11,5 @@ Woke up this morning and decided to study some FastAPI/Postgres videos before cl
 Our group will begin coding today and we decided to place all hands on deck for authentication. It's been said that authentication is the hardest part of back-end, so we're looking to get that out of the way, plus most of our routers need authentication approval to allow entry.
 
 As the day progressed we realized we had a bit more setting up to do than anticipated and spent the day setting up docker files and postgreSQL.
+
+# **February 14th, 2023:**

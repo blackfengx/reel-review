@@ -87,6 +87,20 @@ class AccountsRepository:
             print(e)
             return {"message": "Could not get that account"}
 
+    def delete(self, username: str) -> bool:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as cur:
+                    cur.execute(
+                        """
+                        DELETE FROM accounts
+                        WHERE username = %s
+                        """,
+                        [username]
+                    )
+                    return True
+        except Exception as e:
+            return False
 
     def record_to_account_out(self, record):
         return AccountsOutWithPassword(

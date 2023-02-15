@@ -16,4 +16,4 @@ Our group began working on queries today and completed the pg-admin administrati
 
 # **February 15th, 2023:**
 
-Today our group was able to finish up the authentication feature. Our decision to re-read the material in Learn really helped us to figure out the components that we needed to get the feature working. We are spending the second half of our coding session on syncing our 3rd party api and creating our initial list views/routes. We are hoping to get our backend completed by end of next week.
+Today our group was able to finish up the authentication feature. Our decision to re-read the material in Learn really helped us to figure out the components that we needed to get the feature working. We are spending the second half of our day on syncing our 3rd party api and creating our initial list views/routes. We are hoping to get our backend completed by end of next week.

@@ -22,9 +22,9 @@ class HttpError(BaseModel):
 
 router = APIRouter()
 
-@router.post("/accounts", response_model=AccountsOut)
-def create_account(accounts:AccountsIn, repo: AccountsRepository = Depends()):
-    return repo.create(AccountsOutWithPassword)
+# @router.post("/accounts", response_model=AccountsOut)
+# def create_account(accounts:AccountsIn, repo: AccountsRepository = Depends()):
+#     return repo.create(AccountsOutWithPassword)
 
 @router.post("/api/accounts", response_model=AccountToken | HttpError)
 async def create_account(

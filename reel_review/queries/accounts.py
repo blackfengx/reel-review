@@ -64,3 +64,36 @@ class AccountsRepository:
         except Exception as e:
             print(e)
             return None
+    def get(self, username: str) -> Optional[AccountsOutWithPassword]:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as cur:
+                    result = cur.execute(
+                        """
+                        SELECT id
+                        , first_name
+                        , last_name
+                        , username
+                        , email
+                        , hashed_password
+                        FROM accounts
+                        WHERE username = %s
+                        """,
+                        [username]
+                    )
+                    record = result.fetchone()
+                    return self.record_to_account_out(record)
+        except Exception as e:
+            print(e)
+            return {"message": "Could not get that account"}
+
+
+    def record_to_account_out(self, record):
+        return AccountsOutWithPassword(
+            id=record[0],
+            first_name=record[1],
+            last_name=record[2],
+            username=record[3],
+            email=record[4],
+            hashed_password = record[5]
+        )

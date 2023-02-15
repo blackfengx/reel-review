@@ -181,7 +181,6 @@
       "message": Token has been deleted and user has been signed out.
    }
 
-
 ### **Get Profile Details**
  * Endpoint path: /token
  * Endpoint method: GET

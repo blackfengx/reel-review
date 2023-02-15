@@ -14,3 +14,7 @@ As the day progressed we realized we had a bit more setting up to do than antici
 
 # **February 14th, 2023:**
 Today we were stumped on PGAdmin setup for awhile and upon fixing it realized that it is not actually required. Was a bit of a blow to the morale, but setbacks are a natural part of coding and our team will bounce back harder than ever. We then proceeded to get one query set up and realized we are constantly referring to the videos on learn and after much struggle decided to take some more time to soak the information before we continue now that we have more experience with how it all connects.
+
+
+# **February 15th, 2023:**
+Today we were able to get the authenticator solved and we have begun to move onto the rest of the queries and routers. We are trying to figure out how to properly route our endpoints using the API.

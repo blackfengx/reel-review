@@ -13,6 +13,7 @@ services:
     volumes:
       - ./reel_review:/app
     environment:
+      SIGNING_KEY: 87fe4a3fcfb60092dbaeb854a196bc3d9b190aed7930c734749e8524
       DATABASE_URL: postgresql://reel_review:password@postgres/movies
       WAIT_HOSTS: postgres:5432
   pg-admin:

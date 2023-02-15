@@ -11,3 +11,7 @@ There is definitely a little bit of confusion on if we are doing things correctl
 
 # **February 14th, 2023:**
 We worked much of the day on setting up our database and fixing bugs. The information given from learn for us to copy is not what is actually needed so under the instruction of one of our instructors we undid a lot of the damage that learn did and got our yaml file to a more functional and understanable code. We also spent a little bit of time working on the account queries in the afternoon. Todays drivers were Myself, Bradley, and Alexa.
+
+
+# **February 15th, 2023:**
+Today we spent most of the day working on authentication. Authentication is now done, and we have started on a few of the routers and queries as well. We can now create an account, login and logout.

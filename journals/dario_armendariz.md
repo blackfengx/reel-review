@@ -9,3 +9,6 @@ Over the weekend, I viewd some instructional videos on setting up and establishi
 
 # **February 14th, 2023:**
 We learned how to make calls from tables within a project. Today, for our specific project, we covered the primary establishment of our database as a group of 4. We made sure it was functional and shifted over to seting up our queries. We are reviewing the lessons from learn to better understand how to do routes to complete the core of our backened.
+
+# **February 15th, 2023:**
+As a group of 4, we completed out full authentication process. This included our query and routers. We cycled through the full processes. We also figured out the way tot get a signin key for this since that was a hangup on approach. We have now shifted to working on our api movie database pull for backened use.

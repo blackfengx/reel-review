@@ -1,9 +1,8 @@
 import requests
 import os
-from keys import MOVIE_KEY
 
-API_KEY = MOVIE_KEY
-# print(API_KEY)
+API_KEY = os.environ.get("MOVIE_KEY")
+print(API_KEY)
 
 
 class MovieQueries:
@@ -19,6 +18,3 @@ class MovieQueries:
             temp["vote_average"]= movie["vote_average"]
             returned_movies.append(temp)
         return returned_movies
-
-movie = MovieQueries()
-movie.get_movie_by_name(title = 'shawshank')

@@ -1,13 +1,18 @@
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 import requests
-from apimovies import MovieQueries
+from .apimovies import MovieQueries
 from typing import Union, List
 from queries.pool import pool
 
 
 class Error(BaseModel):
     message: str
+
+
+class SearchIn(BaseModel):
+    title: str
+
 
 class SearchOut(BaseModel):
     movie_id: int
@@ -16,5 +21,6 @@ class SearchOut(BaseModel):
     vote_average: float
 
 class SearchRepository:
-    def search(self) -> Union[Error, List[SearchOut]]:
-        
+    async def search(self, title: SearchIn) -> Union[Error, List[SearchOut]]:
+        movie = MovieQueries()
+        movie.get_movie_by_name(title)

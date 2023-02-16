@@ -7,7 +7,7 @@ class SearchIn(BaseModel):
     title: str
 
 class SearchOut(BaseModel):
-    "movie_id": int
-    "title ": str
-    "poster_path": str
-    "vote_average": float
+    movie_id: int
+    title : str
+    poster_path: str
+    vote_average: float

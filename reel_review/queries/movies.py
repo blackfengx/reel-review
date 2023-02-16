@@ -11,4 +11,3 @@ class SearchOut(BaseModel):
     "title ": str
     "poster_path": str
     "vote_average": float
-

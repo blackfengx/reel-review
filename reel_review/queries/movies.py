@@ -3,7 +3,11 @@ from pydantic import BaseModel
 import requests
 from apimovies import MovieQueries
 from typing import Union, List
+from queries.pool import pool
 
+
+class Error(BaseModel):
+    message: str
 
 class SearchOut(BaseModel):
     movie_id: int
@@ -13,4 +17,4 @@ class SearchOut(BaseModel):
 
 class SearchRepository:
     def search(self) -> Union[Error, List[SearchOut]]:
-        pass
+        

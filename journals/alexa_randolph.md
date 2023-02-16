@@ -13,3 +13,7 @@ Today our team worked through the "project set up" module in Learn. We mainly wo
 # **February 14th, 2023**
 
 Our group began working on queries today and completed the pg-admin administration. Once we began working on our queries we slowly realized that we weren't as familiar with Fast API as we need to be. We decided to complete the create account function we were working on and spend the rest of the night re-watching the explorations in order to get a better handle on the new material.
+
+# **February 15th, 2023:**
+
+Today our group was able to finish up the authentication feature. Our decision to re-read the material in Learn really helped us to figure out the components that we needed to get the feature working. We are spending the second half of our day on syncing our 3rd party api and creating our initial list views/routes. We are hoping to get our backend completed by end of next week.

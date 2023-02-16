@@ -1,12 +1,15 @@
 import requests
 import os
+from keys import MOVIE_KEY
 
-api_key = os.environ.get("MOVIE_KEY")
-print(api_key, '**************')
+API_KEY = MOVIE_KEY
+print(API_KEY)
+
 
 class MovieQueries:
     def get_movie_by_name(self, title: str):
-        res = requests.get(f'https://api.themoviedb.org/3/search/movie?api_key={api_key}&language=en-US&query={title}&page=1&include_adult=false')
+        res = requests.get(f'https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&language=en-US&query={title}&page=1&include_adult=false')
+        print(res)
         data = res.json()
         return data
 

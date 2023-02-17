@@ -17,3 +17,7 @@ Our group began working on queries today and completed the pg-admin administrati
 # **February 15th, 2023:**
 
 Today our group was able to finish up the authentication feature. Our decision to re-read the material in Learn really helped us to figure out the components that we needed to get the feature working. We are spending the second half of our day on syncing our 3rd party api and creating our initial list views/routes. We are hoping to get our backend completed by end of next week.
+
+# **February 16th, 2023:**
+
+Today felt a little rough... My team was able to successfully make an API call to our 3rd party movies API, however we kept getting TypeError's because our data shape didn't match our response model. We ran into a lot of walls today and I think morale might have dropped a bit. We ultimately decided to work on the problem individually and then come back together on Tuesday to discuss potential solutuions.

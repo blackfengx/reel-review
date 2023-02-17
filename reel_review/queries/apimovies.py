@@ -17,4 +17,5 @@ class MovieQueries:
             temp["poster_path"]= movie["poster_path"]
             temp["vote_average"]= movie["vote_average"]
             returned_movies.append(temp)
+        print(returned_movies)
         return returned_movies

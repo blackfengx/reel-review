@@ -4,7 +4,7 @@ from queries.movies import  SearchRepository
 from queries.apimovies import SearchOut
 from typing import List
 
-router = APIRouter()
+# router = APIRouter()
 
 @router.get('/api/movies/search', response_model=List[SearchOut])
 def get_movie_by_title(

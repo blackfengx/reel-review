@@ -3,6 +3,7 @@ import os
 from pydantic import BaseModel
 
 API_KEY = os.environ.get("MOVIE_KEY")
+
 print(API_KEY)
 
 class SearchOut(BaseModel):

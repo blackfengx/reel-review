@@ -6,12 +6,12 @@ from typing import Union, List
 from queries.pool import pool
 
 
-class Error(BaseModel):
-    message: str
+# class Error(BaseModel):
+#     message: str
 
 
-class SearchIn(BaseModel):
-    title: str
+# class SearchIn(BaseModel):
+#     title: str
 
 
 class SearchRepository:

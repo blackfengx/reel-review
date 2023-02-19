@@ -3,6 +3,7 @@ from pydantic import BaseModel
 import requests
 from .apimovies import MovieQueries, SearchOut
 from typing import Union, List
+from queries.pool import pool
 
 
 class Error(BaseModel):

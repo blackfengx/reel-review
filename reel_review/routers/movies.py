@@ -7,7 +7,7 @@ from typing import List
 router = APIRouter()
 
 @router.get('/api/movies/search', response_model=List[SearchOut])
-def get_movie_by_title(
+def get_movie_list(
     title: str,
     # repo: SearchRepository = Depends()
 ):

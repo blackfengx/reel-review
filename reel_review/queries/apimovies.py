@@ -1,13 +1,14 @@
 import requests
 import os
 from pydantic import BaseModel
+from typing import Optional
 
 API_KEY = os.environ.get("MOVIE_KEY")
 
 class SearchOut(BaseModel):
     movie_id: int
     title: str
-    poster_path: str
+    poster_path: Optional[str]
     vote_average: float
 
 class MovieQueries:

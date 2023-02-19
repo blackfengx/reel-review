@@ -18,3 +18,6 @@ Today we were stumped on PGAdmin setup for awhile and upon fixing it realized th
 
 # **February 15th, 2023:**
 Today we were able to get the authenticator solved and we have begun to move onto the rest of the queries and routers. We are trying to figure out how to properly route our endpoints using the API.
+
+# **February 16th, 2023:**
+Routing the API to our code has proven to be a tremendous pain, for some reason we have had exceeding issues with this route in specific, however, we were able to solve the crisis during the weekend. There was also an issue with our .env files and not properly registering our keys. Many instructor/SEIR sessions later, along with many docker compose downs/ups, we were able to repair it. I believe the original problem stemmed from us running checking errors in the VSCode terminal rather than Docker itself.

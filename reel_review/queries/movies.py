@@ -6,12 +6,12 @@ from typing import Union, List
 from queries.pool import pool
 
 
-# # class Error(BaseModel):
-# #     message: str
+class Error(BaseModel):
+    message: str
 
 
-# class SearchIn(BaseModel):
-#     title: str
+class SearchIn(BaseModel):
+    title: str
 
 
 class SearchRepository:
@@ -19,13 +19,3 @@ class SearchRepository:
         movie = MovieQueries()
         found_movies=movie.get_movie_by_name(title)
         return found_movies
-# class SearchOut(BaseModel):
-#     movie_id: int
-#     title: str
-#     poster_path: str
-#     vote_average: float
-
-class SearchRepository:
-#     async def search(self, title: SearchIn) -> Union[Error, List[SearchOut]]:
-#         movie = MovieQueries()
-#         return movie.get_movie_by_name(title)

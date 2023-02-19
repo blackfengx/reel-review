@@ -9,6 +9,7 @@ from queries.accounts import (
     AccountsRepository,
     DuplicateAccountError,
 )
+import os
 
 class AccountForm(BaseModel):
     username: str

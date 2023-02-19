@@ -12,3 +12,6 @@ We learned how to make calls from tables within a project. Today, for our specif
 
 # **February 15th, 2023:**
 As a group of 4, we completed out full authentication process. This included our query and routers. We cycled through the full processes. We also figured out the way tot get a signin key for this since that was a hangup on approach. We have now shifted to working on our api movie database pull for backened use.
+
+# **February 16th, 2023:**
+We are having many API issues today. We figured out our key and how to trouble shoot avoiding the VS code key. We we able to pull in the database from our API but the implementation is different in many ways and we are sorting the system so we can figure it out accordingly. Weekend time, so independently working/reading commences so we can pool our ideas next week. 

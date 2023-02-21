@@ -25,3 +25,8 @@ class SearchRepository:
         movie = MovieQueries()
         movie_result = movie.movie_detail(id)
         return movie_result
+
+    def trending(self) -> List[SearchOut]:
+        movie = MovieQueries()
+        trending_movies = movie.trending_movies()
+        return trending_movies

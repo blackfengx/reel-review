@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, Request
 from pydantic import BaseModel
 from queries.movies import  SearchRepository
-from queries.movies_api import SearchOut
+from queries.movies_api import SearchOut, MovieDetail
 from typing import List
 
 router = APIRouter()
@@ -13,3 +13,10 @@ def get_movie_list(
 ):
     repo = SearchRepository()
     return repo.search(title)
+
+@router.get("/api/movie", response_model=List[MovieDetail])
+def movie_detail(
+    id: int
+):
+    repo = SearchRepository()
+    return repo.detail(id)

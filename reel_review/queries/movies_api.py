@@ -25,11 +25,13 @@ class MovieQueries:
         res = requests.get(f'https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&language=en-US&query={title}&page=1&include_adult=false')
         data = res.json()
         for movie in data["results"]:
+            movie["movie_id"] = movie["id"]
             returned_movies.append(SearchOut(
-                movie_id=movie["id"],
-                title=movie["title"],
-                poster_path=movie["poster_path"],
-                vote_average=movie["vote_average"]
+                # movie_id=movie["id"],
+                # title=movie["title"],
+                # poster_path=movie["poster_path"],
+                # vote_average=movie["vote_average"]
+                **movie
             ))
         return returned_movies
 

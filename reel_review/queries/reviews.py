@@ -116,3 +116,32 @@ class ReviewRepository:
         except Exception as e:
             print(e)
             return {"message": "Error"}
+
+    def get_review(self, id: int) -> Optional[ReviewOut]:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as cur:
+                    result = cur.execute(
+                        """
+                        SELECT *
+                        FROM reviews
+                        WHERE id = %s
+                        """,
+                        [id]
+                    )
+                    record = result.fetchone()
+                    if record is None:
+                        return None
+                    return self.record_to_review_out(record)
+        except Exception as e:
+            print(e)
+            return {"message": "Error"}
+
+    def record_to_review_out(self, record):
+        return ReviewOut(
+            id = record[0],
+            movie_id = record[1],
+            display_name = record[2],
+            rating = record[3],
+            comments = record[4]
+        )

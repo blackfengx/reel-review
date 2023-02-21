@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, Request
 from pydantic import BaseModel
 from queries.movies import  SearchRepository
-from queries.apimovies import SearchOut
+from queries.movies_api import SearchOut
 from typing import List
 
 router = APIRouter()

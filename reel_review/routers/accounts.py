@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Response, Request
+from typing import Optional
 from queries.accounts import AccountsIn, AccountsRepository, AccountsOut, AccountsOutWithPassword
 from jwtdown_fastapi.authentication import Token
 from authenticator import authenticator
@@ -26,6 +27,25 @@ class HttpError(BaseModel):
 
 
 router = APIRouter()
+
+
+@router.get("/api/protected", response_model=bool)
+async def get_protected(
+    account_data: Optional[dict] = Depends(authenticator.try_get_current_account_data),
+):
+    return True
+
+@router.get("/token", response_model=AccountToken | None)
+async def get_token(
+    request: Request,
+    account: AccountsOut = Depends(authenticator.try_get_current_account_data)
+) -> AccountToken | None:
+    if account and authenticator.cookie_name in request.cookies:
+        return {
+            "access_token": request.cookies[authenticator.cookie_name],
+            "type": "Bearer",
+            "account": account,
+        }
 
 
 @router.delete("/api/accounts/{username}", response_model=bool, tags=["accounts"])

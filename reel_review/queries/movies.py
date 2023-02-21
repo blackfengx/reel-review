@@ -21,7 +21,7 @@ class SearchRepository:
         found_movies=movie.get_movie_list(title)
         return found_movies
 
-    def detail(self, id: int) -> List[MovieDetail]:
+    def detail(self, id: int) -> MovieDetail:
         movie = MovieQueries()
         movie_result = movie.movie_detail(id)
         return movie_result

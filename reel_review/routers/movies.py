@@ -14,7 +14,7 @@ def get_movie_list(
     repo = SearchRepository()
     return repo.search(title)
 
-@router.get("/api/movie", response_model=List[MovieDetail])
+@router.get("/api/movie", response_model=MovieDetail)
 def movie_detail(
     id: int
 ):

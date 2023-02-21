@@ -36,19 +36,18 @@ class MovieQueries:
     def movie_detail(self, id: int):
         res = requests.get(f'https://api.themoviedb.org/3/movie/{id}?api_key={API_KEY}&language=en-US')
         data = res.json()
-        result = []
+        # result = []
         # print(data, '------------------------------')
-        # data["movie_id"] = data["id"]
-        result.append(MovieDetail(
-                movie_id=data["id"],
-                title=data["title"],
-                poster_path=data["poster_path"],
-                runtime = data["runtime"],
-                vote_average=data["vote_average"],
-                overview = data["overview"],
-        ))
-        print(result, '------------------------------')
-        return result
+        movie_id = data["id"]
+        # return MovieDetail(
+        #         movie_id=data["id"],
+        #         title=data["title"],
+        #         poster_path=data["poster_path"],
+        #         runtime = data["runtime"],
+        #         vote_average=data["vote_average"],
+        #         overview = data["overview"],
+        # )
+        return MovieDetail(data)
         # movie = MovieDetail(data)
         # print(movie, '------------------------------')
         # return movie

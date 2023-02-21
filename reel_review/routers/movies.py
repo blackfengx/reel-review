@@ -20,3 +20,8 @@ def movie_detail(
 ):
     repo = SearchRepository()
     return repo.detail(id)
+
+@router.get("/api/movies/trending", response_model=List[SearchOut])
+def get_trending_movies():
+    repo = SearchRepository()
+    return repo.trending()

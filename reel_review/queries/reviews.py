@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from queries.pool import pool
-from typing import Optional
+from typing import Optional, List
 
 
 class ReviewIn(BaseModel):
@@ -9,6 +9,9 @@ class ReviewIn(BaseModel):
     rating: float
     comments: str
 
+class ReviewUpdateIn(BaseModel):
+    rating: float
+    comments: str
 
 class ReviewOut(ReviewIn):
     id: int
@@ -40,3 +43,76 @@ class ReviewRepository:
         except Exception as e:
             print(e)
             return None
+
+    def delete(self, id: int) -> bool:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as cur:
+                    cur.execute(
+                        """
+                        DELETE FROM reviews
+                        WHERE id = %s
+                        """,
+                        [id]
+                    )
+                    return True
+        except Exception as e:
+            print(e)
+            return False
+
+    def get_reviews(self) -> List[ReviewOut]:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as cur:
+                    result = cur.execute(
+                        """
+                        SELECT
+                        id
+                        , movie_id
+                        , display_name
+                        , rating
+                        , comments
+                        FROM reviews
+                        """
+                    )
+                    result = []
+                    for record in cur:
+                        review = ReviewOut(
+                            id = record[0],
+                            movie_id = record[1],
+                            display_name = record[2],
+                            rating = record[3],
+                            comments = record[4],
+                        )
+                        result.append(review)
+                    return result
+        except Exception as e:
+            print(e)
+            return {"message": "Error"}
+
+    def update(self, id: int, review: ReviewIn) -> ReviewOut:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as cur:
+                    cur.execute(
+                        """
+                        UPDATE reviews
+                        SET movie_id = %s
+                        , display_name = %s
+                        , rating = %s
+                        , comments = %s
+                        WHERE id = %s
+                        """,
+                        [
+                            review.movie_id,
+                            review.display_name,
+                            review.rating,
+                            review.comments,
+                            id
+                        ]
+                    )
+                    old_data = review.dict()
+                    return ReviewOut(id=id, **old_data)
+        except Exception as e:
+            print(e)
+            return {"message": "Error"}

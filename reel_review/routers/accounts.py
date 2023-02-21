@@ -28,7 +28,7 @@ class HttpError(BaseModel):
 router = APIRouter()
 
 
-@router.delete("/api/accounts/{username}", response_model=bool)
+@router.delete("/api/accounts/{username}", response_model=bool, tags=["accounts"])
 def delete_account(
     username: str,
     repo: AccountsRepository = Depends(),

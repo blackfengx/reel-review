@@ -5,7 +5,7 @@ from typing import List
 
 router = APIRouter()
 
-@router.get('/api/movies/search', response_model=List[SearchOut])
+@router.get('/api/movies/search', response_model=List[SearchOut], tags=["movies"])
 def get_movie_list(
     title: str,
     repo: SearchRepository = Depends()
@@ -13,7 +13,7 @@ def get_movie_list(
     # repo = SearchRepository()
     return repo.search(title)
 
-@router.get("/api/movie", response_model=MovieDetail)
+@router.get("/api/movie", response_model=MovieDetail, tags=["movies"])
 def movie_detail(
     id: int
     # repo: SearchRepository = Depends()
@@ -21,7 +21,7 @@ def movie_detail(
     repo = SearchRepository()
     return repo.detail(id)
 
-@router.get("/api/movies/trending", response_model=List[SearchOut])
+@router.get("/api/movies/trending", response_model=List[SearchOut], tags=["movies"])
 def get_trending_movies():
     repo = SearchRepository()
     return repo.trending()

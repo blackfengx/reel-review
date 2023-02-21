@@ -11,21 +11,22 @@ from queries.accounts import (
 )
 import os
 
+
 class AccountForm(BaseModel):
     username: str
     password: str
 
+
 class AccountToken(Token):
     account: AccountsOut
+
 
 class HttpError(BaseModel):
     detail: str
 
+
 router = APIRouter()
 
-# @router.post("/accounts", response_model=AccountsOut, tags=["accounts"])
-# def create_account(accounts:AccountsIn, repo: AccountsRepository = Depends()):
-#     return repo.create(AccountsOutWithPassword)
 
 @router.delete("/api/accounts/{username}", response_model=bool)
 def delete_account(
@@ -35,8 +36,6 @@ def delete_account(
     return repo.delete(username)
     # if username not in AccountsRepository:
     #     raise HTTPException(status_code=404, detail="Usename not found")
-
-
 
 
 @router.post("/api/accounts", response_model=AccountToken | HttpError, tags=["accounts"])

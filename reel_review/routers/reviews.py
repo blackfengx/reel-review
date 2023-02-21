@@ -24,6 +24,13 @@ def get_review_list(
 ):
     return repo.get_reviews()
 
+@router.get("/api/reviews/{review_id}", response_model=ReviewOut, tags=["reviews"])
+def get_review(
+    id: int,
+    repo: ReviewRepository = Depends(),
+):
+    return repo.get_review(id)
+
 @router.put("/api/reviews/{review_id}", response_model=ReviewOut, tags=["reviews"])
 def update_review(
     review_id: int,

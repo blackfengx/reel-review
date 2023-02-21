@@ -38,7 +38,8 @@ class MovieQueries:
         data = res.json()
         # result = []
         # print(data, '------------------------------')
-        movie_id = data["id"]
+        data["movie_id"] = data["id"]
+        # print(data, '-----------------------------')
         # return MovieDetail(
         #         movie_id=data["id"],
         #         title=data["title"],
@@ -47,7 +48,7 @@ class MovieQueries:
         #         vote_average=data["vote_average"],
         #         overview = data["overview"],
         # )
-        return MovieDetail(data)
+        return MovieDetail(**data)
         # movie = MovieDetail(data)
         # print(movie, '------------------------------')
         # return movie

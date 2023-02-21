@@ -1,5 +1,4 @@
 from fastapi import APIRouter, Depends, Request
-from pydantic import BaseModel
 from queries.movies import  SearchRepository
 from queries.movies_api import SearchOut, MovieDetail
 from typing import List

@@ -29,13 +29,13 @@ class HttpError(BaseModel):
 router = APIRouter()
 
 
-@router.get("/api/protected", response_model=bool)
+@router.get("/api/protected", response_model=bool, tags=["accounts"])
 async def get_protected(
     account_data: Optional[dict] = Depends(authenticator.try_get_current_account_data),
 ):
     return True
 
-@router.get("/token", response_model=AccountToken | None)
+@router.get("/token", response_model=AccountToken | None, tags=["accounts"])
 async def get_token(
     request: Request,
     account: AccountsOut = Depends(authenticator.try_get_current_account_data)

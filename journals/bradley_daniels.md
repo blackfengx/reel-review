@@ -21,3 +21,6 @@ Today we were able to get the authenticator solved and we have begun to move ont
 
 # **February 16th, 2023:**
 Routing the API to our code has proven to be a tremendous pain, for some reason we have had exceeding issues with this route in specific, however, we were able to solve the crisis during the weekend. There was also an issue with our .env files and not properly registering our keys. Many instructor/SEIR sessions later, along with many docker compose downs/ups, we were able to repair it. I believe the original problem stemmed from us running checking errors in the VSCode terminal rather than Docker itself.
+
+# **February 21st, 2023:**
+Today we worked to write all of the routers and queries for reviews.py along with finishing the calls to the third party API. We planned to move on to our last bit of authentication, however, we discovered the rest of the auth is erroring.

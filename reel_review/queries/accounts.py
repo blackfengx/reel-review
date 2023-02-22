@@ -7,14 +7,6 @@ class DuplicateAccountError(ValueError):
     pass
 
 
-class AccountsIn(BaseModel):
-    first_name: Optional[str]
-    last_name: Optional[str]
-    username: str
-    email: Optional[str]
-    password: str
-
-
 class AccountsOut(BaseModel):
     id: int
     first_name: Optional[str]
@@ -25,6 +17,14 @@ class AccountsOut(BaseModel):
 
 class AccountsOutWithPassword(AccountsOut):
     hashed_password: str
+
+
+class AccountsIn(BaseModel):
+    first_name: Optional[str]
+    last_name: Optional[str]
+    username: str
+    email: Optional[str]
+    password: str
 
 
 class AccountsRepository:

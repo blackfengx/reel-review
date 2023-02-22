@@ -1,7 +1,7 @@
 import os
 from fastapi import Depends
 from jwtdown_fastapi.authentication import Authenticator
-from queries.accounts import AccountsRepository, AccountsOut, AccountsIn
+from queries.accounts import AccountsRepository, AccountsOut, AccountsIn, AccountsOutWithPassword
 
 
 class MyAuthenticator(Authenticator):
@@ -21,12 +21,13 @@ class MyAuthenticator(Authenticator):
         # Return the accounts. That's it.
         return accounts
 
-    def get_hashed_password(self, account: AccountsIn):
+    def get_hashed_password(self, account: AccountsOutWithPassword):
         # Return the encrypted password value from your
         # account object
+        print(account)
         return account.hashed_password
 
-    def get_account_data_for_cookie(self, account: AccountsIn):
+    def get_account_data_for_cookie(self, account: AccountsOut):
         # Return the username and the data for the cookie.
         # You must return TWO values from this method.
         return account.username, AccountsOut(**account.dict())

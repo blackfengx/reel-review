@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import TrendingMovies from './components/TrendingMovies'
 import SignUp from './components/SignUp'
+import ReviewList from './components/ReviewList'
 
 
 export default function MainPage() {
@@ -10,7 +11,8 @@ export default function MainPage() {
     <>
     <h1>MainPage</h1>
     {/* <TrendingMovies/> */}
-    <SignUp/>
+    {/* <SignUp/> */}
+    <ReviewList/>
     </>
   )
 }

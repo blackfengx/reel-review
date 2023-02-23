@@ -52,7 +52,10 @@ async def get_token(
 def delete_account(
     username: str,
     repo: AccountsRepository = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
 ) -> bool:
+    if account_data is None:
+        raise HTTPException(status_code=401, detail="Not logged in")
     return repo.delete(username)
     # if username not in AccountsRepository:
     #     raise HTTPException(status_code=404, detail="Usename not found")

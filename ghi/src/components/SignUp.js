@@ -30,7 +30,6 @@ export default function SignUp() {
 
 
 
-
   return (
     <div>
         <div className="form-floating mb-3">

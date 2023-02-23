@@ -56,15 +56,24 @@
 //     }
 //   }, [setToken, token]);
 
-//   async function logout() {
-//     if (token) {
-//       const url = `${process.env.REACT_APP_TUNEWORLD_API_HOST}/token`;
-//       await fetch(url, { method: "delete", credentials: "include" });
-//       internalToken = null;
-//       setToken(null);
-//       navigate("/");
-//     }
-//   }
+  async function login(username, password) {
+    const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
+    const form = new FormData();
+    form.append("username", username);
+    form.append("password", password);
+    const response = await fetch(url, {
+      method: "post",
+      credentials: "include",
+      body: form,
+    });
+    if (response.ok) {
+      const token = await getTokenInternal();
+      setToken(token);
+      return;
+    }
+    let error = await response.json();
+    return handleErrorMessage(error);
+  }
 
 //   async function login(email, password) {
 //     const url = `${process.env.REACT_APP_TUNEWORLD_API_HOST}/token`;

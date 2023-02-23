@@ -13,7 +13,7 @@ def get_movie_list(
     # repo = SearchRepository()
     return repo.search(title)
 
-@router.get("/api/movie", response_model=MovieDetail, tags=["movies"])
+@router.get("/api/movie/{id}", response_model=MovieDetail, tags=["movies"])
 def movie_detail(
     id: int
     # repo: SearchRepository = Depends()

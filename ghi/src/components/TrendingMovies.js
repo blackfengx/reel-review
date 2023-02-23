@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useAuthContext } from "/auth";
+import { useAuthContext } from "./auth";
 
 export default function TrendingMovies() {
   const [trending, setTrending] = useState([]);
   const { token } = useAuthContext();
-
+  console.log(token, "----------------------------------------------------");
   const fetchData = async () => {
-    const response = await fetch("http://localhost:8000/api/movies/trending");
+    const url = "http://localhost:8000/api/movies/trending";
+    const response = await fetch(url, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
     const trendingMovies = await response.json();
+    console.log(
+      trendingMovies,
+      "----------------------------------------------------"
+    );
     setTrending(trendingMovies);
   };
 

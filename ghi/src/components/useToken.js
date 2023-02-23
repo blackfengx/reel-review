@@ -1,14 +1,15 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 let internalToken = null;
+
+// Get Token
 
 export function getToken() {
   return internalToken;
 }
 
 export async function getTokenInternal() {
-  const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/token`;
+  const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
   try {
     const response = await fetch(url, {
       credentials: "include",
@@ -20,27 +21,6 @@ export async function getTokenInternal() {
     }
   } catch (e) {}
   return false;
-}
-
-function handleErrorMessage(error) {
-  if ("error" in error) {
-    error = error.error;
-    try {
-      error = JSON.parse(error);
-      if ("__all__" in error) {
-        error = error.__all__;
-      }
-    } catch {}
-  }
-  if (Array.isArray(error)) {
-    error = error.join("<br>");
-  } else if (typeof error === "object") {
-    error = Object.entries(error).reduce(
-      (acc, x) => `${acc}<br>${x[0]}: ${x[1]}`,
-      ""
-    );
-  }
-  return error;
 }
 
 export const AuthContext = createContext({
@@ -76,7 +56,7 @@ export function useToken() {
 
   async function logout() {
     if (token) {
-      const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/token`;
+      const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
       await fetch(url, { method: "delete", credentials: "include" });
       internalToken = null;
       setToken(null);
@@ -84,10 +64,10 @@ export function useToken() {
     }
   }
 
-  async function login(username, password) {
+  async function login(email, password) {
     const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
     const form = new FormData();
-    form.append("username", username);
+    form.append("username", email.toLowerCase());
     form.append("password", password);
     const response = await fetch(url, {
       method: "post",
@@ -99,41 +79,38 @@ export function useToken() {
       setToken(token);
       return;
     }
-    let error = await response.json();
-    return handleErrorMessage(error);
+    await response.json();
+    return false;
   }
 
-  async function signup(username, password, email, firstName, lastName) {
-    const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/sign_up`;
+  async function signup(password, email, full_name) {
+    const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
     const response = await fetch(url, {
       method: "post",
       body: JSON.stringify({
-        username,
         password,
         email,
-        first_name: firstName,
-        last_name: lastName,
+        full_name: full_name,
       }),
       headers: {
         "Content-Type": "application/json",
       },
     });
     if (response.ok) {
-      await login(username, password);
+      await login(email, password);
     }
     return false;
   }
 
-  async function update(username, password, email, firstName, lastName) {
-    const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/accounts`;
+  async function update(username, password, email, full_name) {
+    const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/accounts`;
     const response = await fetch(url, {
       method: "patch",
       body: JSON.stringify({
         username,
         password,
         email,
-        first_name: firstName,
-        last_name: lastName,
+        full_name: full_name,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -145,30 +122,5 @@ export function useToken() {
     return false;
   }
 
-  return { token, login, logout, signup, update };
+  return [token, login, logout, signup, update];
 }
-
-export const useUser = (token) => {
-  const [user, setUser] = useState();
-
-  useEffect(() => {
-    if (!token) {
-      return;
-    }
-
-    async function getUser() {
-      const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/current_user`;
-      const response = await fetch(url, {
-        credentials: "include",
-      });
-      if (response.ok) {
-        const newUser = await response.json();
-        setUser(newUser);
-      }
-    }
-
-    getUser();
-  }, [token]);
-
-  return user;
-};

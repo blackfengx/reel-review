@@ -6,7 +6,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const { setToken } = useToken();
 
-  const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/token`;
+  const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
 
   const form = new FormData();
   form.append("username", username);
@@ -20,7 +20,7 @@ const Login = () => {
       body: form,
     });
     if (response.ok) {
-      const tokenUrl = `${process.env.REACT_APP_ACCOUNTS_HOST}/token`;
+      const tokenUrl = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
 
       try {
         const response = await fetch(tokenUrl, {

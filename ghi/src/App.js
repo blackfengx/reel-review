@@ -5,6 +5,7 @@ import "./App.css";
 import MainPage from "./MainPage.js";
 import Login from "./components/Login.js";
 import { AuthProvider, useToken } from "./components/auth.js";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
@@ -37,14 +38,15 @@ function App() {
 
   return (
     <div>
-      <AuthProvider>
-        <GetToken />
-
-        <ErrorNotification error={error} />
-        {/* <Construct info={launch_info} /> */}
-        <Login />
-        <MainPage />
-      </AuthProvider>
+      <BrowserRouter>
+        <AuthProvider>
+          <GetToken />
+          <ErrorNotification error={error} />
+          {/* <Construct info={launch_info} /> */}
+          <Login />
+          <MainPage />
+        </AuthProvider>
+      </BrowserRouter>
     </div>
   );
 }

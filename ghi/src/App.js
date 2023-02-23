@@ -6,6 +6,13 @@ import MainPage from "./MainPage.js";
 import Login from "./components/Login.js";
 import { AuthProvider, useToken } from "./components/auth.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SignUp from "./components/SignUp.js";
+import WelcomePage from "./components/WelcomePage.js";
+import MovieDetail from "./components/MovieDetail.js";
+import Reviews from "./components/Reviews.js";
+import ReviewsForm from "./components/ReviewsForm.js";
+import Profile from "./components/Profile.js";
+
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
@@ -43,8 +50,18 @@ function App() {
           <GetToken />
           <ErrorNotification error={error} />
           {/* <Construct info={launch_info} /> */}
-          <Login />
-          <MainPage />
+
+          <Routes>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/welcome" element={<WelcomePage/>}/>
+          <Route path="/movie/detail" element={<MovieDetail/>}/>
+          <Route path="/reviews" element={<Reviews/>}/>
+          <Route path="/reviews/create" element={<ReviewsForm/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+          </Routes>
+
         </AuthProvider>
       </BrowserRouter>
     </div>
@@ -52,3 +69,11 @@ function App() {
 }
 
 export default App;
+
+
+// signup
+// welcomePage
+// movie detail page
+// review form page
+// Edit profile
+// review page

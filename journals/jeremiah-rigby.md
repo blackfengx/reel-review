@@ -16,5 +16,10 @@ We worked much of the day on setting up our database and fixing bugs. The inform
 # **February 15th, 2023:**
 Today we spent most of the day working on authentication. Authentication is now done, and we have started on a few of the routers and queries as well. We can now create an account, login and logout.
 
-# **February 15th, 2023:**
+
+# **February 21st, 2023:**
 Today we completed most everything on the backend. We created the rest of our 3rd party api calls. as well as all crud calls for a review. The only thing we have left to do before the backend is complete, is to add authentication requirements for all of the endpoints that we want locked unless you're logged in.
+
+
+# **February 21st, 2023:**
+Today we finished up our backend by fixing some weird authentication bugs, we then moved on to the frontend and got data for movies and reviews working in our frontend to properly display data (nothing is styled). we plan to study up on front end authentication tonight then rally together tomorrow to get frontend auth done.

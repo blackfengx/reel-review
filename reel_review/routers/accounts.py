@@ -12,7 +12,6 @@ from queries.accounts import (
 )
 import os
 
-
 class AccountForm(BaseModel):
     username: str
     password: str

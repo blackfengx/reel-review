@@ -21,3 +21,7 @@ Today our group was able to finish up the authentication feature. Our decision t
 # **February 21st, 2023:**
 
 Over the holiday weekend my group met up to work out some of the kinks in our 3rd party api calls. After taking time to review separately we were able to share ideas and reach a solution. We also made a lot of progress today, our backend is mostly complete: CRUD functionality on reviews and accounts and we have our 3rd party endpoints complete. We are missing a protected view as well as token validation, but we hope to tackle that tomorrow.
+
+# **February 22nd, 2023:**
+
+My team and I made good progress today. We made a few tweaks on the backend and began working on some front end components. We chose to focus on getting our data to display correctly first and then work on styling later down the line. I'm in the process of working on our login page, however the authentication piece is a little confusing. I plan on reading up on it further and trying again tomorrow.

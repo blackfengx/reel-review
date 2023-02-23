@@ -1,8 +1,16 @@
-import { useEffect, useState } from 'react';
-import Construct from './Construct.js'
-import ErrorNotification from './ErrorNotification';
-import './App.css';
-import MainPage from './MainPage.js';
+import { useEffect, useState } from "react";
+import Construct from "./Construct.js";
+import ErrorNotification from "./ErrorNotification";
+import "./App.css";
+import MainPage from "./MainPage.js";
+import Login from "./components/Login.js";
+import { AuthProvider, useToken } from "./components/auth.js";
+
+function GetToken() {
+  // Get token from JWT cookie (if already logged in)
+  useToken();
+  return null;
+}
 
 function App() {
   // const [launch_info, setLaunchInfo] = useState([]);
@@ -27,12 +35,16 @@ function App() {
   //   getData();
   // }, [])
 
-
   return (
     <div>
-      <ErrorNotification error={error} />
-      {/* <Construct info={launch_info} /> */}
-      <MainPage/>
+      <AuthProvider>
+        <GetToken />
+
+        <ErrorNotification error={error} />
+        {/* <Construct info={launch_info} /> */}
+        <Login />
+        <MainPage />
+      </AuthProvider>
     </div>
   );
 }

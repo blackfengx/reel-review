@@ -1,21 +1,42 @@
 import React, { useState } from "react";
+import { useToken } from "./auth";
 
-function Login() {
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const { setToken } = useToken();
+
+  const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/token`;
+
+  const form = new FormData();
+  form.append("username", username);
+  form.append("password", password);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch("/token", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
+    const response = await fetch(url, {
+      method: "post",
+      credentials: "include",
+      body: form,
     });
     if (response.ok) {
-      const data = await response.json();
-      console.log(data);
+      const tokenUrl = `${process.env.REACT_APP_ACCOUNTS_HOST}/token`;
+
+      try {
+        const response = await fetch(tokenUrl, {
+          credentials: "include",
+        });
+        if (response.ok) {
+          const data = await response.json();
+          const token = data.access_token;
+          setToken(token);
+          // DO SOMETHING WITH THE TOKEN SO YOU CAN USE IT
+          // IN REQUESTS TO YOUR NON-ACCOUNTS SERVICES
+        }
+      } catch (e) {}
+    } else {
+      let error = await response.json();
+      // DO SOMETHING WITH THE ERROR, IF YOU WANT
     }
   };
 
@@ -42,6 +63,6 @@ function Login() {
       <button type="submit">Submit</button>
     </form>
   );
-}
+};
 
 export default Login;

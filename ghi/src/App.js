@@ -12,6 +12,7 @@ import MovieDetail from "./components/MovieDetail.js";
 import Reviews from "./components/Reviews.js";
 import ReviewsForm from "./components/ReviewsForm.js";
 import Profile from "./components/Profile.js";
+import Nav from "./components/Nav.js";
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
@@ -46,6 +47,7 @@ function App() {
     <div>
       <BrowserRouter>
         <AuthProvider>
+          <Nav></Nav>
           <GetToken />
           <ErrorNotification error={error} />
           {/* <Construct info={launch_info} /> */}

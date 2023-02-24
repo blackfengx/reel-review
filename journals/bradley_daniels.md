@@ -24,3 +24,6 @@ Routing the API to our code has proven to be a tremendous pain, for some reason 
 
 # **February 21st, 2023:**
 Today we worked to write all of the routers and queries for reviews.py along with finishing the calls to the third party API. We planned to move on to our last bit of authentication, however, we discovered the rest of the auth is erroring.
+
+# **February 22nd, 2023:**
+Today we were able to fix our back-end authentication, it turns out it was working the whole time, however, we inserted new tables into our SQL database and forgot to migrate changes.

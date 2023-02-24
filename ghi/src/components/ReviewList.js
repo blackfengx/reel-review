@@ -5,7 +5,7 @@ export default function ReviewList() {
     const [movies, setMovies] = useState([])
 
     const fetchData = async () => {
-        const response = await fetch("http://localhost:8000/api/reviews")
+        const response = await fetch(`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews`)
         const reviewsData = await response.json()
         setReviews(reviewsData)
     }
@@ -14,7 +14,7 @@ export default function ReviewList() {
         const movieTitleList = []
         for (let review of reviews){
             // console.log(review)
-            const response = await fetch(`http://localhost:8000/api/movie/${review.movie_id}`)
+            const response = await fetch(`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/movie/${review.movie_id}`)
             const movieData = await response.json()
             // movieTitleList.push(movieData)
             review["title"] = movieData["title"]

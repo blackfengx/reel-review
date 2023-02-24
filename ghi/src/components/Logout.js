@@ -12,6 +12,11 @@ function Logout() {
       console.error(e);
     }
   };
+  return (
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Logout</button>
+    </form>
+  );
 }
 
 export default Logout;

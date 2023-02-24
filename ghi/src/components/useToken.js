@@ -83,21 +83,23 @@ export function useToken() {
     return false;
   }
 
-  async function signup(password, email, full_name) {
-    const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
+  async function signup(username, password, email, firstName, lastName) {
+    const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/sign_up`;
     const response = await fetch(url, {
       method: "post",
       body: JSON.stringify({
+        username,
         password,
         email,
-        full_name: full_name,
+        first_name: firstName,
+        last_name: lastName,
       }),
       headers: {
         "Content-Type": "application/json",
       },
     });
     if (response.ok) {
-      await login(email, password);
+      await login(username, password);
     }
     return false;
   }

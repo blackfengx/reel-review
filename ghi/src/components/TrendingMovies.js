@@ -6,7 +6,7 @@ export default function TrendingMovies() {
   const { token } = useAuthContext();
   const fetchData = async () => {
     console.log(token, "----------------------------------------------------");
-    const url = "http://localhost:8000/api/movies/trending";
+    const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/movies/trending`;
     const response = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` }, credentials: "include"
     });

@@ -8,7 +8,7 @@ export default function TrendingMovies() {
     console.log(token, "----------------------------------------------------");
     const url = "http://localhost:8000/api/movies/trending";
     const response = await fetch(url, {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}` }, credentials: "include"
     });
     const trendingMovies = await response.json();
     console.log(

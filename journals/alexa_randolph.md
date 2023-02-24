@@ -25,3 +25,7 @@ Over the holiday weekend my group met up to work out some of the kinks in our 3r
 # **February 22nd, 2023:**
 
 My team and I made good progress today. We made a few tweaks on the backend and began working on some front end components. We chose to focus on getting our data to display correctly first and then work on styling later down the line. I'm in the process of working on our login page, however the authentication piece is a little confusing. I plan on reading up on it further and trying again tomorrow.
+
+# **February 23rd, 2023:**
+
+Authentication continued being a challenge today. The team continued working on getting our data to show on the different url paths. And I got our login feature to work however once logged in, the access token would not sync with our other protected webpages. Our plan is to seek help tomorrow and hopefully resolve the access token issue and proceed with the rest of our front-end goals.

@@ -122,5 +122,5 @@ export function useToken() {
     return false;
   }
 
-  return [token, login, logout, signup, update];
+  return { token, login, logout, signup, update };
 }

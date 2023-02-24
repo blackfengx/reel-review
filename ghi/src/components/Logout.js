@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { navigate } from "react-router";
 import { useToken } from "./useToken";
 
 function Logout() {
@@ -9,8 +8,6 @@ function Logout() {
     event.preventDefault();
     try {
       await logout();
-      // Signup successful, do something (e.g. redirect to home page)
-      //   window.location.reload(false);
     } catch (e) {
       console.error(e);
     }

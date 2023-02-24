@@ -10,9 +10,9 @@ const Login = () => {
 
   const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
 
-  const form = new FormData();
-  form.append("username", username);
-  form.append("password", password);
+//   const form = new FormData();
+//   form.append("username", username);
+//   form.append("password", password);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,7 +20,7 @@ const Login = () => {
       await login(username, password);
       // Login successful, do something (e.g. redirect to home page)
       navigate("/");
-      window.location.reload(false);
+    //   window.location.reload(false);
     } catch (e) {
       console.error(e);
       // Login failed, show error message to user

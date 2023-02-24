@@ -8,7 +8,7 @@ export default function MainPage() {
     <>
       <h1>MainPage</h1>
       <TrendingMovies />
-      {/* <SignUp/> */}
+      {/* <SignUp /> */}
       {/* <ReviewList /> */}
     </>
   );

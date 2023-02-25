@@ -79,7 +79,7 @@ async def create_account(
     token = await authenticator.login(response, request, form, repo)
     return AccountToken(account=account, **token.dict())
 
-@router.get("/api/accounts/{id}", response_model=AccountsOutWithPassword | None, tags=["accounts"])
+@router.get("/api/accounts/{username}", response_model=AccountsOutWithPassword | None, tags=["accounts"])
 def get_account(
     username: str,
     repo: AccountsRepository = Depends()

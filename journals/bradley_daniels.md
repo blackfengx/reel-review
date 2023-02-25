@@ -27,3 +27,8 @@ Today we worked to write all of the routers and queries for reviews.py along wit
 
 # **February 22nd, 2023:**
 Today we were able to fix our back-end authentication, it turns out it was working the whole time, however, we inserted new tables into our SQL database and forgot to migrate changes.
+
+# **February 23nd, 2023:**
+Today we were very stuck with authentication once again in the front-end, while we were stuck we fleshed out what routes/other parts of authentication we could.
+
+# **February 24th, 2023:**

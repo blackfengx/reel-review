@@ -78,3 +78,16 @@ async def create_account(
     form = AccountForm(username=info.email, password=info.password)
     token = await authenticator.login(response, request, form, repo)
     return AccountToken(account=account, **token.dict())
+
+@router.get("/api/accounts/{id}", response_model=AccountsOutWithPassword | None, tags=["accounts"])
+def get_account(
+    username: str,
+    repo: AccountsRepository = Depends()
+) -> AccountsOutWithPassword | None:
+    return repo.get(username)
+
+# @router.put("/api/accounts/{id}", tags=["accounts"])
+# def update_account(
+#     id: int,
+#     repo: AccountsRepository = Depends()
+# ) ->

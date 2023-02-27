@@ -50,7 +50,7 @@ function App() {
 
   return (
     <div>
-      {!token ? (
+      {/* {!token ? (
         <BrowserRouter>
           <AuthProvider>
             <GetToken />
@@ -61,7 +61,7 @@ function App() {
             </Routes>
           </AuthProvider>
       </BrowserRouter>
-      ) :null}
+      ) :null} */}
 
       <BrowserRouter>
         <AuthProvider>
@@ -78,6 +78,9 @@ function App() {
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/reviews/create" element={<ReviewsForm />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/welcome" element={<WelcomePage />} />
           </Routes>
         </AuthProvider>
       </BrowserRouter>

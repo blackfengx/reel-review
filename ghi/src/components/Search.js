@@ -13,6 +13,10 @@ export default function Search() {
     //     console.log(e.target.value)
     // }
 
+    const handleSearch = async (e) => {
+      console.log("hello")
+    }
+
 
 
   return (

@@ -6,12 +6,20 @@ export default function MainPage() {
   const [searching, setSearching] = useState(false);
 
 
+  const searchingstuff = (input) => {
 
-
-
-
-      if (searching) {
-    return <TrendingMovies />;
   }
-  return <Search />;
+
+
+
+      if (!searching) {
+    return <div>
+      <Search/>
+      <TrendingMovies />
+      </div>;
+  }
+  return <div>
+     <Search />
+     <div>movies</div>
+     </div>;
 }

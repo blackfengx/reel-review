@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-export default function Search() {
+export default function Search(props) {
     const [search, setSearch] = useState("")
 
     const handleSearchChange = async (e) => {
         setSearch(e.target.value)
-        console.log(e.target.value)
+        props.searchingstuff(e.target.value)
     }
 
     // const handleSearchChange = async (e) => {

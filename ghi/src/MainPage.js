@@ -7,19 +7,19 @@ export default function MainPage() {
 
 
   const searchingstuff = (input) => {
-
+    console.log(input)
   }
 
 
 
       if (!searching) {
     return <div>
-      <Search/>
+      <Search searchingstuff={searchingstuff}/>
       <TrendingMovies />
       </div>;
   }
   return <div>
-     <Search />
+     <Search searchingstuff={searchingstuff}/>
      <div>movies</div>
      </div>;
 }

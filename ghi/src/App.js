@@ -46,7 +46,7 @@ function App() {
 
       // <Route path="/welcome" element={<WelcomePage/>} />
       // <Route path="/signup" element={<SignUp />} />
-  const {token} = useToken();
+  // const {token} = useToken();
 
   return (
     <div>

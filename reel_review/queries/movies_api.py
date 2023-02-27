@@ -27,10 +27,6 @@ class MovieQueries:
         for movie in data["results"]:
             movie["movie_id"] = movie["id"]
             returned_movies.append(SearchOut(
-                # movie_id=movie["id"],
-                # title=movie["title"],
-                # poster_path=movie["poster_path"],
-                # vote_average=movie["vote_average"]
                 **movie
             ))
         return returned_movies
@@ -38,22 +34,9 @@ class MovieQueries:
     def movie_detail(self, id: int):
         res = requests.get(f'https://api.themoviedb.org/3/movie/{id}?api_key={API_KEY}&language=en-US')
         data = res.json()
-        # result = []
-        # print(data, '------------------------------')
         data["movie_id"] = data["id"]
-        # print(data, '-----------------------------')
-        # return MovieDetail(
-        #         movie_id=data["id"],
-        #         title=data["title"],
-        #         poster_path=data["poster_path"],
-        #         runtime = data["runtime"],
-        #         vote_average=data["vote_average"],
-        #         overview = data["overview"],
-        # )
         return MovieDetail(**data)
-        # movie = MovieDetail(data)
-        # print(movie, '------------------------------')
-        # return movie
+
 
     def trending_movies(self):
         res = requests.get(f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}")

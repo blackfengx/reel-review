@@ -73,7 +73,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<MainPage />} />
             <Route path="/welcome" element={<WelcomePage />} />
-            <Route path="/movie/detail" element={<MovieDetail />} />
+            <Route path="/movie/detail/:id" element={<MovieDetail />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/reviews/create" element={<ReviewsForm />} />
             <Route path="/profile" element={<Profile />} />

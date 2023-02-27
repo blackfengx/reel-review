@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useAuthContext } from "./useToken";
 
 export default function Profile() {
-  const [account, setAccount] = useState(null);
+  const [account, setAccount] = useState([]);
   const { token } = useAuthContext();
 
   const fetchAccount = async () => {
     try {
+      console.log(account.username)
       const response = await fetch(
-        `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/accounts/${username}`,
+        `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/accounts/${'d'}`,
         {
           headers: { Authorization: `Bearer ${token}` },
           credentials: "include",
@@ -16,6 +17,7 @@ export default function Profile() {
       );
       if (response.ok) {
         const accountData = await response.json();
+        console.log(accountData)
         setAccount(accountData);
       }
     } catch (e) {
@@ -34,8 +36,8 @@ export default function Profile() {
   return (
     <div>
       <h2>Account Details</h2>
-      <div>First Name: {account.firstName}</div>
-      <div>Last Name: {account.lastName}</div>
+      <div>First Name: {account.first_name}</div>
+      <div>Last Name: {account.last_name}</div>
       <div>Email: {account.email}</div>
       <div>Username: {account.username}</div>
       <div>Password: {account.password}</div>

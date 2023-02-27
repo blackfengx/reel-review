@@ -18,6 +18,11 @@ function Nav() {
         </Link>
       </li>
       <li>
+        <Link className="dropdown-item" to="/movie/detail">
+          Movie Detail
+        </Link>
+      </li>
+      <li>
         <Link className="dropdown-item" to="/profile">
           Profile
         </Link>

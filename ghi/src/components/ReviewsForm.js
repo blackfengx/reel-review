@@ -1,29 +1,26 @@
 import React, { useState } from "react";
 
-export default function ReviewsForm(movies) {
+export default function ReviewsForm({ movie }) {
   const [review, setReview] = useState({
-    movie_id: "",
+    movie_id: movie.id,
     display_name: "",
     rating: "",
     comments: "",
   });
-  const [selectedMovieId, setSelectedMovieId] = useState({
-    defaultValues: movies,
-  });
+  // const [selectedMovieId, setSelectedMovieId] = useState("");
 
   const handleReviewChange = (event) => {
     const { name, value } = event.target;
     setReview((review) => ({
       ...review,
       [name]: value,
-      movie_id: setSelectedMovieId,
     }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setReview({
-      movie_id: "",
+      movie_id: movie.id,
       display_name: "",
       rating: "",
       comments: "",
@@ -32,8 +29,8 @@ export default function ReviewsForm(movies) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1> {selectedMovieId}</h1>
-      <div>Reviews Form</div>
+      <h1>{movie.title}</h1>
+      <div>Leave a Reel Review</div>
       <label>
         Display Name:
         <input

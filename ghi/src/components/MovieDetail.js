@@ -23,9 +23,10 @@ const fetchData = async () => {
     <div>
       {movieDetail.title}
     </div>
-    {/* <div>
-      {movieDetail.title}
-    </div> */}
+   <img
+    src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`}
+    alt=""
+    />
     <div>
       {movieDetail.runtime}
     </div>

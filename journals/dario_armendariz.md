@@ -22,5 +22,8 @@ Over the weekend we got together and corrected our code for our main API databas
 # **February 22nd, 2023:**
 ABSENT: As per team- just to update you on what happened today we were able to fix the authenticator. It was working the whole time we just needed to migrate after creating a new table on our database. We then moved onto front end and we're kinda just sculpting bare bones routes and we're studying the explorations/prepping for front-end authentication.
 
-# **February 22nd, 2023:**
+# **February 23rd, 2023:**
 ABSENT: As per team-just to update you, we are still kinda stuck on front end auth...we are able to log in on the front end and get a token, but for some reason our auth is having trouble actually reading it so we plan on going to riley in the morning. In addition, we were able to protect the back end routers along with return the appropriate status code for the create/delete requests. All in all we are progressing well with our last main block being the final portion of this auth
+
+# **February 24th, 2023:**
+Today we started with the flake 8 setup. We also fixed our authorization completely and set up our login and create requests for accounts. We also set up the inial homepage setup as well as the nav bar for our services. Today, my personal wall was based on docker not  launching my ghi container. This weekend I will catchup on the current ccode and start the download/setup for tailwind.

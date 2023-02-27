@@ -43,8 +43,14 @@ function App() {
   //   getData();
   // }, [])
 
+<<<<<<< HEAD
   // <Route path="/welcome" element={<WelcomePage/>} />
   // <Route path="/signup" element={<SignUp />} />
+=======
+
+      // <Route path="/welcome" element={<WelcomePage/>} />
+      // <Route path="/signup" element={<SignUp />} />
+>>>>>>> ef3684eacad54b1be9d3d8af2f9bd9b684b994bc
   // const {token} = useToken();
 
   return (

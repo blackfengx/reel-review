@@ -9,7 +9,7 @@ export default function Profile() {
     try {
       console.log(account.username)
       const response = await fetch(
-        `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/accounts/${'d'}`,
+        `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/accounts/${account.username}`,
         {
           headers: { Authorization: `Bearer ${token}` },
           credentials: "include",

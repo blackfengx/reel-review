@@ -29,3 +29,7 @@ My team and I made good progress today. We made a few tweaks on the backend and 
 # **February 23rd, 2023:**
 
 Authentication continued being a challenge today. The team continued working on getting our data to show on the different url paths. And I got our login feature to work however once logged in, the access token would not sync with our other protected webpages. Our plan is to seek help tomorrow and hopefully resolve the access token issue and proceed with the rest of our front-end goals.
+
+# **February 24th, 2023:**
+
+I'm happy with the progress my team made today. We solved our issue on passing the access token through our other site's routes. Also, we discussed having CRUD functionality for all the features on our site. We are missing a few of these on the back end but agreed to complete those early next week. I'd say we're about 70% done with our barebone front end so we should begin styling next week.

@@ -43,8 +43,26 @@ function App() {
   //   getData();
   // }, [])
 
+
+      // <Route path="/welcome" element={<WelcomePage/>} />
+      // <Route path="/signup" element={<SignUp />} />
+  const {token} = useToken();
+
   return (
     <div>
+      {!token ? (
+        <BrowserRouter>
+          <AuthProvider>
+            <GetToken />
+            <Routes>
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/welcome" element={<WelcomePage />} />
+            </Routes>
+          </AuthProvider>
+      </BrowserRouter>
+      ) :null}
+
       <BrowserRouter>
         <AuthProvider>
           <Nav></Nav>
@@ -55,7 +73,6 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<MainPage />} />
-            <Route path="/signup" element={<SignUp />} />
             <Route path="/welcome" element={<WelcomePage />} />
             <Route path="/movie/detail" element={<MovieDetail />} />
             <Route path="/reviews" element={<Reviews />} />

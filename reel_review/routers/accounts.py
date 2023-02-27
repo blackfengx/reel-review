@@ -86,8 +86,9 @@ def get_account(
 ) -> AccountsOutWithPassword | None:
     return repo.get(username)
 
-# @router.put("/api/accounts/{id}", tags=["accounts"])
+# @router.put("/api/accounts/{id}", response_model=AccountsOutWithPassword, tags=["accounts"])
 # def update_account(
 #     id: int,
 #     repo: AccountsRepository = Depends()
-# ) ->
+# ) -> AccountsOutWithPassword:
+#     return repo.upd

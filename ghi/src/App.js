@@ -43,9 +43,8 @@ function App() {
   //   getData();
   // }, [])
 
-
-      // <Route path="/welcome" element={<WelcomePage/>} />
-      // <Route path="/signup" element={<SignUp />} />
+  // <Route path="/welcome" element={<WelcomePage/>} />
+  // <Route path="/signup" element={<SignUp />} />
   // const {token} = useToken();
 
   return (

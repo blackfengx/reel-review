@@ -22,11 +22,11 @@ function Nav() {
           Movie Detail
         </Link>
       </li>
-      <li>
+      {/* <li>
         <Link className="dropdown-item" to="/profile">
           Profile
         </Link>
-      </li>
+      </li> */}
       <li>
         <Link className="dropdown-item" to="/login">
           <Logout />

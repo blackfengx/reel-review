@@ -75,8 +75,8 @@ function App() {
             <Route path="/welcome" element={<WelcomePage />} />
             <Route path="/movie/detail/:id" element={<MovieDetail />} />
             <Route path="/reviews" element={<Reviews />} />
-            <Route path="/reviews/create" element={<ReviewsForm />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/reviews/create/:id" element={<ReviewsForm />} />
+            {/* <Route path="/profile" element={<Profile />} /> */}
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/welcome" element={<WelcomePage />} />

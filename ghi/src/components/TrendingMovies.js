@@ -5,12 +5,13 @@ import { useNavigate } from "react-router-dom";
 export default function TrendingMovies() {
   const [trending, setTrending] = useState([]);
   const { token } = useAuthContext();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const fetchData = async () => {
     console.log(token, "----------------------------------------------------");
     const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/movies/trending`;
     const response = await fetch(url, {
-      headers: { Authorization: `Bearer ${token}` }, credentials: "include"
+      headers: { Authorization: `Bearer ${token}` },
+      credentials: "include",
     });
     const trendingMovies = await response.json();
     console.log(
@@ -21,10 +22,9 @@ export default function TrendingMovies() {
   };
 
   const movieDetail = (movie_id) => {
-    console.log(movie_id)
-    navigate(`/movie/detail/${movie_id}`)
-
-  }
+    console.log(movie_id);
+    navigate(`/movie/detail/${movie_id}`);
+  };
 
   useEffect(() => {
     fetchData();

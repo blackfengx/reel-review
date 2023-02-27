@@ -1,12 +1,20 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-export default function ReviewsForm({ movie }) {
+export default function ReviewsForm(movieDetail) {
+  const { movie_id } = useParams();
+
+  console.log(movie_id, "--------------------------------------------");
+
+  const navigate = useNavigate();
   const [review, setReview] = useState({
-    movie_id: movie.id,
+    movie_id: movie_id,
     display_name: "",
     rating: "",
     comments: "",
   });
+
   // const [selectedMovieId, setSelectedMovieId] = useState("");
 
   const handleReviewChange = (event) => {
@@ -19,17 +27,22 @@ export default function ReviewsForm({ movie }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setReview({
-      movie_id: movie.id,
-      display_name: "",
-      rating: "",
-      comments: "",
-    });
+    try {
+      setReview({
+        movie_id: movie_id,
+        display_name: "",
+        rating: "",
+        comments: "",
+      });
+      navigate("/reviews");
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>{movie.title}</h1>
+      <h1>{movieDetail.title}</h1>
       <div>Leave a Reel Review</div>
       <label>
         Display Name:

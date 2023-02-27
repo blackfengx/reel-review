@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useAuthContext } from "./useToken";
+import { useParams } from 'react-router-dom';
+
 export default function MovieDetail() {
   const[movieDetail, setMovieDetail] = useState([]);
   const { token } = useAuthContext();
+  const { id } = useParams()
 const fetchData = async () => {
-    const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/movie/550`;
+    const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/movie/${id}`;
     const response = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` }, credentials: "include"
     });

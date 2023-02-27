@@ -1,15 +1,25 @@
 import React, { useState, useEffect } from "react";
 import TrendingMovies from "./components/TrendingMovies";
-import SignUp from "./components/SignUp";
-import ReviewList from "./components/ReviewList";
+import Search from "./components/Search";
 
 export default function MainPage() {
-  return (
-    <>
-      <h1>MainPage</h1>
+  const [searching, setSearching] = useState(false);
+
+
+  const searchingstuff = (input) => {
+    console.log(input)
+  }
+
+
+
+      if (!searching) {
+    return <div>
+      <Search searchingstuff={searchingstuff}/>
       <TrendingMovies />
-      {/* <SignUp /> */}
-      {/* <ReviewList /> */}
-    </>
-  );
+      </div>;
+  }
+  return <div>
+     <Search searchingstuff={searchingstuff}/>
+     <div>movies</div>
+     </div>;
 }

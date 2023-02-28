@@ -16,7 +16,6 @@ export default function ReviewsForm(movieDetail) {
     });
     const movie = await response.json();
     setTitle(movie);
-    console.log(movie, "movieeeeeeeeeeeeeeeeeeeeeeeeee");
   };
   useEffect(() => {
     fetchData();
@@ -55,13 +54,15 @@ export default function ReviewsForm(movieDetail) {
     const response = await fetch(reviewUrl, fetchConfig);
 
     try {
-      setReview({
-        movie_id: id,
-        display_name: "",
-        rating: "",
-        comments: "",
-      });
-      navigate("/reviews");
+      if (response.ok) {
+        setReview({
+          movie_id: id,
+          display_name: "",
+          rating: "",
+          comments: "",
+        });
+        navigate("/reviews");
+      }
     } catch (e) {
       console.error(e);
     }

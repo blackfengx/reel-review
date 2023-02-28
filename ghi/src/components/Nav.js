@@ -1,9 +1,13 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logout from "./Logout";
+import { useToken } from "./useToken";
 
 function Nav() {
-  // the classname is the css
-  // the "to" is what where it directs you when you click on the link, works with app js
+  const { token } = useToken();
+
+  if (!token) {
+    return null; // hide the navigation bar if the user is not logged in
+  }
 
   return (
     <nav className="bg-gray-300 w-full">
@@ -29,9 +33,7 @@ function Nav() {
           </Link>
         </li> */}
         <li>
-          <Link className="dropdown-item" to="/login">
-            <Logout />
-          </Link>
+          <Logout />
         </li>
       </ul>
     </nav>

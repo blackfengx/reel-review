@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import Logout from "./Logout";
 import { useToken } from "./useToken";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function Nav() {
+  const { pathname } = useLocation();
   const { token } = useToken();
+  const navigate = useNavigate()
 
-  if (!token) {
+   if (!token || !token && pathname !== "/login" || pathname !== "/signup") {
+    navigate("/welcome")
     return null; // hide the navigation bar if the user is not logged in
   }
 

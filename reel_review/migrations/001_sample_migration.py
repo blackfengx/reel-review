@@ -36,7 +36,6 @@ steps = [
     #     """
     # ],
     [
-        # "Up" SQL statement
         """
         CREATE TABLE accounts (
             id SERIAL PRIMARY KEY NOT NULL,
@@ -48,7 +47,6 @@ steps = [
 
         );
         """,
-        # "Down" SQL statement
         """
         DROP TABLE accounts;
         """,
@@ -69,5 +67,4 @@ steps = [
         DROP TABLE reviews;
         """,
     ]
-
 ]

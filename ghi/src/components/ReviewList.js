@@ -13,7 +13,6 @@ export default function ReviewList() {
   };
 
   const filteredReviews = async () => {
-    console.log("filtered!")
     const searchResult = movies.filter((review) =>
       review.title.toLowerCase().includes(searchTerm.toLowerCase()) || searchTerm === ""
     );
@@ -49,6 +48,7 @@ export default function ReviewList() {
       movieTitleList.push(review);
     }
     setMovies(movieTitleList);
+    setFilteredMovies(movieTitleList)
   };
 
   useEffect(() => {

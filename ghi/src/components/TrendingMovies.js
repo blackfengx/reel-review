@@ -33,7 +33,6 @@ export default function TrendingMovies() {
             <img
               src={movie.poster_path !== null ? `https://image.tmdb.org/t/p/original/${movie.poster_path}`: `https://image.tmdb.org/t/p/original/qzMYKnT4MG1d0gnhwytr4cKhUvS.jpg` } //not the real path wed use but it works!
               alt=""
-              className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
               className="object-cover"
             />
             <div className="text-2xl">{movie.title}</div>

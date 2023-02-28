@@ -8,7 +8,7 @@ function Nav() {
   return (
     <ul>
       <li>
-        <Link className="dropdown-item" to="/reviews">
+        <Link className="dropdown-item" to="/reviews/list">
           Reviews
         </Link>
       </li>

@@ -1,15 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { useAuthContext } from "./useToken";
 
 export default function ReviewsForm(movieDetail) {
-  const { movie_id } = useParams();
+  const { token } = useAuthContext();
+  const { id } = useParams();
+  const [title, setTitle] = useState("");
 
-  console.log(movie_id, "--------------------------------------------");
+  const fetchData = async () => {
+    const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/movie/${id}`;
+    const response = await fetch(url, {
+      headers: { Authorization: `Bearer ${token}` },
+      credentials: "include",
+    });
+    const movie = await response.json();
+    setTitle(movie);
+    console.log(movie, "movieeeeeeeeeeeeeeeeeeeeeeeeee");
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const navigate = useNavigate();
   const [review, setReview] = useState({
-    movie_id: movie_id,
+    movie_id: id,
     display_name: "",
     rating: "",
     comments: "",
@@ -27,9 +42,21 @@ export default function ReviewsForm(movieDetail) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const reviewUrl = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/create`;
+    const fetchConfig = {
+      method: "post",
+      body: JSON.stringify(review),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      credentials: "include",
+    };
+    const response = await fetch(reviewUrl, fetchConfig);
+
     try {
       setReview({
-        movie_id: movie_id,
+        movie_id: id,
         display_name: "",
         rating: "",
         comments: "",
@@ -42,7 +69,7 @@ export default function ReviewsForm(movieDetail) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>{movieDetail.title}</h1>
+      <h1>{title.title}</h1>
       <div>Leave a Reel Review</div>
       <label>
         Display Name:

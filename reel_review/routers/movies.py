@@ -7,16 +7,6 @@ from authenticator import authenticator
 
 router = APIRouter()
 
-@router.get('/api/movies/{title}', response_model=List[SearchOut], tags=["movies"])
-def get_movie_list(
-    title: str,
-    repo: SearchRepository = Depends(),
-    account_data: dict = Depends(authenticator.get_current_account_data),
-):
-    if account_data is None:
-        raise HTTPException(status_code=401, detail="Not logged in")
-    return repo.search(title)
-
 @router.get("/api/movie/{id}", response_model=MovieDetail, tags=["movies"])
 def movie_detail(
     id: int,
@@ -35,3 +25,13 @@ def get_trending_movies(account_data: dict = Depends(authenticator.get_current_a
         raise HTTPException(status_code=401, detail="Not logged in")
     repo = SearchRepository()
     return repo.trending()
+
+@router.get('/api/movies/{title}', response_model=List[SearchOut], tags=["movies"])
+def get_movie_list(
+    title: str,
+    repo: SearchRepository = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
+):
+    if account_data is None:
+        raise HTTPException(status_code=401, detail="Not logged in")
+    return repo.search(title)

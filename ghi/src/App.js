@@ -13,6 +13,7 @@ import Reviews from "./components/Reviews.js";
 import ReviewsForm from "./components/ReviewsForm.js";
 import Profile from "./components/Profile.js";
 import Nav from "./components/Nav.js";
+import ReviewList from "./components/ReviewList.js";
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
@@ -75,6 +76,7 @@ function App() {
             <Route path="/welcome" element={<WelcomePage />} />
             <Route path="/movie/detail/:id" element={<MovieDetail />} />
             <Route path="/reviews" element={<Reviews />} />
+            <Route path="/reviews/list" element={<ReviewList />} />
             <Route path="/reviews/create/:id" element={<ReviewsForm />} />
             {/* <Route path="/profile" element={<Profile />} /> */}
             <Route path="/login" element={<Login />} />

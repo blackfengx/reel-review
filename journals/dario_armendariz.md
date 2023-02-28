@@ -27,3 +27,6 @@ ABSENT: As per team-just to update you, we are still kinda stuck on front end au
 
 # **February 24th, 2023:**
 Today we started with the flake 8 setup. We also fixed our authorization completely and set up our login and create requests for accounts. We also set up the inial homepage setup as well as the nav bar for our services. Today, my personal wall was based on docker not  launching my ghi container. This weekend I will catchup on the current ccode and start the download/setup for tailwind.
+
+# **February 27th, 2023:**
+We implemented 3 areas of our React fronend. First, we set up the link from our main search of movies to link and display specific details. We then linked the detail option directly to the Review forms and implemented the system to fill and submit the form. We established the search bar for movies which have the same link process as normal homepage. We also created the base form of our welcome page. Tonight we study a small amount for our tailwind and set up to complete our reviews list/details tomorrow.

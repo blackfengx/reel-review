@@ -10,7 +10,7 @@ function Nav() {
   const { token } = useToken();
   const navigate = useNavigate()
 
-  const redirect = () => {
+   const redirect = () => {
 if (!token && (pathname !== "/welcome" || pathname !== "/login" || pathname !== "/signup")) {
     navigate("/welcome")
   }
@@ -18,6 +18,11 @@ if (!token && (pathname !== "/welcome" || pathname !== "/login" || pathname !== 
   useEffect(() =>{
     redirect()
 }, [])
+
+  if (!token) {
+    // navigate("/welcome")
+    return null; // hide the navigation bar if the user is not logged in
+  }
 
   return (
     <nav className="bg-gray-300 w-full">

@@ -6,21 +6,18 @@ export default function ReviewList() {
   const [movies, setMovies] = useState([]);
   const { token } = useAuthContext();
   const [searchTerm, setSearchTerm] = useState("");
+  const [filteredMovies, setFilteredMovies] = useState([])
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
   const filteredReviews = async () => {
-    const response = await fetch(
-      `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews`
+    console.log("filtered!")
+    const searchResult = movies.filter((review) =>
+      review.title.toLowerCase().includes(searchTerm.toLowerCase()) || searchTerm === ""
     );
-    const content = await response.json();
-    const reviewList = content.reviews;
-    const searchResult = reviewList.filter((review) =>
-      review.title.includes(searchTerm)
-    );
-    setReviews(searchResult);
+    setFilteredMovies(searchResult);
   };
 
   useEffect(() => {
@@ -68,10 +65,10 @@ export default function ReviewList() {
         <input
           type="text"
           value={searchTerm}
-          onchange={handleInputChange}
+          onChange={handleInputChange}
           placeholder="Search by title"
         />
-        <button type="button" onclick={filteredReviews}>
+        <button type="button" onClick={filteredReviews}>
           Search
         </button>
       </div>
@@ -87,7 +84,7 @@ export default function ReviewList() {
             </tr>
           </thead>
           <tbody>
-            {movies.map((review) => (
+            {filteredMovies.map((review) => (
               <tr key={review.id}>
                 <td>{review.title}</td>
                 <td>{review.display_name}</td>

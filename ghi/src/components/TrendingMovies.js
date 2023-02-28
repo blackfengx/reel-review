@@ -7,17 +7,12 @@ export default function TrendingMovies() {
   const { token } = useAuthContext();
   const navigate = useNavigate();
   const fetchData = async () => {
-    console.log(token, "----------------------------------------------------");
     const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/movies/trending`;
     const response = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` },
       credentials: "include",
     });
     const trendingMovies = await response.json();
-    console.log(
-      trendingMovies,
-      "----------------------------------------------------"
-    );
     setTrending(trendingMovies);
   };
 

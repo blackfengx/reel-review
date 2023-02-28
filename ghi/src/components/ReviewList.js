@@ -1,11 +1,17 @@
 import React, {useEffect, useState} from 'react'
+import { useAuthContext } from "./useToken";
 
 export default function ReviewList() {
     const [reviews, setReviews] = useState([])
     const [movies, setMovies] = useState([])
+    const {token} = useAuthContext()
 
     const fetchData = async () => {
-        const response = await fetch(`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews`)
+        const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews`
+        const auth = {
+                    headers: { Authorization: `Bearer ${token}` },
+                    credentials: "include",}
+        const response = await fetch(url, auth)
         const reviewsData = await response.json()
         setReviews(reviewsData)
     }
@@ -13,20 +19,16 @@ export default function ReviewList() {
     const fetchMovieData = async () => {
         const movieTitleList = []
         for (let review of reviews){
-            // console.log(review)
-            const response = await fetch(`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/movie/${review.movie_id}`)
+            const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/movie/${review.movie_id}`
+            const auth = {
+                    headers: { Authorization: `Bearer ${token}` },
+                    credentials: "include",}
+            const response = await fetch(url, auth)
             const movieData = await response.json()
-            // movieTitleList.push(movieData)
             review["title"] = movieData["title"]
             movieTitleList.push(review)
         }
         setMovies(movieTitleList)
-        // console.log(movieTitleList)
-        // count = 0
-        // for (let review of reviews){
-        //     review["title"] =
-        // }
-
     }
 
 

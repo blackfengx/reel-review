@@ -9,6 +9,7 @@ export default function WelcomePage() {
       <Link className="dropdown-item" to="/login">
         LOGIN
       </Link>
+      <br></br>
       <Link className="dropdown-item" to="/signup">
         CREATE NEW ACCOUNT
       </Link>

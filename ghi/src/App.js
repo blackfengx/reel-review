@@ -71,7 +71,7 @@ function App() {
           {/* <Construct info={launch_info} /> */}
 
           <Routes>
-            <Route path="/login" element={<Login />} />
+            {/* <Route path="/login" element={<Login />} /> */}
             <Route path="/" element={<MainPage />} />
             <Route path="/welcome" element={<WelcomePage />} />
             <Route path="/movie/detail/:id" element={<MovieDetail />} />

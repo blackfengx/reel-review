@@ -9,10 +9,6 @@ function Nav() {
   const { token } = useToken();
   const navigate = useNavigate()
 
-   if (!token || !token && pathname !== "/login" || pathname !== "/signup") {
-    navigate("/welcome")
-    return null; // hide the navigation bar if the user is not logged in
-  }
 
   return (
     <nav className="bg-gray-300 w-full">

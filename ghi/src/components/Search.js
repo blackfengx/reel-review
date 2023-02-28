@@ -9,13 +9,12 @@ export default function Search(props) {
 
     const handleSearch = async (e) => {
         e.preventDefault()
-      console.log("hello")
         props.searchingstuff(search)
     }
 
   return (
     <form onSubmit={handleSearch}>
-        <input onChange={handleSearchChange} value={search} placeholder="Enter search" required type="text" name="search" id="search"/>
+        <input onChange={handleSearchChange} value={search} placeholder="Enter search" type="text" name="search" id="search"/>
         <label htmlFor="search"></label>
         <button type="submit">Search</button>
     </form>

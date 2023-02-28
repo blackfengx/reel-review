@@ -28,7 +28,6 @@ export default function MovieDetail() {
 
   return (
     <div>
-      <div>MovieDetail</div>
       <div>{movieDetail.title}</div>
       <img
         onClick={() => movieReview(movieDetail.movie_id)}

@@ -37,17 +37,12 @@ if (!token && (pathname !== "/welcome" || pathname !== "/login" || pathname !== 
             Home Page
           </Link>
         </li>
-        <li>
-          <Link className="dropdown-item" to="/movie/detail">
-            Movie Detail
-          </Link>
-        </li>
         {/* <li>
           <Link className="dropdown-item" to="/profile">
             Profile
           </Link>
         </li> */}
-        <li>
+        <li className="absolute right-10 top-5">
           <Logout />
         </li>
       </ul>

@@ -26,14 +26,14 @@ export default function TrendingMovies() {
   }, []);
 
   return (
-    <div>
-      <div className="card">
+    <div >
+      <div className="grid grid-cols-4 gap-4">
         {trending.map((movie) => (
-          <div onClick={() => movieDetail(movie.movie_id)} key={movie.movie_id}>
+          <div  className="relative max-w-sm rounded overflow-hidden shadow-lg hover:bg-blue-600 " onClick={() => movieDetail(movie.movie_id)} key={movie.movie_id}>
             <img
-              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+              src={movie.poster_path !== null ? `https://image.tmdb.org/t/p/original/${movie.poster_path}`: `https://image.tmdb.org/t/p/original/qzMYKnT4MG1d0gnhwytr4cKhUvS.jpg` } //not the real path wed use but it works!
               alt=""
-              className="object-cover w-full h-full"
+              className="object-cover"
             />
             <div>{movie.title}</div>
             <div>{movie.vote_average}</div>

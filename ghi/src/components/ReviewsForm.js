@@ -71,7 +71,7 @@ export default function ReviewsForm(movieDetail) {
   return (
     <form onSubmit={handleSubmit}>
       <h1>{title.title}</h1>
-      <div>Leave a Reel Review</div>
+      <div>Share a Reel Review</div>
       <label>
         Display Name:
         <input

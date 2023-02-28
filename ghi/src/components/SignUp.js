@@ -53,16 +53,11 @@ export default function SignUp() {
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
           <div className="form-floating mb-3">
-            <label
-              htmlFor="firstName"
-              className="block text-gray-700 text-sm font-bold mb-2"
-            >
-              First Name
-            </label>
             <input
+              htmlFor="firstName"
               onChange={handleFirstNameChange}
               value={firstName}
-              placeholder="Enter your first name"
+              placeholder="First Name"
               required
               type="text"
               name="firstName"
@@ -71,16 +66,11 @@ export default function SignUp() {
             />
           </div>
           <div className="form-floating mb-3">
-            <label
-              htmlFor="lastName"
-              className="block text-gray-700 text-sm font-bold mb-2"
-            >
-              Last Name
-            </label>
             <input
+              htmlFor="lastName"
               onChange={handleLastNameChange}
               value={lastName}
-              placeholder="Enter your last name"
+              placeholder="Last Name"
               required
               type="text"
               name="lastName"
@@ -89,16 +79,11 @@ export default function SignUp() {
             />
           </div>
           <div className="form-floating mb-3">
-            <label
-              htmlFor="username"
-              className="block text-gray-700 text-sm font-bold mb-2"
-            >
-              Username
-            </label>
             <input
+              htmlFor="username"
               onChange={handleUsernameChange}
               value={username}
-              placeholder="Enter your desired username"
+              placeholder="Username"
               required
               type="text"
               name="username"
@@ -107,16 +92,11 @@ export default function SignUp() {
             />
           </div>
           <div className="form-floating mb-3">
-            <label
-              htmlFor="email"
-              className="block text-gray-700 text-sm font-bold mb-2"
-            >
-              E-Mail
-            </label>
             <input
+              htmlFor="email"
               onChange={handleEmailChange}
               value={email}
-              placeholder="Enter your email"
+              placeholder="Email"
               required
               type="text"
               name="email"
@@ -125,16 +105,11 @@ export default function SignUp() {
             />
           </div>
           <div className="form-floating mb-3">
-            <label
-              htmlFor="password"
-              className="block text-gray-700 text-sm font-bold mb-2"
-            >
-              Password
-            </label>
             <input
+              htmlFor="password"
               onChange={handlePasswordChange}
               value={password}
-              placeholder="********"
+              placeholder="Password"
               required
               type="password"
               name="password"

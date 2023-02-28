@@ -33,3 +33,7 @@ Authentication continued being a challenge today. The team continued working on 
 # **February 24th, 2023:**
 
 I'm happy with the progress my team made today. We solved our issue on passing the access token through our other site's routes. Also, we discussed having CRUD functionality for all the features on our site. We are missing a few of these on the back end but agreed to complete those early next week. I'd say we're about 70% done with our barebone front end so we should begin styling next week.
+
+# **February 26th, 2023:**
+
+Today we continued working on front end components. We decided to work in groups of two and work on different pages. We got to use URL parameters today in order to link our movies to a detail page and specific reviews.

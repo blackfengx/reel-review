@@ -3,14 +3,24 @@ import Logout from "./Logout";
 import { useToken } from "./useToken";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 function Nav() {
   const { pathname } = useLocation();
   const { token } = useToken();
   const navigate = useNavigate()
 
-   if (!token || !token && pathname !== "/login" || pathname !== "/signup") {
+   const redirect = () => {
+if (!token && (pathname !== "/welcome" || pathname !== "/login" || pathname !== "/signup")) {
     navigate("/welcome")
+  }
+}
+  useEffect(() =>{
+    redirect()
+}, [])
+
+  if (!token) {
+    // navigate("/welcome")
     return null; // hide the navigation bar if the user is not logged in
   }
 

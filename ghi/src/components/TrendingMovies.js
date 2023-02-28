@@ -27,15 +27,15 @@ export default function TrendingMovies() {
 
   return (
     <div>
-      <div className="card">
+      <div>
         {trending.map((movie) => (
           <div onClick={() => movieDetail(movie.movie_id)} key={movie.movie_id}>
             <img
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
               alt=""
-              className="object-cover w-full h-full"
+              className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
             />
-            <div>{movie.title}</div>
+            <div className="text-2xl">{movie.title}</div>
             <div>{movie.vote_average}</div>
           </div>
         ))}

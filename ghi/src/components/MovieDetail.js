@@ -27,16 +27,21 @@ export default function MovieDetail() {
   }, []);
 
   return (
-    <div>
-      <div>MovieDetail</div>
-      <div>{movieDetail.title}</div>
-      <img
-        onClick={() => movieReview(movieDetail.movie_id)}
-        src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`}
-        alt=""
-      />
-      <div>{movieDetail.runtime}</div>
-      <div>{movieDetail.vote_average}</div>
+    <div className='bg-bg-dark-blue min-h-screen'>
+      <div className="flex flex-row items-center">
+          <div>{movieDetail.title}</div>
+          <img
+            // onClick={() => movieReview(movieDetail.movie_id)}
+            src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`}
+            alt=""
+            style={{ width: '350px', height: '750px', objectFit: 'contain' }}
+          />
+        <div className="flex flex-col justify-center ml-4">
+          <div className="mb-2">{movieDetail.title}</div>
+          <div>{movieDetail.runtime} minutes</div>
+          <div>{movieDetail.vote_average}</div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TrendingMovies from "./components/TrendingMovies";
 import Search from "./components/Search";
 import SearchedMovies from "./components/SearchedMovies";
@@ -8,8 +8,6 @@ import { useNavigate } from "react-router";
 export default function MainPage() {
   const [searching, setSearching] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const {token} = useToken()
-  const navigate = useNavigate()
 
 
   const searchingstuff = (input) => {
@@ -22,14 +20,7 @@ export default function MainPage() {
     }
 
   }
-const redirect = () => {
-if (!token) {
-    navigate("/welcome")
-  }
-}
-  useEffect(() =>{
-    redirect()
-}, [])
+
 
       if (!searching) {
     return <div>

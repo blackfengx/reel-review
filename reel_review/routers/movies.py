@@ -7,7 +7,7 @@ from authenticator import authenticator
 
 router = APIRouter()
 
-@router.get('/api/movies/search', response_model=List[SearchOut], tags=["movies"])
+@router.get('/api/movies/{title}', response_model=List[SearchOut], tags=["movies"])
 def get_movie_list(
     title: str,
     repo: SearchRepository = Depends(),

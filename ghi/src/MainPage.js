@@ -1,15 +1,42 @@
 import React, { useState, useEffect } from "react";
 import TrendingMovies from "./components/TrendingMovies";
-import SignUp from "./components/SignUp";
-import ReviewList from "./components/ReviewList";
+import Search from "./components/Search";
+import SearchedMovies from "./components/SearchedMovies";
 
 export default function MainPage() {
-  return (
-    <>
-      <h1>MainPage</h1>
+  const [searching, setSearching] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+
+
+  const searchingstuff = (input) => {
+    if (input !== "") {
+      setSearching(true)
+      setSearchTerm(input)
+    }
+    else {
+      setSearching(false)
+    }
+
+    // console.log(input)
+  }
+
+  // const switched = () => {
+  //   // console.log(searching)
+  // }
+
+
+//   useEffect(() =>{
+//     switched()
+// }, searching)
+
+      if (!searching) {
+    return <div>
+      <Search searchingstuff={searchingstuff}/>
       <TrendingMovies />
-      {/* <SignUp /> */}
-      {/* <ReviewList /> */}
-    </>
-  );
+      </div>;
+  }
+  return <div>
+    <Search searchingstuff={searchingstuff}/>
+    <SearchedMovies searchTerm={searchTerm}/>
+    </div>;
 }

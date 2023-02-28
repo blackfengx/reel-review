@@ -33,6 +33,7 @@ export default function TrendingMovies() {
             <img
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
               alt=""
+              className="object-cover w-full h-full"
             />
             <div>{movie.title}</div>
             <div>{movie.vote_average}</div>

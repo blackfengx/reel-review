@@ -11,7 +11,7 @@ function Nav() {
   const { token } = useAuthContext();
   const navigate = useNavigate()
 
-   const redirect = () => {
+   const redirect = async () => {
 
     if (token && (pathname === "/welcome" || pathname === "/login" || pathname === "/signup")) {
   console.log("in 2nd")

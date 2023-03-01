@@ -43,7 +43,7 @@ export default function SignUp() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-r from-blue-900 to-indigo-900">
+    <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-r from-bg-dark-blue to-blue-700">
       <div className="container mx-auto flex items-center py-4 justify-center">
         <div className="text-white font-Open Sans text-[50px]">Reel Review</div>
       </div>
@@ -120,7 +120,7 @@ export default function SignUp() {
           <div>
             <button
               type="submit"
-              className="bg-sky-900 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Sign up
             </button>

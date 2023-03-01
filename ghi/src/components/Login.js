@@ -83,7 +83,7 @@ const Login = () => {
             type="submit"
             className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
-            Submit
+            Login
           </button>
         </form>
       </div>

@@ -27,10 +27,10 @@ export default function TrendingMovies() {
 
   return (
     <div className="min-h-screen px-8 py-8">
-      <div className="grid grid-cols-5 gap-4 ml-8 mr-8">
+      <div className="grid grid-cols-5 gap-4 mx-auto">
         {trending.map((movie) => (
           <div
-            className="relative max-w-sm rounded overflow-hidden shadow-movie-shadow border-x-8 border-y-8 border-white  bg-white hover:bg-blue-600 hover:border-blue-600 opacity-90"
+            className="relative max-w-sm rounded overflow-hidden shadow-lg bg-white hover:bg-blue-100 hover:border-blue-600 opacity-90 transition duration-300 transform hover:-translate-y-1 hover:scale-105"
             onClick={() => movieDetail(movie.movie_id)}
             key={movie.movie_id}
           >
@@ -43,11 +43,29 @@ export default function TrendingMovies() {
               alt=""
               className="object-cover"
             />
-            <div className="text-2xl">{movie.title}</div>
-            <div> Rating: {movie.vote_average.toFixed(1)} &#x2B50;</div>
+            <div className="p-4">
+              <div className="text-2xl font-bold">{movie.title}</div>
+              <div className="mt-2">
+                <div className="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-yellow-500 mr-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  ></svg>
+                  <span className="mr-auto text-lg text-gray-600">
+                    Rating: {movie.vote_average.toFixed(1)} &#x2B50;
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
+      <p className="text-center text-gray-500 text-xs mt-20">
+        &copy;2023 Popcorn Posse LLC. All rights reserved.
+      </p>
     </div>
   );
 }

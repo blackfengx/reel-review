@@ -14,7 +14,12 @@ function Logout() {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <button type="submit">Logout</button>
+      <button
+        className="text-white font-medium hover:text-gray-400 transition duration-300"
+        type="submit"
+      >
+        Logout
+      </button>
     </form>
   );
 }

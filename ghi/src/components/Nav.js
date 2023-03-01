@@ -47,8 +47,9 @@ function Nav() {
         <img
           src="https://www.clipartmax.com/png/middle/481-4817973_clapperboard-clipart-chalk-movie-clapper-board-png.png"
           alt="clapper"
-          className="h-12"
+          className="h-12 shadow-lg"
         />
+
         <span className="text-white text-xl font-bold ml-2">Reel Review</span>
       </Link>
       <div className="flex items-center mr-10">
@@ -64,7 +65,7 @@ function Nav() {
         >
           Reviews
         </Link>
-        <Logout className="text-white font-medium hover:text-gray-400 transition duration-300" />
+        <Logout />
       </div>
     </nav>
   );

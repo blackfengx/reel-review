@@ -26,7 +26,7 @@ export default function TrendingMovies() {
   }, []);
 
   return (
-    <div >
+    <div className="min-h-screen" >
       <div className="grid grid-cols-4 gap-4">
         {trending.map((movie) => (
           <div  className="relative max-w-sm rounded overflow-hidden shadow-lg hover:bg-blue-600 " onClick={() => movieDetail(movie.movie_id)} key={movie.movie_id}>

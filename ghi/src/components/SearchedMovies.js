@@ -27,7 +27,7 @@ export default function SearchedMovies(props) {
     fetchData();
   }, [SearchedMovies]);
   return (
-    <div>
+    <div className='min-h-screen'>
       <div className="grid grid-cols-4 gap-4">
         {SearchedMovies.map((movie) => (
           <div className="relative max-w-sm rounded overflow-hidden shadow-lg  hover:bg-blue-600" onClick={() => movieDetail(movie.movie_id)} key={movie.movie_id}>

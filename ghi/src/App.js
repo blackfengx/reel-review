@@ -65,8 +65,9 @@ function App() {
 
       <BrowserRouter>
         <AuthProvider>
-          <Nav></Nav>
+
           <GetToken />
+          <Nav></Nav>
           <ErrorNotification error={error} />
           {/* <Construct info={launch_info} /> */}
 

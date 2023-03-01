@@ -61,7 +61,7 @@ export default function ReviewsForm(movieDetail) {
           rating: "",
           comments: "",
         });
-        navigate("/reviews");
+        navigate("/reviews/list");
       }
     } catch (e) {
       console.error(e);

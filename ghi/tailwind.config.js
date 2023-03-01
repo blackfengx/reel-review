@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         "bg-dark-blue": "#00041F",
+        "card": "#6276C8",
       },
       boxShadow: {
         "movie-shadow":

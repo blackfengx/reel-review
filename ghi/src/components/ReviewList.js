@@ -60,7 +60,7 @@ export default function ReviewList() {
   }, [reviews]);
 
   return (
-    <div>
+    <div className="min-h-screen">
       <div>
         <input
           type="text"

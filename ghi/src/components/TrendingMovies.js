@@ -26,11 +26,11 @@ export default function TrendingMovies() {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <div className="grid grid-cols-5 gap-4">
+    <div className="min-h-screen px-8 py-8">
+      <div className="grid grid-cols-5 gap-4 ml-8 mr-8">
         {trending.map((movie) => (
           <div
-            className="relative max-w-sm rounded overflow-hidden shadow-[boxShadow] border-x-8 border-y-8 border-white  bg-white hover:bg-blue-600 hover:border-blue-600 "
+            className="relative max-w-sm rounded overflow-hidden shadow-movie-shadow border-x-8 border-y-8 border-white  bg-white hover:bg-blue-600 hover:border-blue-600 opacity-90"
             onClick={() => movieDetail(movie.movie_id)}
             key={movie.movie_id}
           >
@@ -48,6 +48,9 @@ export default function TrendingMovies() {
           </div>
         ))}
       </div>
+      <p class="text-center text-gray-500 text-xs mt-20">
+        &copy;2023 Popcorn Posse LLC. All rights reserved.
+      </p>
     </div>
   );
 }

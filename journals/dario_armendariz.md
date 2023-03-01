@@ -30,3 +30,6 @@ Today we started with the flake 8 setup. We also fixed our authorization complet
 
 # **February 27th, 2023:**
 We implemented 3 areas of our React fronend. First, we set up the link from our main search of movies to link and display specific details. We then linked the detail option directly to the Review forms and implemented the system to fill and submit the form. We established the search bar for movies which have the same link process as normal homepage. We also created the base form of our welcome page. Tonight we study a small amount for our tailwind and set up to complete our reviews list/details tomorrow.
+
+# **February 28th, 2023:**
+Today we completed and debugged the search system. We completed nav bar for users. We set up our front end rerouts to push users not logged in to the correct page to login/create an account. Completed the full Details page and set up our page views based on page the user is visiting. We started our tailwind overview setting up different pages. I myself worked on the welcome page first page any visitor would see.

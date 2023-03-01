@@ -1,23 +1,33 @@
 import { Link } from "react-router-dom";
 import Logout from "./Logout";
-import { useToken } from "./useToken";
+import { useAuthContext, useToken } from "./useToken";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
+
 function Nav() {
   const { pathname } = useLocation();
-  const { token } = useToken();
+  const { token } = useAuthContext();
   const navigate = useNavigate()
 
    const redirect = () => {
+
+    if (token && (pathname === "/welcome" || pathname === "/login" || pathname === "/signup")) {
+  console.log("in 2nd")
+  navigate("/")
+    }
 if (!token && (pathname !== "/welcome" || pathname !== "/login" || pathname !== "/signup")) {
+  console.log("in 1st")
+  console.log(token)
     navigate("/welcome")
   }
 }
+
+
   useEffect(() =>{
     redirect()
-}, [])
+}, [token])
 
   if (!token) {
     // navigate("/welcome")

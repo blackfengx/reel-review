@@ -42,24 +42,29 @@ function Nav() {
   }
 
   return (
-    <nav className="bg-gray-300 w-screen">
-      <ul className="font-sans font-medium">
-        <li>
-          <Link className="dropdown-item" to="/reviews/list">
-            Reviews
-          </Link>
-        </li>
-        <li>
-          <Link className="dropdown-item" to="/">
+    <nav className="bg-blue-700 w-screen h-24">
+      <ul className="font-sans font-medium flex justify-between">
+        <div className=" ml-10 flex">
+          <Link to="/">
+          <img src="https://www.clipartmax.com/png/middle/481-4817973_clapperboard-clipart-chalk-movie-clapper-board-png.png" alt="clapper" className="h-20" />
+        </Link>
+        <li className="ml-8 mr-4 mt-8 text-2xl">
+          <Link className="" to="/">
             Home Page
           </Link>
         </li>
+         <li className=" ml-2 mt-8 mr-4 text-2xl">
+          <Link className="" to="/reviews/list">
+            Reviews
+          </Link>
+        </li>
+        </div>
         {/* <li>
           <Link className="dropdown-item" to="/profile">
             Profile
           </Link>
         </li> */}
-        <li className="absolute right-10 top-5">
+        <li className="mr-10 mt-8 text-2xl">
           <Logout />
         </li>
       </ul>

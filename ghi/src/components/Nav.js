@@ -42,32 +42,30 @@ function Nav() {
   }
 
   return (
-    <nav className="bg-blue-700 w-screen h-24">
-      <ul className="font-sans font-medium flex justify-between">
-        <div className=" ml-10 flex">
-          <Link to="/">
-          <img src="https://www.clipartmax.com/png/middle/481-4817973_clapperboard-clipart-chalk-movie-clapper-board-png.png" alt="clapper" className="h-20" />
+    <nav className="bg-blue-700 w-screen h-20 flex justify-between items-center">
+      <Link to="/" className="flex items-center ml-10">
+        <img
+          src="https://www.clipartmax.com/png/middle/481-4817973_clapperboard-clipart-chalk-movie-clapper-board-png.png"
+          alt="clapper"
+          className="h-12"
+        />
+        <span className="text-white text-xl font-bold ml-2">Reel Review</span>
+      </Link>
+      <div className="flex items-center mr-10">
+        <Link
+          to="/"
+          className="text-white font-medium mr-8 hover:text-gray-400 transition duration-300"
+        >
+          Home
         </Link>
-        <li className="ml-8 mr-4 mt-8 text-2xl">
-          <Link className="" to="/">
-            Home Page
-          </Link>
-        </li>
-         <li className=" ml-2 mt-8 mr-4 text-2xl">
-          <Link className="" to="/reviews/list">
-            Reviews
-          </Link>
-        </li>
-        </div>
-        {/* <li>
-          <Link className="dropdown-item" to="/profile">
-            Profile
-          </Link>
-        </li> */}
-        <li className="mr-10 mt-8 text-2xl">
-          <Logout />
-        </li>
-      </ul>
+        <Link
+          to="/reviews/list"
+          className="text-white font-medium mr-8 hover:text-gray-400 transition duration-300"
+        >
+          Reviews
+        </Link>
+        <Logout className="text-white font-medium hover:text-gray-400 transition duration-300" />
+      </div>
     </nav>
   );
 }

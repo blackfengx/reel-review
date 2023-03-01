@@ -61,26 +61,28 @@ export default function ReviewList() {
 
   return (
     <div className="min-h-screen">
-      <div>
+      <div className="relative max-w-sm mx-auto">
         <input
+          className="rounded p-1.5"
           type="text"
           value={searchTerm}
           onChange={handleInputChange}
           placeholder="Search by title"
         />
-        <button type="button" onClick={filteredReviews}>
+        <button type="button" onClick={filteredReviews}
+          className="text-white m-3 p-1.5 rounded-xl bg-gradient-to-br to-purple-500 via-black from-purple-500 bg-size-200 hover:bg-right-bottom">
           Search
         </button>
       </div>
       <h1>My Reviews</h1>
-      <div className="card">
+      <div className="text-white gap-4 ml-8 mr-8">
         <table>
-          <thead>
+          <thead className="text-2xl">
             <tr>
-              <th>Movie Title</th>
-              <th>Display Name</th>
-              <th>Rating</th>
-              <th>Comment</th>
+              <th className="pr-8 inline align-text-bottom">Movie Title</th>
+              <th className="pr-8 align-text-bottom text-fit">Display Name</th>
+              <th className="pr-8 align-text-bottom">Rating</th>
+              <th className="pr-8 inline align-text-bottom max-w-10">Comment</th>
             </tr>
           </thead>
           <tbody>

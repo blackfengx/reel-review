@@ -30,7 +30,7 @@ export default function MovieDetail() {
     <div className="bg-bg-dark-blue min-h-screen">
       <div className="w-screen">
         <div className="mx-20 flex justify-center px-8 py-16">
-          <div className="flex flex-row items-center bg-gray-500 p-4 rounded-lg">
+          <div className="flex flex-row items-center bg-card p-4 rounded-lg">
             <div>
               <img
                 src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`}
@@ -43,13 +43,13 @@ export default function MovieDetail() {
                 Runtime: {movieDetail.runtime} minutes
               </div>
               <div style={{ margin: "2px" }}>
-                Rating: {movieDetail.vote_average.toFixed(1)}
+                Rating: {movieDetail.vote_average}
               </div>
               <br></br>
               <div>Overview:</div>
               <div style={{ margin: "2px" }}>{movieDetail.overview}</div>
               <button
-                className="mt-40 border w-fit p-2"
+                className="mt-40 border w-fit p-2 hover:border-black"
                 onClick={() => movieReview(movieDetail.movie_id)}
               >
                 Review This Movie

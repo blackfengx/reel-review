@@ -43,7 +43,7 @@ export default function SignUp() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-r from-bg-dark-blue to-blue-700">
+    <div className="flex flex-col justify-center items-center h-screen">
       <div className="container mx-auto flex items-center py-4 justify-center">
         <div className="text-white font-Open Sans text-[50px]">Reel Review</div>
       </div>

@@ -69,36 +69,51 @@ export default function ReviewsForm(movieDetail) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>{title.title}</h1>
-      <div>Share a Reel Review</div>
-      <label>
-        Display Name:
-        <input
-          type="text"
-          name="display_name"
-          value={review.display_name}
-          onChange={handleReviewChange}
-        />
-      </label>
-      <label>
-        Rating:
-        <input
-          type="number"
-          name="rating"
-          value={review.rating}
-          onChange={handleReviewChange}
-        />
-      </label>
-      <label>
-        Comments:
-        <textarea
-          name="comments"
-          value={review.comments}
-          onChange={handleReviewChange}
-        />
-      </label>
-      <button type="submit">Submit Review</button>
-    </form>
+    <div className="flex justify-center items-center h-screen">
+      <form onSubmit={handleSubmit} className="w-full max-w-lg">
+        <h1 className="text-2xl font-bold mb-6">{title.title}</h1>
+        <div className="w-full md:w-3/4 mb-6 md:mb-0 text-2xl font-bold">
+          Share a Reel Review
+        </div>
+        <div className="w-full md:w-1/2 mb-6 md:mb-0">
+          <input
+            className="appearance-none block w-full bg-gray-100 border border-gray-300 py-2 px-4 leading-tight rounded-md focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-first-name"
+            type="text"
+            name="display_name"
+            placeholder="Display Name"
+            value={review.display_name}
+            onChange={handleReviewChange}
+          />
+        </div>
+        <div className="w-full md:w-1/2 mb-6 md:mb-0">
+          <input
+            className="appearance-none block w-full bg-gray-100 border border-gray-300 py-2 px-4 leading-tight rounded-md focus:outline-none focus:bg-white focus:border-gray-500"
+            type="number"
+            name="rating"
+            placeholder="Rating"
+            min={1}
+            max={10}
+            value={review.rating}
+            onChange={handleReviewChange}
+          />
+        </div>
+        <div className="w-full mb-6">
+          <textarea
+            className="appearance-none block w-full bg-gray-100 border border-gray-300 py-2 px-4 leading-tight rounded-md focus:outline-none focus:bg-white focus:border-gray-500"
+            placeholder="What are your thoughts?"
+            name="comments"
+            value={review.comments}
+            onChange={handleReviewChange}
+          />
+        </div>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          type="submit"
+        >
+          Submit Review
+        </button>
+      </form>
+    </div>
   );
 }

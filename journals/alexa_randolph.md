@@ -37,3 +37,7 @@ I'm happy with the progress my team made today. We solved our issue on passing t
 # **February 27th, 2023:**
 
 Today we continued working on front end components. We decided to work in groups of two and work on different pages. We got to use URL parameters today in order to link our movies to a detail page and specific reviews.
+
+# **February 28th, 2023:**
+
+Today the team worked on conditionally rendering our nav bar when a user is logged in vs not logged in as well as redirecting them to the welcome page if they're not signed in. In the afternoon we began focusing our efforts on styling all the pages on the front end. We shared our initial designs with each other and spent time individually studying tailwind's capabilities.

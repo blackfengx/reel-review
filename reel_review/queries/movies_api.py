@@ -42,7 +42,7 @@ class MovieQueries:
         res = requests.get(f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}")
         results = []
         movie_data = res.json()
-        movie_data["results"] = movie_data["results"][:8]
+        movie_data["results"] = movie_data["results"][:10]
         for movie in movie_data["results"]:
             movie["movie_id"] = movie["id"]
             results.append(SearchOut(**movie))

@@ -26,8 +26,8 @@ export default function TrendingMovies() {
   }, []);
 
   return (
-    <div>
-      <div className="grid grid-cols-5 gap-4">
+    <div className="min-h-screen">
+      <div className="grid grid-cols-4 gap-4">
         {trending.map((movie) => (
           <div
             className="relative max-w-sm rounded overflow-hidden shadow-[boxShadow] border-x-8 border-y-8 border-white  bg-white hover:bg-blue-600 hover:border-blue-600 "

@@ -28,19 +28,34 @@ export default function MovieDetail() {
 
   return (
     <div className="bg-bg-dark-blue min-h-screen">
-      <div className="flex flex-row items-center">
-        <img
-          // onClick={() => movieReview(movieDetail.movie_id)}
-          src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`}
-          alt=""
-          style={{ width: "350px", height: "750px", objectFit: "contain" }}
-        />
-        <div className="flex flex-col justify-center ml-4 gray-100 rounded-md p-4">
-          <div className="mb-2">{movieDetail.title}</div>
-          <div>{movieDetail.runtime} minutes</div>
-          <div>{movieDetail.vote_average}</div>
-          <div>{movieDetail.overview}</div>
-          <button></button>
+      <div className="w-screen">
+        <div className="mx-20 flex justify-center px-8 py-16">
+          <div className="flex flex-row items-center bg-gray-500 p-4 rounded-lg">
+            <div>
+              <img
+                src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`}
+                alt=""
+              />
+            </div>
+            <div className="flex flex-col justify-center ml-4 text-2xl">
+              <div className="text-5xl mb-40">{movieDetail.title}</div>
+              <div style={{ margin: "2px" }}>
+                Runtime: {movieDetail.runtime} minutes
+              </div>
+              <div style={{ margin: "2px" }}>
+                Rating: {movieDetail.vote_average}
+              </div>
+              <br></br>
+              <div>Overview:</div>
+              <div style={{ margin: "2px" }}>{movieDetail.overview}</div>
+              <button
+                className="mt-40 border w-fit p-2"
+                onClick={() => movieReview(movieDetail.movie_id)}
+              >
+                Review This Movie
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

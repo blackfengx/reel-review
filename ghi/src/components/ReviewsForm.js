@@ -90,6 +90,7 @@ export default function ReviewsForm(movieDetail) {
           <input
             className="appearance-none block w-full bg-gray-100 border border-gray-300 py-2 px-4 leading-tight rounded-md focus:outline-none focus:bg-white focus:border-gray-500"
             type="number"
+            step={0.1}
             name="rating"
             placeholder="Rating"
             min={1}

@@ -43,7 +43,7 @@ export default function MovieDetail() {
                 Runtime: {movieDetail.runtime} minutes
               </div>
               <div style={{ margin: "2px" }}>
-                Rating: {movieDetail.vote_average}
+                Rating: {movieDetail.vote_average.toFixed(1)}
               </div>
               <br></br>
               <div>Overview:</div>

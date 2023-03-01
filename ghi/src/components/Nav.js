@@ -5,29 +5,36 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
-
 function Nav() {
   const { pathname } = useLocation();
   const { token } = useAuthContext();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-   const redirect = () => {
-
-    if (token && (pathname === "/welcome" || pathname === "/login" || pathname === "/signup")) {
-  console.log("in 2nd")
-  navigate("/")
+  const redirect = () => {
+    if (
+      token &&
+      (pathname === "/welcome" ||
+        pathname === "/login" ||
+        pathname === "/signup")
+    ) {
+      console.log("in 2nd");
+      navigate("/");
     }
-if (!token && (pathname !== "/welcome" || pathname !== "/login" || pathname !== "/signup")) {
-  console.log("in 1st")
-  console.log(token)
-    navigate("/welcome")
-  }
-}
+    if (
+      !token &&
+      (pathname !== "/welcome" ||
+        pathname !== "/login" ||
+        pathname !== "/signup")
+    ) {
+      console.log("in 1st");
+      console.log(token);
+      navigate("/welcome");
+    }
+  };
 
-
-  useEffect(() =>{
-    redirect()
-}, [token])
+  useEffect(() => {
+    redirect();
+  }, [token]);
 
   if (!token) {
     // navigate("/welcome")
@@ -35,7 +42,7 @@ if (!token && (pathname !== "/welcome" || pathname !== "/login" || pathname !== 
   }
 
   return (
-    <nav className="bg-gray-300 w-full">
+    <nav className="bg-gray-300 w-screen">
       <ul className="font-sans font-medium">
         <li>
           <Link className="dropdown-item" to="/reviews/list">

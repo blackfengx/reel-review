@@ -32,3 +32,10 @@ Today we were able to fix our back-end authentication, it turns out it was worki
 Today we were very stuck with authentication once again in the front-end, while we were stuck we fleshed out what routes/other parts of authentication we could.
 
 # **February 24th, 2023:**
+Today we fixed the rest of the authentication on the front-end. We are continuing to lay out the skeletal structure of the rest of our components along with putting in the meat of some of them as well. We split off into groups of 2 after auth and are grouping together to tackle any blockers.
+
+# **February 27th, 2023:**
+Our group finished the skeletal framework of the components and we are now filling the components with code to result in an actual flowing product. Once again, we split into groups of 2 and tackled different components, coming together to tackle any blockers the group may have faced.
+
+# **February 28th, 2023:**
+Today we finished the functionality part of the project and moved onto Tailwind. We took a few hours to watch videos and learn the intricate different commands that can be implemented using this framework. We also split once again to hone our knowledge and came back together to ensure our vision was matching and flowed as a gorup.

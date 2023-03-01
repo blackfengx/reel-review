@@ -20,7 +20,7 @@ export default function Search(props) {
 
   return (
     <div className="max-w-md mx-auto">
-      <form onSubmit={handleSearch} className="relative flex items-center">
+      <form onSubmit={handleSearch} className="relative flex items-center p-8">
         <input
           type="text"
           name="search"

@@ -27,8 +27,8 @@ export default function SearchedMovies(props) {
     fetchData();
   }, [SearchedMovies]);
   return (
-    <div className="min-h-screen">
-      <div className="grid grid-cols-4 gap-4">
+    <div className="min-h-screen px-8 py-8">
+      <div className="grid grid-cols-4 gap-4 ml-8 mr-8">
         {SearchedMovies.map((movie) => (
           <div
             className="relative max-w-sm rounded overflow-hidden shadow-movie-shadow border-x-8 border-y-8 border-white  bg-white hover:bg-blue-600 hover:border-blue-600 opacity-90"
@@ -45,7 +45,7 @@ export default function SearchedMovies(props) {
               className="object-cover h-auto"
             />
             <div>{movie.title}</div>
-            <div> Rating: {movie.vote_average.toFixed(1)}</div>
+            <div> Rating: {movie.vote_average.toFixed(1)} &#x2B50;</div>
           </div>
         ))}
       </div>

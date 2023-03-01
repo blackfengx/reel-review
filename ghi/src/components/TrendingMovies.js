@@ -44,7 +44,7 @@ export default function TrendingMovies() {
               className="object-cover"
             />
             <div className="text-2xl">{movie.title}</div>
-            <div> Rating: {movie.vote_average.toFixed(1)}</div>
+            <div> Rating: {movie.vote_average.toFixed(1)} &#x2B50;</div>
           </div>
         ))}
       </div>

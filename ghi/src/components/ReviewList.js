@@ -76,22 +76,22 @@ export default function ReviewList() {
       </div>
       <h1>My Reviews</h1>
       <div className="text-white gap-4 ml-8 mr-8">
-        <table>
+        <table className="w-full" style={{ borderCollapse: 'separate', borderSpacing: '0 10px' }}>
           <thead className="text-2xl">
             <tr>
-              <th className="pr-8 inline align-text-bottom">Movie Title</th>
-              <th className="pr-8 align-text-bottom text-fit">Display Name</th>
-              <th className="pr-8 align-text-bottom">Rating</th>
-              <th className="pr-8 inline align-text-bottom max-w-10">Comment</th>
+              <th className="pr-8 min-w-1/4 text-left">Movie Title</th>
+              <th className="pr-8 min-w-1/4 text-left">Display Name</th>
+              <th className="pr-8 min-w-1/4 text-left">Rating</th>
+              <th className="pr-8 min-w-1/4 text-left">Comment</th>
             </tr>
           </thead>
           <tbody>
             {filteredMovies.map((review) => (
               <tr key={review.id}>
-                <td>{review.title}</td>
-                <td>{review.display_name}</td>
-                <td>{review.rating}</td>
-                <td>{review.comments}</td>
+                <td className="min-w-1/4">{review.title}</td>
+                <td className="min-w-1/4">{review.display_name}</td>
+                <td className="min-w-1/4">{review.rating}</td>
+                <td className="min-w-1/4">{review.comments}</td>
               </tr>
             ))}
           </tbody>

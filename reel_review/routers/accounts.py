@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Response, Request
 from typing import Optional
-from queries.accounts import AccountsIn, AccountsRepository, AccountsOut, AccountsOutWithPassword, DuplicateAccountError, AccountUpdateIn, AccountUpdateOut
+from queries.accounts import AccountsIn, AccountsRepository, AccountsOut, AccountsOutWithPassword, DuplicateAccountError
 from jwtdown_fastapi.authentication import Token
 from authenticator import authenticator
 from pydantic import BaseModel

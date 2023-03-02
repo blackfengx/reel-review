@@ -32,6 +32,7 @@ export default function SearchedMovies(props) {
         {SearchedMovies.map((movie) => (
           <div
             className="relative max-w-sm rounded overflow-hidden shadow-lg bg-white hover:bg-blue-100 hover:border-blue-600 opacity-90 transition duration-300 transform hover:-translate-y-1 hover:scale-105"
+            onClick={() => movieDetail(movie.movie_id)}
             key={movie.movie_id}
           >
             <img

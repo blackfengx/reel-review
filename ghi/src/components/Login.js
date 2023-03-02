@@ -5,25 +5,22 @@ import { useToken } from "./useToken";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { token, login } = useToken();
+  const { login } = useToken();
   const navigate = useNavigate();
 
   const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
 
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      localStorage.setItem("username", username)
+      localStorage.setItem("username", username);
       await login(username, password);
       // Login successful, do something (e.g. redirect to home page)
       navigate("/");
-      //   window.location.reload(false);
     } catch (e) {
       console.error(e);
       // Login failed, show error message to user
     }
-
   };
 
   return (
@@ -64,7 +61,7 @@ const Login = () => {
           </button>
         </form>
       </div>
-      <p class="text-center text-gray-500 text-xs">
+      <p className="text-center text-gray-500 text-xs">
         &copy;2023 Popcorn Posse LLC. All rights reserved.
       </p>
     </div>

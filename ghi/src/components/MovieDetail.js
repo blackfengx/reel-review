@@ -34,7 +34,7 @@ export default function MovieDetail() {
         <div className="bg-gradient-to-r from-bg-dark-blue to to-blue-900">
           <div className="mx-20 flex justify-center px-8 py-16">
             <div className="flex flex-row items-center bg-darker p-4 rounded-lg border-8 border-card">
-              <ReactPlayer
+              {/* <ReactPlayer
                 className="video"
                 url={`https://www.youtube.com/embed/${movieDetail.trailer}`}
                 width="720px"
@@ -45,7 +45,7 @@ export default function MovieDetail() {
                 loop={true}
                 muted={false}
                 controls={true}
-              />
+              /> */}
               <div>
                 <img
                   src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`}
@@ -53,9 +53,8 @@ export default function MovieDetail() {
                   className="border-4 border-card"
                 />
               </div>
-              <div className="flex flex-col justify-center mx-20 text-xl">
-                <div className="text-5xl mb-40 text-gray-200 font-bold underline">{movieDetail.title}</div>
-                <br></br>
+              <div className="flex justify-center items-center flex-col mx-20 text-xl bg-card pb-5 pt-5 pl-5 pr-5">
+                <div className="text-4xl mb-40 text-gray-200 font-bold underline font-verdana">{movieDetail.title}</div>
                 <div className="text-gray-200" style={{ margin: "2px" }}>
                   Runtime: {movieDetail.runtime} minutes
                 </div>
@@ -66,7 +65,7 @@ export default function MovieDetail() {
                 <div className="text-gray-200" >Overview:</div>
                 <div className="text-gray-200" style={{ margin: "2px" }}>{movieDetail.overview}</div>
                 <button
-                  className="mt-40 border w-fit p-2 hover:border-yellow-500 text-white"
+                  className="mt-40 border w-fit p-2 hover:border-yellow-500 text-white hover:text-yellow-500"
                   onClick={() => movieReview(movieDetail.movie_id)}
                 >
                   Review This Movie

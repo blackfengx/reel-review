@@ -9,7 +9,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignUp from "./components/SignUp.js";
 import WelcomePage from "./components/WelcomePage.js";
 import MovieDetail from "./components/MovieDetail.js";
-import Reviews from "./components/Reviews.js";
 import ReviewsForm from "./components/ReviewsForm.js";
 import Profile from "./components/Profile.js";
 import Nav from "./components/Nav.js";
@@ -24,7 +23,6 @@ function GetToken() {
 function App() {
   // const [launch_info, setLaunchInfo] = useState([]);
   const [error, setError] = useState(null);
-  const [username , setUsername] = useState("")
 
   // useEffect(() => {
   //   async function getData() {
@@ -79,11 +77,10 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/welcome" element={<WelcomePage />} />
             <Route path="/movie/detail/:id" element={<MovieDetail />} />
-            <Route path="/reviews" element={<Reviews />} />
             <Route path="/reviews/list" element={<ReviewList />} />
-            <Route path="/reviews/create/:id" element={<ReviewsForm username={username} />} />
+            <Route path="/reviews/create/:id" element={<ReviewsForm />} />
             {/* <Route path="/profile" element={<Profile />} /> */}
-            <Route path="/login" element={<Login setUsername={setUsername} />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/welcome" element={<WelcomePage />} />
           </Routes>

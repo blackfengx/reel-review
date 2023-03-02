@@ -18,7 +18,7 @@ class MovieDetail(BaseModel):
     runtime: int
     vote_average: float
     overview: str
-    trailer: str
+    trailer: Optional[str]
 
 # testing
 
@@ -39,10 +39,12 @@ class MovieQueries:
         data = res.json()
         trailer_res = requests.get( f"https://api.themoviedb.org/3/movie/{id}/videos?api_key={API_KEY}&language=en-US")
         trailer_data = trailer_res.json()
-        movie_trailer = []
         for trailer in trailer_data["results"]:
-            if trailer["type"] == "Trailer" and trailer["site"] == "YouTube":
-                data["trailer"] = trailer["key"]
+            try:
+                if trailer["type"] == "Trailer" and trailer["site"] == "YouTube":
+                    data["trailer"] = trailer["key"]
+            except:
+                pass
         data["movie_id"] = data["id"]
         return MovieDetail(**data)
 

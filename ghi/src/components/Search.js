@@ -9,7 +9,6 @@ export default function Search(props) {
   };
 
   const handleSearch = async (e) => {
-    // e.preventDefault()
     props.searchingstuff(search);
   };
 

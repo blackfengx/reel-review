@@ -34,18 +34,6 @@ export default function MovieDetail() {
         <div className="bg-gradient-to-r from-bg-dark-blue to to-blue-900">
           <div className="mx-20 flex justify-center px-8 py-16">
             <div className="flex flex-row items-center bg-darker p-4 rounded-lg border-8 border-card">
-              {/* <ReactPlayer
-                className="video"
-                url={`https://www.youtube.com/embed/${movieDetail.trailer}`}
-                width="720px"
-                height="405px"
-                margin="auto"
-                pip={true}
-                playing={false}
-                loop={true}
-                muted={false}
-                controls={true}
-              /> */}
               <div>
                 <img
                   src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`}

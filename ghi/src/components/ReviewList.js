@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthContext } from "./useToken";
+import { useNavigate } from "react-router-dom";
 
 export default function ReviewList() {
   const [reviews, setReviews] = useState([]);
@@ -7,6 +8,7 @@ export default function ReviewList() {
   const { token } = useAuthContext();
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredMovies, setFilteredMovies] = useState([])
+  const navigate = useNavigate()
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
@@ -34,6 +36,10 @@ export default function ReviewList() {
     setReviews(reviewsData);
   };
 
+  const sendToDetail = async (id) => {
+    navigate(`/movie/detail/${id}`);
+  }
+
   const fetchMovieData = async () => {
     const movieTitleList = [];
     for (let review of reviews) {
@@ -59,7 +65,6 @@ export default function ReviewList() {
   useEffect(() => {
     fetchMovieData();
   }, [reviews]);
-console.log(reviews)
   return (
     <div className="min-h-screen">
       <div className="relative max-w-sm mx-auto">
@@ -99,10 +104,11 @@ console.log(reviews)
                               src={`https://image.tmdb.org/t/p/original/${review.poster_path}`}
                               alt=""
                               className="border-4 border-card"
+                              onClick={() => sendToDetail(review.movie_id)}
                             />
                           </div>
                         </td>
-                        <td className="min-w-1/4 border-b border-slate-600 ">{review.title}</td>
+                        <td onClick={() => sendToDetail(review.movie_id)} className="min-w-1/4 border-b border-slate-600 ">{review.title}</td>
                         <td className="min-w-1/4 border-b border-slate-600">{review.display_name}</td>
                         <td className="min-w-1/4 border-b border-slate-600">{review.rating}</td>
                         <td className="min-w-1/4 border-b border-slate-600">{review.comments}</td>

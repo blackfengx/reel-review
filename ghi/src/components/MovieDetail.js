@@ -31,51 +31,47 @@ export default function MovieDetail() {
   return (
     <div>
       <div className="w-screen">
-        <div className="mx-20 flex justify-center px-8 py-16">
-          <div className="flex flex-row items-center bg-card p-4 rounded-lg">
-            <ReactPlayer
-              className="video"
-              url={`https://www.youtube.com/embed/${movieDetail.trailer}`}
-              width="720px"
-              height="405px"
-              margin="auto"
-              pip={true}
-              playing={false}
-              loop={true}
-              muted={false}
-              controls={true}
-            />
-            <div>
-              <img
-                src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`}
-                alt=""
-                className="border-4 border-gradient-to-r from-bg-dark-blue to to-blue-900"
+        <div className="bg-gradient-to-r from-bg-dark-blue to to-blue-900">
+          <div className="mx-20 flex justify-center px-8 py-16">
+            <div className="flex flex-row items-center bg-darker p-4 rounded-lg border-8 border-card">
+              <ReactPlayer
+                className="video"
+                url={`https://www.youtube.com/embed/${movieDetail.trailer}`}
+                width="720px"
+                height="405px"
+                margin="auto"
+                pip={true}
+                playing={false}
+                loop={true}
+                muted={false}
+                controls={true}
               />
-            </div>
-            <div className="flex flex-col justify-center ml-4 text-2xl">
-              <div className="text-5xl mb-40 text-white">{movieDetail.title}</div>
-              <div className="text-white" style={{ margin: "2px" }}>
-                Runtime: {movieDetail.runtime} minutes
+              <div>
+                <img
+                  src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`}
+                  alt=""
+                  className="border-4 border-card"
+                />
               </div>
-              <div className="text-white" style={{ margin: "2px" }}>
-                Rating: {movieDetail.vote_average}
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-yellow-500 mr-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                ></svg>
+              <div className="flex flex-col justify-center mx-20 text-xl">
+                <div className="text-5xl mb-40 text-gray-200 font-bold underline">{movieDetail.title}</div>
+                <br></br>
+                <div className="text-gray-200" style={{ margin: "2px" }}>
+                  Runtime: {movieDetail.runtime} minutes
+                </div>
+                <div className="text-gray-200" style={{ margin: "2px" }}>
+                  Rating: {movieDetail.vote_average}
+                </div>
+                <br></br>
+                <div className="text-gray-200" >Overview:</div>
+                <div className="text-gray-200" style={{ margin: "2px" }}>{movieDetail.overview}</div>
+                <button
+                  className="mt-40 border w-fit p-2 hover:border-yellow-500 text-white"
+                  onClick={() => movieReview(movieDetail.movie_id)}
+                >
+                  Review This Movie
+                </button>
               </div>
-              <br></br>
-              <div className="text-" >Overview:</div>
-              <div className="text-white" style={{ margin: "2px" }}>{movieDetail.overview}</div>
-              <button
-                className="mt-40 border w-fit p-2 hover:border-black text-white"
-                onClick={() => movieReview(movieDetail.movie_id)}
-              >
-                Review This Movie
-              </button>
             </div>
           </div>
         </div>

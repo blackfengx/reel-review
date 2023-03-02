@@ -42,7 +42,7 @@ function Nav() {
   }
 
   return (
-    <nav className="bg-blue-700 w-screen h-20 flex justify-between items-center">
+    <nav className="bg-darker w-screen h-20 flex justify-between items-center border-b-card border-t-darker border-8">
       <Link to="/" className="flex items-center ml-10">
         <img
           src="https://www.clipartmax.com/png/middle/481-4817973_clapperboard-clipart-chalk-movie-clapper-board-png.png"

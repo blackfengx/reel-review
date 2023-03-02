@@ -2,7 +2,6 @@ from queries.pool import pool
 from pydantic import BaseModel
 from typing import Optional
 
-
 class DuplicateAccountError(ValueError):
     pass
 
@@ -18,7 +17,6 @@ class AccountsOut(BaseModel):
 class AccountsOutWithPassword(AccountsOut):
     hashed_password: str
 
-
 class AccountsIn(BaseModel):
     first_name: Optional[str]
     last_name: Optional[str]
@@ -26,9 +24,15 @@ class AccountsIn(BaseModel):
     email: Optional[str]
     password: str
 
+class AccountUpdateIn(BaseModel):
+    first_name: Optional[str]
+    last_name: Optional[str]
+    username: str
+    email: Optional[str]
+
 
 class AccountsRepository:
-    def create(self, account: AccountsIn, hashed_password: str) -> AccountsOutWithPassword:
+    def create(self, account: AccountsIn, hashed_password: str) -> AccountsOut:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as cur:
@@ -102,6 +106,36 @@ class AccountsRepository:
         except Exception as e:
             return False
 
+
+    def update(self, account_id: int, account: AccountUpdateIn) -> Optional[AccountsOut]:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as cur:
+                    cur.execute(
+                        """
+                        UPDATE accounts
+                        SET first_name = %s
+                        ,  last_name = %s
+                        , username = %s
+                        , email = %s
+                        WHERE id = %s
+                        """,
+                        [
+                        account.first_name,
+                        account.last_name,
+                        account.username,
+                        account.email,
+                        account_id
+                        ]
+                    )
+                    id = cur.fetchone()[0]
+                    old_data = account.dict()
+                    return AccountsOut(id=id,
+                        **old_data)
+        except Exception as e:
+            return False
+
+
     def record_to_account_out(self, record):
         return AccountsOutWithPassword(
             id=record[0],
@@ -109,5 +143,5 @@ class AccountsRepository:
             last_name=record[2],
             username=record[3],
             email=record[4],
-            hashed_password = record[5]
+            hashed_password=record[5]
         )

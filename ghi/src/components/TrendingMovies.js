@@ -26,7 +26,7 @@ export default function TrendingMovies() {
   }, []);
 
   return (
-    <div className="min-h-screen px-8 py-8">
+    <div className="min-h-screen px-8 py-8 ">
       <div className="grid grid-cols-5 gap-4 mx-auto">
         {trending.map((movie) => (
           <div

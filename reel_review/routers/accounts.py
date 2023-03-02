@@ -34,6 +34,7 @@ async def get_protected(
 ):
     return True
 
+
 @router.get("/token", response_model=AccountToken | None, tags=["accounts"])
 async def get_token(
     request: Request,
@@ -46,7 +47,6 @@ async def get_token(
             "account": account,
         }
 
-
 @router.delete("/api/accounts/{username}", response_model=bool, tags=["accounts"])
 def delete_account(
     username: str,
@@ -56,9 +56,6 @@ def delete_account(
     if account_data is None:
         raise HTTPException(status_code=401, detail="Not logged in")
     return repo.delete(username)
-    # if username not in AccountsRepository:
-    #     raise HTTPException(status_code=404, detail="Usename not found")
-
 
 @router.post("/api/accounts", response_model=AccountToken | HttpError, tags=["accounts"])
 async def create_account(
@@ -86,9 +83,10 @@ def get_account(
 ) -> AccountsOutWithPassword | None:
     return repo.get(username)
 
-# @router.put("/api/accounts/{id}", response_model=AccountsOutWithPassword, tags=["accounts"])
-# def update_account(
-#     id: int,
-#     repo: AccountsRepository = Depends()
-# ) -> AccountsOutWithPassword:
-#     return repo.upd
+@router.put("/api/accounts/{account_id}", response_model=AccountsOut, tags=["accounts"])
+def update_account(
+    account_id: int,
+    account: AccountsIn,
+    repo: AccountsRepository = Depends()
+) -> AccountsOut:
+    return repo.update(account_id, account)

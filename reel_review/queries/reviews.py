@@ -9,9 +9,11 @@ class ReviewIn(BaseModel):
     rating: float
     comments: str
 
+
 class ReviewUpdateIn(BaseModel):
     rating: float
     comments: str
+
 
 class ReviewOut(ReviewIn):
     id: int
@@ -90,32 +92,6 @@ class ReviewRepository:
             print(e)
             return {"message": "Error"}
 
-    def update(self, id: int, review: ReviewIn) -> ReviewOut:
-        try:
-            with pool.connection() as conn:
-                with conn.cursor() as cur:
-                    cur.execute(
-                        """
-                        UPDATE reviews
-                        SET movie_id = %s
-                        , display_name = %s
-                        , rating = %s
-                        , comments = %s
-                        WHERE id = %s
-                        """,
-                        [
-                            review.movie_id,
-                            review.display_name,
-                            review.rating,
-                            review.comments,
-                            id
-                        ]
-                    )
-                    old_data = review.dict()
-                    return ReviewOut(id=id, **old_data)
-        except Exception as e:
-            print(e)
-            return {"message": "Error"}
 
     def get_review(self, id: int) -> Optional[ReviewOut]:
         try:

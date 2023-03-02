@@ -102,6 +102,33 @@ class AccountsRepository:
         except Exception as e:
             return False
 
+    def update(self, account_id: int, account: AccountsIn) -> AccountsOut:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as cur:
+                    cur.execute(
+                        """
+                        UPDATE accounts
+                        SET first_name = %s
+                        , last_name = %s
+                        , email = %s
+                        , username = %s
+                        WHERE id = %s
+                        """,
+                        [
+                            account.first_name,
+                            account.last_name,
+                            account.email,
+                            account.username,
+                            account_id
+                        ]
+                    )
+                    old_data = account.dict()
+                    return AccountsOut(id=account_id, **old_data)
+        except Exception as e:
+            return {"message": "Error"}
+
+
     def record_to_account_out(self, record):
         return AccountsOutWithPassword(
             id=record[0],

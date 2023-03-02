@@ -14,7 +14,6 @@ export default function Search(props) {
 
   useEffect(() => {
     handleSearch();
-    console.log("hello");
   }, [search]);
 
   return (

@@ -17,6 +17,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      localStorage.setItem("username", username)
       await login(username, password);
       // Login successful, do something (e.g. redirect to home page)
       navigate("/");

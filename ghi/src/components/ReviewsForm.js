@@ -3,12 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "./useToken";
 
-export default function ReviewsForm(movieDetail) {
+export default function ReviewsForm() {
   const { token } = useAuthContext();
   const { id } = useParams();
   const [title, setTitle] = useState("");
+  const [username, setUsername] = useState("")
 
   const fetchData = async () => {
+    const user = localStorage.getItem("username")
+    setUsername(user)
     const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/movie/${id}`;
     const response = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` },
@@ -17,14 +20,25 @@ export default function ReviewsForm(movieDetail) {
     const movie = await response.json();
     setTitle(movie);
   };
+
+
   useEffect(() => {
     fetchData();
   }, []);
 
+  useEffect(() =>{
+    setReview({
+          movie_id: id,
+          display_name: username,
+          rating: "",
+          comments: "",
+        })
+  },[username])
+
   const navigate = useNavigate();
   const [review, setReview] = useState({
     movie_id: id,
-    display_name: "",
+    display_name: username,
     rating: "",
     comments: "",
   });
@@ -41,6 +55,8 @@ export default function ReviewsForm(movieDetail) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    // setUsername(props.username)
+
     const reviewUrl = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/create`;
     const fetchConfig = {
       method: "post",
@@ -57,7 +73,7 @@ export default function ReviewsForm(movieDetail) {
       if (response.ok) {
         setReview({
           movie_id: id,
-          display_name: "",
+          display_name: username,
           rating: "",
           comments: "",
         });
@@ -84,19 +100,19 @@ export default function ReviewsForm(movieDetail) {
         <div className="w-full md:w-1/2 mb-6 md:mb-0">
           <label
             className="block text-gray-700 font-bold mb-2"
-            for="display_name"
+            htmlFor="display_name"
           >
-            Display Name
+            Username
           </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="display_name"
-            type="text"
-            name="display_name"
-            placeholder="John Doe"
-            value={review.display_name}
-            onChange={handleReviewChange}
-          />
+          <div
+            className=" appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            // id="display_name"
+            // type="text"
+            // name="display_name"
+            // placeholder="John Doe"
+            // value={username}
+            // onChange={handleReviewChange}
+          >{username}</div>
         </div>
         <div className="w-full md:w-1/2 mb-6 md:mb-0">
           <label className="block text-gray-700 font-bold mb-2" for="rating">

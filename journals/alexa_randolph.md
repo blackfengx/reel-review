@@ -41,3 +41,7 @@ Today we continued working on front end components. We decided to work in groups
 # **February 28th, 2023:**
 
 Today the team worked on conditionally rendering our nav bar when a user is logged in vs not logged in as well as redirecting them to the welcome page if they're not signed in. In the afternoon we began focusing our efforts on styling all the pages on the front end. We shared our initial designs with each other and spent time individually studying tailwind's capabilities.
+
+# **March 1st, 2023:**
+
+Our front-end is basically complete... we may add a few minor finishing touches however I'm pleased with the overall usage and look of the website. Tomorrow I believe we'll begin implementing Redux which I'm looking forward to.

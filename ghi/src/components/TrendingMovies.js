@@ -38,10 +38,10 @@ export default function TrendingMovies() {
               src={
                 movie.poster_path !== null
                   ? `https://image.tmdb.org/t/p/original/${movie.poster_path}`
-                  : `https://image.tmdb.org/t/p/original/qzMYKnT4MG1d0gnhwytr4cKhUvS.jpg`
+                  : `https://cdn.discordapp.com/attachments/1072228028589019256/1080656211952808006/dariokun.png`
               } //not the real path wed use but it works!
               alt=""
-              className="object-cover"
+              className="object-cover h-5/6"
             />
             <div className="p-4">
               <div className="text-2xl font-bold">{movie.title}</div>

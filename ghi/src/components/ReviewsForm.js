@@ -43,7 +43,7 @@ export default function ReviewsForm() {
     comments: "",
   });
 
-  // const [selectedMovieId, setSelectedMovieId] = useState("");
+
 
   const handleReviewChange = (event) => {
     const { name, value } = event.target;
@@ -55,7 +55,7 @@ export default function ReviewsForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // setUsername(props.username)
+
 
     const reviewUrl = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/create`;
     const fetchConfig = {

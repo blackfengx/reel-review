@@ -9,13 +9,11 @@ export default function Search(props) {
   };
 
   const handleSearch = async (e) => {
-    // e.preventDefault()
     props.searchingstuff(search);
   };
 
   useEffect(() => {
     handleSearch();
-    console.log("hello");
   }, [search]);
 
   return (

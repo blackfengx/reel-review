@@ -17,7 +17,6 @@ export default function TrendingMovies() {
   };
 
   const movieDetail = (movie_id) => {
-    console.log(movie_id);
     navigate(`/movie/detail/${movie_id}`);
   };
 
@@ -66,5 +65,3 @@ export default function TrendingMovies() {
     </div>
   );
 }
-
-//testing

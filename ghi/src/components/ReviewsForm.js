@@ -43,7 +43,7 @@ export default function ReviewsForm() {
     comments: "",
   });
 
-  // const [selectedMovieId, setSelectedMovieId] = useState("");
+
 
   const handleReviewChange = (event) => {
     const { name, value } = event.target;
@@ -55,7 +55,7 @@ export default function ReviewsForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // setUsername(props.username)
+
 
     const reviewUrl = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/create`;
     const fetchConfig = {
@@ -106,12 +106,6 @@ export default function ReviewsForm() {
           </label>
           <div
             className=" appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            // id="display_name"
-            // type="text"
-            // name="display_name"
-            // placeholder="John Doe"
-            // value={username}
-            // onChange={handleReviewChange}
           >{username}</div>
         </div>
         <div className="w-full md:w-1/2 mb-6 md:mb-0">

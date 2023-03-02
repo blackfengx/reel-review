@@ -20,7 +20,6 @@ class MovieDetail(BaseModel):
     overview: Optional[str]
     trailer: Optional[str]
 
-# testing
 
 class MovieQueries:
     def get_movie_list(self, title: str):

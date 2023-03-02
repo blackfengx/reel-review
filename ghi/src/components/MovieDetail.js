@@ -17,7 +17,6 @@ export default function MovieDetail() {
     });
     const movie = await response.json();
     setMovieDetail(movie);
-    console.log(movie)
   };
 
   const movieReview = (movie_id) => {
@@ -48,9 +47,19 @@ export default function MovieDetail() {
               /> */}
               <div>
                 <img
-                  src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`}
+                    src={
+                      movieDetail.poster_path !== null
+                      ? `https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`
+                      : `https://cdn.discordapp.com/attachments/1072228028589019256/1080656211952808006/dariokun.png`
+                    }
                   alt=""
-                  className="border-4 border-card"
+                  className="border-8 border-card"
+                  style={{
+                    minWidth: "300px",
+                    maxWidth: "700px",
+                    minHeight: "300px",
+                    maxHeight: "700px",
+                  }}
                 />
               </div>
               <div className="flex justify-center items-center flex-col mx-20 text-xl bg-card pb-5 pt-5 pl-5 pr-5">

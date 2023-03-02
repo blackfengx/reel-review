@@ -12,12 +12,12 @@ class SearchOut(BaseModel):
     vote_average: float
 
 class MovieDetail(BaseModel):
-    movie_id: int
-    title: str
-    poster_path: str
-    runtime: int
-    vote_average: float
-    overview: str
+    movie_id: Optional[int]
+    title: Optional[str]
+    poster_path: Optional[str]
+    runtime: Optional[int]
+    vote_average: Optional[float]
+    overview: Optional[str]
     trailer: Optional[str]
 
 # testing

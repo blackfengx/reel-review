@@ -21,49 +21,11 @@ function GetToken() {
 }
 
 function App() {
-  // const [launch_info, setLaunchInfo] = useState([]);
   const [error, setError] = useState(null);
-
-  // useEffect(() => {
-  //   async function getData() {
-  //     let url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/launch-details`;
-  //     console.log('fastapi url: ', url);
-  //     let response = await fetch(url);
-  //     console.log("------- hello? -------");
-  //     let data = await response.json();
-
-  //     if (response.ok) {
-  //       console.log("got launch data!");
-  //       setLaunchInfo(data.launch_details);
-  //     } else {
-  //       console.log("drat! something happened");
-  //       setError(data.message);
-  //     }
-  //   }
-  //   getData();
-  // }, [])
-
-  // <Route path="/welcome" element={<WelcomePage/>} />
-  // <Route path="/signup" element={<SignUp />} />
-  // const {token} = useToken();
-
 
 
   return (
     <div>
-      {/* {!token ? (
-        <BrowserRouter>
-          <AuthProvider>
-            <GetToken />
-            <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/welcome" element={<WelcomePage />} />
-            </Routes>
-          </AuthProvider>
-      </BrowserRouter>
-      ) :null} */}
-
       <BrowserRouter>
         <AuthProvider>
 
@@ -91,10 +53,3 @@ function App() {
 }
 
 export default App;
-
-// signup
-// welcomePage
-// movie detail page
-// review form page
-// Edit profile
-// review page

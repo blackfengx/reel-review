@@ -106,12 +106,6 @@ export default function ReviewsForm() {
           </label>
           <div
             className=" appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            // id="display_name"
-            // type="text"
-            // name="display_name"
-            // placeholder="John Doe"
-            // value={username}
-            // onChange={handleReviewChange}
           >{username}</div>
         </div>
         <div className="w-full md:w-1/2 mb-6 md:mb-0">

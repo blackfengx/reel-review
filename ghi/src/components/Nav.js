@@ -37,8 +37,7 @@ function Nav() {
   }, [token]);
 
   if (!token) {
-    // navigate("/welcome")
-    return null; // hide the navigation bar if the user is not logged in
+    return null;
   }
 
   return (

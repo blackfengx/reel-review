@@ -10,9 +10,6 @@ const Login = () => {
 
   const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
 
-  //   const form = new FormData();
-  //   form.append("username", username);
-  //   form.append("password", password);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -26,28 +23,7 @@ const Login = () => {
       console.error(e);
       // Login failed, show error message to user
     }
-    // if (response.ok) {
-    //   const tokenUrl = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
 
-    //   try {
-    //     const response = await fetch(tokenUrl, {
-    //       method: "post",
-    //       credentials: "include",
-    //       body: form,
-    //     });
-    //     if (response.ok) {
-    //       const data = await response.json();
-    //       const token = data.access_token;
-
-    //       useToken(token);
-    //       // DO SOMETHING WITH THE TOKEN SO YOU CAN USE IT
-    //       // IN REQUESTS TO YOUR NON-ACCOUNTS SERVICES
-    //     }
-    //   } catch (e) {}
-    // } else {
-    //   let error = await response.json();
-    //   // DO SOMETHING WITH THE ERROR, IF YOU WANT
-    // }
   };
 
   return (

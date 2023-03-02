@@ -4,7 +4,6 @@ from queries.accounts import AccountsIn, AccountsRepository, AccountsOut, Accoun
 from jwtdown_fastapi.authentication import Token
 from authenticator import authenticator
 from pydantic import BaseModel
-import os
 
 class AccountForm(BaseModel):
     username: str

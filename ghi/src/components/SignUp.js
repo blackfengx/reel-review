@@ -124,7 +124,7 @@ export default function SignUp() {
             </button>
           </div>
         </form>
-        <p class="text-center text-gray-500 text-xs">
+        <p className="text-center text-gray-500 text-xs">
           &copy;2023 Popcorn Posse LLC. All rights reserved.
         </p>
       </div>

@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useAuthContext } from "./useToken";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import ReactPlayer from 'react-player/youtube';
+import ReactPlayer from "react-player/youtube";
+import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
+import Carousel from "./Carousel";
+import "swiper/swiper-bundle.css";
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 export default function MovieDetail() {
   const navigate = useNavigate();
@@ -28,46 +32,36 @@ export default function MovieDetail() {
   }, []);
 
   return (
-    <div>
-      <div className="w-screen">
-        <div className="bg-gradient-to-r from-bg-dark-blue to to-blue-900">
-          <div className="mx-20 flex justify-center px-8 py-16">
-            <div className="flex flex-row items-center bg-darker p-4 rounded-lg border-8 border-card">
+    <div className="w-screen">
+      <div className="mx-20 py-16">
+        <div className="flex flex-row items-center bg-darker p-4 rounded-lg border-8 border-card">
+          <div className="w-full lg:w-1/2 pr-4">
+            <Carousel
+              trailer={movieDetail.trailer}
+              posterPath={movieDetail.poster_path}
+            />
+          </div>
+          <div className="w-full lg:w-1/2 pl-4">
+            <div className="flex flex-col justify-between h-full text-gray-200 bg-card p-5">
               <div>
-                <img
-                    src={
-                      movieDetail.poster_path !== null
-                      ? `https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`
-                      : `https://cdn.discordapp.com/attachments/1072228028589019256/1080656211952808006/dariokun.png`
-                    }
-                  alt=""
-                  className="border-8 border-card"
-                  style={{
-                    minWidth: "300px",
-                    maxWidth: "700px",
-                    minHeight: "300px",
-                    maxHeight: "700px",
-                  }}
-                />
-              </div>
-              <div className="flex justify-center items-center flex-col mx-20 text-xl bg-card pb-5 pt-5 pl-5 pr-5">
-                <div className="text-4xl mb-40 text-gray-200 font-bold underline font-verdana">{movieDetail.title}</div>
-                <div className="text-gray-200" style={{ margin: "2px" }}>
-                  Runtime: {movieDetail.runtime} minutes
+                <div className="text-4xl mb-40 font-bold underline font-verdana">
+                  {movieDetail.title}
                 </div>
-                <div className="text-gray-200" style={{ margin: "2px" }}>
-                  Rating: {movieDetail.vote_average}
+                <div style={{ margin: "2px" }}>
+                  <div>Runtime: {movieDetail.runtime} minutes</div>
+                  <div>Rating: {movieDetail.vote_average}</div>
                 </div>
-                <br></br>
-                <div className="text-gray-200" >Overview:</div>
-                <div className="text-gray-200" style={{ margin: "2px" }}>{movieDetail.overview}</div>
-                <button
-                  className="mt-40 border w-fit p-2 hover:border-yellow-500 text-white hover:text-yellow-500"
-                  onClick={() => movieReview(movieDetail.movie_id)}
-                >
-                  Review This Movie
-                </button>
+                <div className="text-gray-200 mt-6">Overview:</div>
+                <div className="text-gray-200" style={{ margin: "2px" }}>
+                  {movieDetail.overview}
+                </div>
               </div>
+              <button
+                className="border w-fit p-2 mt-10 hover:border-yellow-500 text-white hover:text-yellow-500"
+                onClick={() => movieReview(movieDetail.movie_id)}
+              >
+                Review This Movie
+              </button>
             </div>
           </div>
         </div>

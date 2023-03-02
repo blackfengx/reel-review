@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useToken } from "./useToken";
 
-const Login = () => {
+const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { token, login } = useToken();
@@ -17,6 +17,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      props.setUsername(username)
       await login(username, password);
       // Login successful, do something (e.g. redirect to home page)
       navigate("/");

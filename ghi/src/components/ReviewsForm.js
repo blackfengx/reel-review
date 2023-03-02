@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "./useToken";
 
-export default function ReviewsForm(movieDetail) {
+export default function ReviewsForm(props) {
   const { token } = useAuthContext();
   const { id } = useParams();
   const [title, setTitle] = useState("");
@@ -41,6 +41,7 @@ export default function ReviewsForm(movieDetail) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(props.username)
     const reviewUrl = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/create`;
     const fetchConfig = {
       method: "post",

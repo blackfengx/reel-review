@@ -69,7 +69,7 @@ export default function ReviewsForm(movieDetail) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center h-screen">
       <div className="container mx-auto flex items-center py-4 justify-center">
         <div className="text-white font-Open Sans text-[50px]">
           Share a Reel Review

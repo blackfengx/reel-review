@@ -17,7 +17,6 @@ function Nav() {
         pathname === "/login" ||
         pathname === "/signup")
     ) {
-      console.log("in 2nd");
       navigate("/");
     }
     if (
@@ -26,8 +25,6 @@ function Nav() {
         pathname !== "/login" ||
         pathname !== "/signup")
     ) {
-      console.log("in 1st");
-      console.log(token);
       navigate("/welcome");
     }
   };

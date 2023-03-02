@@ -69,51 +69,73 @@ export default function ReviewsForm(movieDetail) {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <form onSubmit={handleSubmit} className="w-full max-w-lg">
-        <h1 className="text-2xl font-bold mb-6">{title.title}</h1>
-        <div className="w-full md:w-3/4 mb-6 md:mb-0 text-2xl font-bold">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+      <div className="container mx-auto flex items-center py-4 justify-center">
+        <div className="text-white font-Open Sans text-[50px]">
           Share a Reel Review
         </div>
+      </div>
+
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-10"
+      >
+        <h1 className="text-3xl font-bold mb-6">{title.title}</h1>
         <div className="w-full md:w-1/2 mb-6 md:mb-0">
+          <label
+            className="block text-gray-700 font-bold mb-2"
+            for="display_name"
+          >
+            Display Name
+          </label>
           <input
-            className="appearance-none block w-full bg-gray-100 border border-gray-300 py-2 px-4 leading-tight rounded-md focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-first-name"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="display_name"
             type="text"
             name="display_name"
-            placeholder="Display Name"
+            placeholder="John Doe"
             value={review.display_name}
             onChange={handleReviewChange}
           />
         </div>
         <div className="w-full md:w-1/2 mb-6 md:mb-0">
+          <label className="block text-gray-700 font-bold mb-2" for="rating">
+            Rating
+          </label>
           <input
-            className="appearance-none block w-full bg-gray-100 border border-gray-300 py-2 px-4 leading-tight rounded-md focus:outline-none focus:bg-white focus:border-gray-500"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="rating"
             type="number"
             step={0.1}
             name="rating"
-            placeholder="Rating"
+            placeholder="5"
             min={1}
             max={10}
             value={review.rating}
             onChange={handleReviewChange}
           />
         </div>
-        <div className="w-full mb-6">
+        <div className="w-full md:w-full mb-6">
+          <label className="block text-gray-700 font-bold mb-2" for="comments">
+            Comments
+          </label>
           <textarea
-            className="appearance-none block w-full bg-gray-100 border border-gray-300 py-2 px-4 leading-tight rounded-md focus:outline-none focus:bg-white focus:border-gray-500"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="comments"
             placeholder="What are your thoughts?"
             name="comments"
             value={review.comments}
             onChange={handleReviewChange}
-          />
+          ></textarea>
         </div>
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          type="submit"
-        >
-          Submit Review
-        </button>
+        <div className="flex items-center justify-center w-60">
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Submit Review
+          </button>
+        </div>
       </form>
     </div>
   );

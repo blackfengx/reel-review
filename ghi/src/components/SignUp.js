@@ -17,7 +17,6 @@ export default function SignUp() {
       await signup(firstName, lastName, username, email, password);
       // Signup successful, do something (e.g. redirect to home page)
       navigate("/");
-      //   window.location.reload(false);
     } catch (e) {
       console.error(e);
     }

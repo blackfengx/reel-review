@@ -1,15 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Response, Request
 from typing import Optional
-from queries.accounts import AccountsIn, AccountsRepository, AccountsOut, AccountsOutWithPassword
+from queries.accounts import AccountsIn, AccountsRepository, AccountsOut, AccountsOutWithPassword, DuplicateAccountError, AccountUpdateIn
 from jwtdown_fastapi.authentication import Token
 from authenticator import authenticator
 from pydantic import BaseModel
-from queries.accounts import (
-    AccountsIn,
-    AccountsOut,
-    AccountsRepository,
-    DuplicateAccountError,
-)
 import os
 
 class AccountForm(BaseModel):
@@ -83,10 +77,10 @@ def get_account(
 ) -> AccountsOutWithPassword | None:
     return repo.get(username)
 
-@router.put("/api/accounts/{account_id}", response_model=AccountsOut, tags=["accounts"])
+@router.put("/api/accounts", response_model=AccountsOut, tags=["accounts"])
 def update_account(
     account_id: int,
-    account: AccountsIn,
+    account: AccountUpdateIn,
     repo: AccountsRepository = Depends()
 ) -> AccountsOut:
     return repo.update(account_id, account)

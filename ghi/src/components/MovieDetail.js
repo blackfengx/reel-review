@@ -32,7 +32,7 @@ export default function MovieDetail() {
   }, []);
 
   return (
-    <div className="w-screen">
+    <div className="w-screen h-screen">
       <div className="mx-20 py-16">
         <div className="flex flex-row items-center bg-darker p-4 rounded-lg border-8 border-card">
           <div className="w-full lg:w-1/2 pr-4">
@@ -42,27 +42,25 @@ export default function MovieDetail() {
             />
           </div>
           <div className="w-full lg:w-1/2 pl-4">
-            <div className="flex flex-col justify-between h-full text-gray-200 bg-card p-5">
-              <div>
-                <div className="text-4xl mb-40 font-bold underline font-verdana">
-                  {movieDetail.title}
-                </div>
-                <div style={{ margin: "2px" }}>
-                  <div>Runtime: {movieDetail.runtime} minutes</div>
-                  <div>Rating: {movieDetail.vote_average}</div>
-                </div>
-                <div className="text-gray-200 mt-6">Overview:</div>
-                <div className="text-gray-200" style={{ margin: "2px" }}>
-                  {movieDetail.overview}
-                </div>
+            <div className="flex flex-col justify-between h-full text-gray-200 bg-card p-5 shadow-xl">
+              <div className="text-4xl mb-40 font-bold underline font-verdana">
+                {movieDetail.title}
               </div>
-              <button
-                className="border w-fit p-2 mt-10 hover:border-yellow-500 text-white hover:text-yellow-500"
-                onClick={() => movieReview(movieDetail.movie_id)}
-              >
-                Review This Movie
-              </button>
+              <div style={{ margin: "2px" }}>
+                <div>Runtime: {movieDetail.runtime} minutes</div>
+                <div>Rating: {movieDetail.vote_average}</div>
+              </div>
+              <div className="text-gray-200 mt-6">Overview:</div>
+              <div className="text-gray-200" style={{ margin: "2px" }}>
+                {movieDetail.overview}
+              </div>
             </div>
+            <button
+              className="border w-fit p-2 mt-10 hover:border-yellow-500 text-white hover:text-yellow-500"
+              onClick={() => movieReview(movieDetail.movie_id)}
+            >
+              Review This Movie
+            </button>
           </div>
         </div>
       </div>

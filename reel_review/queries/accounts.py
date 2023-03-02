@@ -24,12 +24,6 @@ class AccountsIn(BaseModel):
     email: Optional[str]
     password: str
 
-class AccountUpdateIn(BaseModel):
-    first_name: Optional[str]
-    last_name: Optional[str]
-    username: str
-    email: Optional[str]
-
 
 class AccountsRepository:
     def create(self, account: AccountsIn, hashed_password: str) -> AccountsOut:
@@ -103,35 +97,6 @@ class AccountsRepository:
                         [username]
                     )
                     return True
-        except Exception as e:
-            return False
-
-
-    def update(self, account_id: int, account: AccountUpdateIn) -> Optional[AccountsOut]:
-        try:
-            with pool.connection() as conn:
-                with conn.cursor() as cur:
-                    cur.execute(
-                        """
-                        UPDATE accounts
-                        SET first_name = %s
-                        ,  last_name = %s
-                        , username = %s
-                        , email = %s
-                        WHERE id = %s
-                        """,
-                        [
-                        account.first_name,
-                        account.last_name,
-                        account.username,
-                        account.email,
-                        account_id
-                        ]
-                    )
-                    id = cur.fetchone()[0]
-                    old_data = account.dict()
-                    return AccountsOut(id=id,
-                        **old_data)
         except Exception as e:
             return False
 

@@ -63,9 +63,6 @@ export default function TrendingMovies() {
           </div>
         ))}
       </div>
-      <p className="text-center text-gray-500 text-xs mt-20">
-        &copy;2023 Popcorn Posse LLC. All rights reserved.
-      </p>
     </div>
   );
 }

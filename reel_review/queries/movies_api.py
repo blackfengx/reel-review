@@ -20,6 +20,8 @@ class MovieDetail(BaseModel):
     overview: str
     trailer: str
 
+# testing
+
 class MovieQueries:
     def get_movie_list(self, title: str):
         returned_movies = []

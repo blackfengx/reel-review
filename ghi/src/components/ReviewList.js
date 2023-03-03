@@ -80,7 +80,7 @@ console.log(reviews)
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className="border-gray-200 sm:rounded-lg bg-darker p-4 rounded-lg border-8 border-card">
               <div className="text-white gap-4 ml-8 mr-8">
-                <table className="w-fullmin-w-full divide-y divide-gray-200 " style={{ borderCollapse: 'separate', borderSpacing: '0 10px' }}>
+                <table className="w-fullmin-w-full divide-y divide-gray-200" style={{ borderCollapse: 'separate', borderSpacing: '0 10px' }}>
                   <thead className="text-2xl bg-gray-500 shadow-lg">
                     <tr>
                       <th className="pr-8 min-w-1/4 text-left rounded-l-lg">Movie Title</th>
@@ -93,7 +93,7 @@ console.log(reviews)
                   <tbody className="border-gray-200 shadow rounded-lg border-8 border-card">
                     {filteredMovies.map((review) => (
                       <tr key={review.id}>
-                        <td className="border-b border-slate-600 -space-y-4">
+                        <td className="border-b border-slate-600">
                           <div className="object-scale-down h-72 w-36">
                             <img
                               src={`https://image.tmdb.org/t/p/original/${review.poster_path}`}
@@ -102,7 +102,7 @@ console.log(reviews)
                             />
                           </div>
                         </td>
-                        <td className="min-w-1/4 border-b border-slate-600 ">{review.title}</td>
+                        <td className="min-w-1/4 border-b border-slate-600">{review.title}</td>
                         <td className="min-w-1/4 border-b border-slate-600">{review.display_name}</td>
                         <td className="min-w-1/4 border-b border-slate-600">{review.rating}</td>
                         <td className="min-w-1/4 border-b border-slate-600">{review.comments}</td>

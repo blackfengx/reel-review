@@ -33,3 +33,9 @@ We implemented 3 areas of our React fronend. First, we set up the link from our 
 
 # **February 28th, 2023:**
 Today we completed and debugged the search system. We completed nav bar for users. We set up our front end rerouts to push users not logged in to the correct page to login/create an account. Completed the full Details page and set up our page views based on page the user is visiting. We started our tailwind overview setting up different pages. I myself worked on the welcome page first page any visitor would see.
+
+# **March 1st, 2023:**
+Today we completed our front end. We added functionality to our backend to introduce trailers to our project. We completed the entire front end including our Home page, Login, Review List, and movie details. We plan to read up on additional tailwind and redux to continue our development.
+
+# **March 2nd, 2023:**
+Today we completed our tailwind and styling of our frontend. We implemented many QOL changes and features. We are adapting to pure stretch goals to make our app better. We installed a new feature to our frontend to improve our aesthetics. We shall start learning redux passively and do some final touches/deploy and complete the required features.

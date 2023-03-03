@@ -45,31 +45,37 @@ export default function DetailReviews(props) {
 
   return (
     <>
-      <h4 className="text-white text-4xl text-center">Reviews</h4>
-      <ul className="pl-16 pr-16 max-h-max">
-        {detailReviews.map((review) => (
-          <div
-            key={review.id}
-            className="border-gray-200 shadow rounded-lg border-2 border-card"
-          >
-            <div className="flex">
-              <li className="min-w-1/4 border-b border-slate-600 text-white pr-4">
-                Username: {review.display_name}
+      <h4 className="text-white text-4xl text-center pb-6">Reviews</h4>
+      {detailReviews.length > 0 ? (
+        <ul className="pl-16 pr-16 max-h-max">
+          {detailReviews.map((review) => (
+            <div
+              key={review.id}
+              className="border-gray-200 shadow rounded-lg border-2"
+            >
+              <div className="flex">
+                <li className="min-w-1/4 border-b border-slate-600 text-white pr-4">
+                  Username: {review.display_name}
+                </li>
+                <li className="min-w-1/4 border-b border-slate-600 text-white pr-4">
+                  User Rating: {review.rating}
+                </li>
+              </div>
+              <br />
+              <li className="min-w-1/4 border-slate-600 text-white pr-4 text-xl">
+                Comments:
               </li>
-              <li className="min-w-1/4 border-b border-slate-600 text-white pr-4">
-                User Rating: {review.rating}
+              <li className="min-w-1/4 border-b border-slate-600 text-white pb-4 max-w-fit">
+                {review.comments}
               </li>
             </div>
-            <br />
-            <li className="min-w-1/4 border-slate-600 text-white pr-4 text-xl">
-              Comments:
-            </li>
-            <li className="min-w-1/4 border-b border-slate-600 text-white pb-4 max-w-fit">
-              {review.comments}
-            </li>
-          </div>
-        ))}
-      </ul>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-white text-xl text-center">
+          This movie doesn't have any reviews yet.
+        </p>
+      )}
     </>
   );
 }

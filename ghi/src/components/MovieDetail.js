@@ -6,6 +6,7 @@ import ReactPlayer from "react-player/youtube";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import Carousel from "./Carousel";
 import "swiper/swiper-bundle.css";
+import DetailReviews from "./DetailReviews";
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 export default function MovieDetail() {

@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ReactPlayer from "react-player/youtube";
+import DetailReviews from "./DetailReviews";
 
 export default function Carousel(props) {
   const { trailer, posterPath } = props;
@@ -48,6 +49,11 @@ export default function Carousel(props) {
             muted={false}
             controls={true}
           />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide key={posterPath}>
+        <div>
+          <DetailReviews/>
         </div>
       </SwiperSlide>
     </Swiper>

@@ -19,6 +19,7 @@ export default function SignUp() {
       await signup(firstName, lastName, username, email, password);
             console.log(firstName, lastName, username, email, password)
 
+      localStorage.setItem("username", username);
       navigate("/");
     } catch (e) {
       console.error(e);

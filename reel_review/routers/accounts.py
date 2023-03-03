@@ -56,7 +56,7 @@ async def create_account(
     request: Request,
     response: Response,
     repo: AccountsRepository = Depends(),
-):
+) -> AccountsOutWithPassword | None:
     hashed_password = authenticator.hash_password(info.password)
     try:
         account = repo.create(info, hashed_password)

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useToken } from "./useToken";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -126,6 +127,9 @@ export default function SignUp() {
               Sign up
             </button>
           </div>
+            <p className="text-center text-gray-500 text-xs">
+              Already Have an account? <Link className="text-purple-500" to="/login">Login</Link>
+            </p>
         </form>
         <p className="text-center text-gray-500 text-xs">
           &copy;2023 Popcorn Posse LLC. All rights reserved.

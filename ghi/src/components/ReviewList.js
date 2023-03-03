@@ -111,7 +111,7 @@ export default function ReviewList() {
                         <td onClick={() => sendToDetail(review.movie_id)} className="min-w-1/4 border-b border-slate-600 ">{review.title}</td>
                         <td className="min-w-1/4 border-b border-slate-600">{review.display_name}</td>
                         <td className="min-w-1/4 border-b border-slate-600">{review.rating}</td>
-                        <td className="min-w-1/4 border-b border-slate-600">{review.comments}</td>
+                        <td className="min-w-1/4 border-b border-slate-600 break-all">{review.comments}</td>
                       </tr>
                     ))}
                   </tbody>

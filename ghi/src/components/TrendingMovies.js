@@ -40,7 +40,7 @@ export default function TrendingMovies() {
                   : `https://cdn.discordapp.com/attachments/1072228028589019256/1080656211952808006/dariokun.png`
               } //not the real path wed use but it works!
               alt=""
-              className="object-cover h-5/6"
+              className="h-1/2 object-cover lg:h-5/6"
             />
             <div className="p-4">
               <div className="text-2xl font-bold">{movie.title}</div>

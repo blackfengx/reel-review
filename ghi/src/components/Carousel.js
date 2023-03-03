@@ -5,7 +5,7 @@ import ReactPlayer from "react-player/youtube";
 import DetailReviews from "./DetailReviews";
 
 export default function Carousel(props) {
-  const { trailer, posterPath } = props;
+  const { trailer, posterPath, movie_id } = props;
 
   return (
     <Swiper
@@ -51,9 +51,9 @@ export default function Carousel(props) {
           />
         </div>
       </SwiperSlide>
-      <SwiperSlide key={posterPath}>
+      <SwiperSlide key={movie_id}>
         <div>
-          <DetailReviews/>
+          <DetailReviews movie_id={movie_id}/>
         </div>
       </SwiperSlide>
     </Swiper>

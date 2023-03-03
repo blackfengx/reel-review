@@ -40,6 +40,7 @@ export default function MovieDetail() {
             <Carousel
               trailer={movieDetail.trailer}
               posterPath={movieDetail.poster_path}
+              movie_id={movieDetail.movie_id}
             />
           </div>
           <div className="w-full lg:w-1/2 pl-4">

@@ -5,6 +5,8 @@ import { useToken } from "./useToken";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [errorFields, setErrorFields] = useState([]);
   const { login } = useToken();
   const navigate = useNavigate();
 
@@ -20,14 +22,37 @@ const Login = () => {
     } catch (e) {
       console.error(e);
       // Login failed, show error message to user
+      setErrorMessage("Incorrect username or password");
+      setErrorFields(["username", "password"]);
     }
+  };
+
+  const handleInputChange = (event) => {
+    const { id, value } = event.target;
+    if (errorFields.includes(id)) {
+      setErrorFields(errorFields.filter((field) => field !== id));
+      setErrorMessage("");
+    }
+    if (id === "username") {
+      setUsername(value);
+    } else if (id === "password") {
+      setPassword(value);
+    }
+  };
+
+  const getFieldClassNames = (fieldId) => {
+    return `shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+      errorFields.includes(fieldId) ? "border-red-500" : ""
+    }`;
   };
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
       <div className="bg-darker rounded px-8 mb-4 border-card border-8">
         <div className="container mx-auto flex items-center py-4 justify-center">
-          <div className="text-white font-Open Sans text-[50px]">Reel Review</div>
+          <div className="text-white font-Open Sans text-[50px]">
+            Reel Review
+          </div>
         </div>
         <div className="w-96 h-96">
           <form
@@ -40,9 +65,12 @@ const Login = () => {
                 type="text"
                 id="username"
                 value={username}
-                onChange={(event) => setUsername(event.target.value)}
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                onChange={handleInputChange}
+                className={getFieldClassNames("username")}
               />
+              {errorFields.includes("username") && (
+                <p className="text-red-500 text-sm">{errorMessage}</p>
+              )}
             </div>
             <div className="form-floating mb-3">
               <input
@@ -50,9 +78,12 @@ const Login = () => {
                 type="password"
                 id="password"
                 value={password}
-                onChange={(event) => setPassword(event.target.value)}
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                onChange={handleInputChange}
+                className={getFieldClassNames("password")}
               />
+              {errorFields.includes("password") && (
+                <p className="text-red-500 text-sm">{errorMessage}</p>
+              )}
             </div>
             <button
               type="submit"

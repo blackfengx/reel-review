@@ -3,9 +3,11 @@ import { useAuthContext } from "./useToken";
 import { useNavigate } from "react-router-dom";
 
 export default function TrendingMovies() {
-  const [trending, setTrending] = useState([]);
   const { token } = useAuthContext();
+  const [trending, setTrending] = useState([]);
   const navigate = useNavigate();
+
+
   const fetchData = async () => {
     const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/movies/trending`;
     const response = await fetch(url, {
@@ -15,6 +17,7 @@ export default function TrendingMovies() {
     const trendingMovies = await response.json();
     setTrending(trendingMovies);
   };
+
 
   const movieDetail = (movie_id) => {
     navigate(`/movie/detail/${movie_id}`);

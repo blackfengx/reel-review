@@ -26,6 +26,11 @@ export default function TrendingMovies() {
 
   return (
     <div className="min-h-screen px-8 py-8 flex flex-col justify-center items-center h-full bg-gradient-to-r from-bg-dark-blue to-blue-900">
+      <div className="container mx-auto flex items-center py-4 justify-center">
+        <div className="text-white font-Open Sans text-[50px]">
+          Trending Movies
+        </div>
+      </div>
       <div className="grid grid-cols-5 gap-4 mx-auto">
         {trending.map((movie) => (
           <div

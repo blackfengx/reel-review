@@ -42,16 +42,18 @@ export default function MovieDetail() {
             />
           </div>
           <div className="w-full lg:w-1/2 pl-4">
-            <div className="flex flex-col justify-between h-full text-gray-200 bg-card p-5">
+            <div className="flex flex-col justify-between h-full text-gray-200 bg-card p-5 rounded">
               <div>
-                <div className="text-4xl mb-40 font-bold underline font-verdana">
+                <div className="text-4xl mb-40 font-bold underline font-verdana pt-5">
                   {movieDetail.title}
                 </div>
                 <div style={{ margin: "2px" }}>
-                  <div>Runtime: {movieDetail.runtime} minutes</div>
-                  <div>Rating: {movieDetail.vote_average}</div>
+                  <div className="text-gray-200 mt-6 text-xl font-bold">Runtime:</div>
+                  <div>{movieDetail.runtime} minutes</div>
+                  <div className="text-gray-200 mt-6 text-xl font-bold">Rating:</div>
+                  <div>{movieDetail.vote_average}</div>
                 </div>
-                <div className="text-gray-200 mt-6">Overview:</div>
+                <div className="text-gray-200 mt-6 text-xl font-bold">Overview:</div>
                 <div className="text-gray-200" style={{ margin: "2px" }}>
                   {movieDetail.overview}
                 </div>

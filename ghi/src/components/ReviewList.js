@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthContext } from "./useToken";
+import { useNavigate } from "react-router-dom";
 
 export default function ReviewList() {
   const [reviews, setReviews] = useState([]);
@@ -7,6 +8,7 @@ export default function ReviewList() {
   const { token } = useAuthContext();
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredMovies, setFilteredMovies] = useState([])
+  const navigate = useNavigate()
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
@@ -34,6 +36,10 @@ export default function ReviewList() {
     setReviews(reviewsData);
   };
 
+  const sendToDetail = async (id) => {
+    navigate(`/movie/detail/${id}`);
+  }
+
   const fetchMovieData = async () => {
     const movieTitleList = [];
     for (let review of reviews) {
@@ -59,7 +65,6 @@ export default function ReviewList() {
   useEffect(() => {
     fetchMovieData();
   }, [reviews]);
-console.log(reviews)
   return (
     <div className="min-h-screen">
       <div className="relative max-w-sm mx-auto">
@@ -78,7 +83,7 @@ console.log(reviews)
       <h1 className="mt-2 text-2xl text-white ml-8 mr-8 font-mono">My Reviews</h1>
       <div className="mt-2 flex flex-col ">
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-          <div className="border-gray-200 sm:rounded-lg bg-darker p-4 rounded-lg border-8 border-card">
+          <div className=" sm:rounded-lg bg-darker p-4 rounded-lg border-8 border-card">
               <div className="text-white gap-4 ml-8 mr-8">
                 <table className="w-fullmin-w-full divide-y divide-gray-200" style={{ borderCollapse: 'separate', borderSpacing: '0 10px' }}>
                   <thead className="text-2xl bg-gray-500 shadow-lg">
@@ -90,7 +95,7 @@ console.log(reviews)
                       <th className="pr-8 min-w-1/4 text-left rounded-r-lg">Comment</th>
                     </tr>
                   </thead>
-                  <tbody className="border-gray-200 shadow rounded-lg border-8 border-card">
+                  <tbody className="shadow rounded-lg border-8 border-card">
                     {filteredMovies.map((review) => (
                       <tr key={review.id}>
                         <td className="border-b border-slate-600">
@@ -99,10 +104,11 @@ console.log(reviews)
                               src={`https://image.tmdb.org/t/p/original/${review.poster_path}`}
                               alt=""
                               className="border-4 border-card"
+                              onClick={() => sendToDetail(review.movie_id)}
                             />
                           </div>
                         </td>
-                        <td className="min-w-1/4 border-b border-slate-600">{review.title}</td>
+                        <td onClick={() => sendToDetail(review.movie_id)} className="min-w-1/4 border-b border-slate-600 ">{review.title}</td>
                         <td className="min-w-1/4 border-b border-slate-600">{review.display_name}</td>
                         <td className="min-w-1/4 border-b border-slate-600">{review.rating}</td>
                         <td className="min-w-1/4 border-b border-slate-600">{review.comments}</td>

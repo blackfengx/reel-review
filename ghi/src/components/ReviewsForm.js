@@ -94,26 +94,26 @@ export default function ReviewsForm() {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-10"
+          className="bg-card shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-10"
         >
-          <h1 className="text-3xl font-bold mb-6">{title.title}</h1>
+          <h1 className="text-3xl  text-white font-bold mb-6">{title.title}</h1>
           <div className="w-full md:w-1/2 mb-6 md:mb-0">
             <label
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-white font-bold"
               htmlFor="display_name"
             >
               Username
             </label>
             <div
-              className=" appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className=" appearance-none rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
             >{username}</div>
           </div>
           <div className="w-full md:w-1/2 mb-6 md:mb-0">
-            <label className="block text-gray-700 font-bold mb-2" for="rating">
+            <label className="block text-white font-bold mb-2 mt-6" for="rating">
               Rating
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:shadow-outline"
               id="rating"
               type="number"
               step={0.1}
@@ -125,8 +125,8 @@ export default function ReviewsForm() {
               onChange={handleReviewChange}
             />
           </div>
-          <div className="w-full md:w-full mb-6">
-            <label className="block text-gray-700 font-bold mb-2" for="comments">
+          <div className="w-full md:w-full mb-6 mt-6">
+            <label className="block text-white font-bold mb-2" for="comments">
               Comments
             </label>
             <textarea
@@ -140,7 +140,7 @@ export default function ReviewsForm() {
           </div>
           <div className="flex items-center justify-center w-60">
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Submit Review

@@ -45,3 +45,7 @@ Today the team worked on conditionally rendering our nav bar when a user is logg
 # **March 1st, 2023:**
 
 Our front-end is basically complete... we may add a few minor finishing touches however I'm pleased with the overall usage and look of the website. Tomorrow I believe we'll begin implementing Redux which I'm looking forward to.
+
+# **March 2nd, 2023:**
+
+The group asked an instructor to review our project and make suggestions on how we can improve it. They recommended we get our project deployed, add stories, add issues, and complete our unit test. Our group is now focused on working on these milestones to leave us in a good spot leading up to our last days before turning the project in. Today we continued to work on beautifying the website and began studying the deployment process.

@@ -32,7 +32,7 @@ export default function MovieDetail() {
   }, []);
 
   return (
-    <div className="w-screen">
+    <div className="w-screen h-screen">
       <div className="mx-20 py-16">
         <div className="flex flex-row items-center bg-darker p-4 rounded-lg border-8 border-card">
           <div className="w-full lg:w-1/2 pr-4">
@@ -58,13 +58,13 @@ export default function MovieDetail() {
                   {movieDetail.overview}
                 </div>
               </div>
-              <button
-                className="border w-fit p-2 mt-10 hover:border-yellow-500 text-white hover:text-yellow-500"
-                onClick={() => movieReview(movieDetail.movie_id)}
-              >
-                Review This Movie
-              </button>
             </div>
+            <button
+              className="border w-fit p-2 mt-10 hover:border-yellow-500 text-white hover:text-yellow-500"
+              onClick={() => movieReview(movieDetail.movie_id)}
+            >
+              Review This Movie
+            </button>
           </div>
         </div>
       </div>

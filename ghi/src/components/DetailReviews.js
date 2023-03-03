@@ -18,9 +18,18 @@ export default function DetailReviews(props) {
   };
 
     const filterReviews = () => {
-    const detailReviewList = reviews.filter((review) =>
-      review.movie_id === props.movie_id
+    const detailReviewFilter = reviews.filter((review) =>
+      review.movie_id === props.movie_id && review.comments.length <= 90
     );
+    const detailReviewList = []
+        let counter = 0
+        for (let i=(detailReviewFilter.length - 1) ; i > 0 ; i -= 1){
+            counter += 1
+            detailReviewList.push(detailReviewFilter[i])
+            if (counter === 5){
+                break
+            }
+        }
     setDetailReviews(detailReviewList);
     console.log(detailReviewList)
     }
@@ -37,8 +46,8 @@ export default function DetailReviews(props) {
 
     return (
     <>
-    <h4 className='text-white text-2xl text-center'>Movie Reviews</h4>
-     <ul>
+    <h4 className='text-white text-4xl text-center'>Movie Reviews</h4>
+     <ul className='pl-16 pr-16 max-h-max'>
             {detailReviews.map((review) => (
                 <div key={review.id} className="border-gray-200 shadow rounded-lg border-2 border-card">
                     <div className='flex'>
@@ -47,7 +56,7 @@ export default function DetailReviews(props) {
                     </div>
                     <br />
                     <li className="min-w-1/4 border-slate-600 text-white pr-4 text-xl">Comments:</li>
-                <li className="min-w-1/4 border-b border-slate-600 text-white pb-4">{review.comments}</li>
+                <li className="min-w-1/4 border-b border-slate-600 text-white pb-4 max-w-fit">{review.comments}</li>
                 </div>
             ))}
 </ul>

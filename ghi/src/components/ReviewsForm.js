@@ -7,11 +7,11 @@ export default function ReviewsForm() {
   const { token } = useAuthContext();
   const { id } = useParams();
   const [title, setTitle] = useState("");
-  const [username, setUsername] = useState("")
+  const [username, setUsername] = useState("");
 
   const fetchData = async () => {
-    const user = localStorage.getItem("username")
-    setUsername(user)
+    const user = localStorage.getItem("username");
+    setUsername(user);
     const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/movie/${id}`;
     const response = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` },
@@ -21,19 +21,18 @@ export default function ReviewsForm() {
     setTitle(movie);
   };
 
-
   useEffect(() => {
     fetchData();
   }, []);
 
-  useEffect(() =>{
+  useEffect(() => {
     setReview({
-          movie_id: id,
-          display_name: username,
-          rating: "",
-          comments: "",
-        })
-  },[username])
+      movie_id: id,
+      display_name: username,
+      rating: "",
+      comments: "",
+    });
+  }, [username]);
 
   const navigate = useNavigate();
   const [review, setReview] = useState({
@@ -42,8 +41,6 @@ export default function ReviewsForm() {
     rating: "",
     comments: "",
   });
-
-
 
   const handleReviewChange = (event) => {
     const { name, value } = event.target;
@@ -55,7 +52,6 @@ export default function ReviewsForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
 
     const reviewUrl = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/create`;
     const fetchConfig = {
@@ -104,12 +100,15 @@ export default function ReviewsForm() {
             >
               Username
             </label>
-            <div
-              className=" appearance-none rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
-            >{username}</div>
+            <div className=" appearance-none rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline">
+              {username}
+            </div>
           </div>
           <div className="w-full md:w-1/2 mb-6 md:mb-0">
-            <label className="block text-white font-bold mb-2 mt-6" for="rating">
+            <label
+              className="block text-white font-bold mb-2 mt-6"
+              for="rating"
+            >
               Rating
             </label>
             <input
@@ -118,7 +117,7 @@ export default function ReviewsForm() {
               type="number"
               step={0.1}
               name="rating"
-              placeholder="5"
+              placeholder="Ex: 7.5"
               min={1}
               max={10}
               value={review.rating}

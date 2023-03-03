@@ -14,7 +14,10 @@ export default function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      console.log(firstName, lastName, username, email, password)
       await signup(firstName, lastName, username, email, password);
+            console.log(firstName, lastName, username, email, password)
+
       navigate("/");
     } catch (e) {
       console.error(e);
@@ -96,7 +99,7 @@ export default function SignUp() {
               value={email}
               placeholder="Email"
               required
-              type="text"
+              type="email"
               name="email"
               id="email"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"

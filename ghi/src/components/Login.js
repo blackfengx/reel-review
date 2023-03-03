@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useToken } from "./useToken";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -89,6 +90,9 @@ const Login = () => {
             >
               Login
             </button>
+              <p className="text-center text-gray-500 text-xs pt-4">
+                Do not have an Account? <Link className="text-purple-500" to="/signup">Sign up</Link>
+              </p>
           </form>
         </div>
       </div>

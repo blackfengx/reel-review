@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthContext } from "./useToken";
 import { useNavigate } from "react-router-dom";
+import MyReviews from "./MyReviews";
 
 export default function ReviewList() {
   const [reviews, setReviews] = useState([]);
@@ -8,6 +9,7 @@ export default function ReviewList() {
   const { token } = useAuthContext();
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredMovies, setFilteredMovies] = useState([])
+  const [myReviews, setMyReviews] = useState(false)
   const navigate = useNavigate()
 
   const handleInputChange = (e) => {
@@ -35,6 +37,13 @@ export default function ReviewList() {
     const reviewsData = await response.json();
     setReviews(reviewsData);
   };
+
+  const handleToggleChange = async (e) => {
+    console.log(e.target.value)
+    setMyReviews(!myReviews)
+  }
+
+
 
   const sendToDetail = async (id) => {
     navigate(`/movie/detail/${id}`);
@@ -80,7 +89,13 @@ export default function ReviewList() {
           Search
         </button>
       </div>
-      <h1 className="mt-2 text-2xl text-white ml-8 mr-8 font-mono">My Reviews</h1>
+      <div className="flex">
+        <h1 className="mt-2 text-2xl text-white ml-8 mr-8 font-mono">{myReviews? "My Reviews" : "Reviews"}</h1>
+        <select onChange={handleToggleChange} name="myReviews" id="myReviews">
+        <option key={1} value={false}>All Reviews</option>
+        <option key={2} value={true}>My Reviews</option>
+        </select>
+      </div>
       <div className="mt-2 flex flex-col ">
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className=" sm:rounded-lg bg-darker p-4 rounded-lg border-8 border-card">
@@ -96,7 +111,7 @@ export default function ReviewList() {
                     </tr>
                   </thead>
                   <tbody className="shadow rounded-lg border-8 border-card">
-                    {filteredMovies.map((review) => (
+                    {myReviews? <MyReviews filteredMovies={filteredMovies}/> : filteredMovies.map((review) => (
                       <tr key={review.id}>
                         <td className="border-b border-slate-600">
                           <div className="object-scale-down h-72 w-36">

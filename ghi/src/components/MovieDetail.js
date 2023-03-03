@@ -45,28 +45,30 @@ export default function MovieDetail() {
           </div>
           <div className="w-full lg:w-1/2 pl-4">
             <div className="flex flex-col justify-between h-full text-gray-200 bg-card p-5 rounded">
-              <div>
-                <div className="text-4xl mb-40 font-bold underline font-verdana pt-5">
+              <div className="flex flex-col justify-center items-center">
+                <div className="text-5xl mb-40 font-bold underline font-verdana pt-5">
                   {movieDetail.title}
                 </div>
                 <div style={{ margin: "2px" }}>
-                  <div className="text-gray-200 mt-6 text-xl font-bold">Runtime:</div>
-                  <div>{movieDetail.runtime} minutes</div>
-                  <div className="text-gray-200 mt-6 text-xl font-bold">Rating:</div>
-                  <div>{movieDetail.vote_average}</div>
+                  <div className="text-gray-200 mt-6 text-2xl font-bold mb-2">Runtime</div>
+                    <div className="text-lg">{movieDetail.runtime} minutes</div>
+                  <div className="text-gray-200 mt-6 text-2xl font-bold mb-2">Rating</div>
+                    <div className="text-lg">{movieDetail.vote_average}</div>
                 </div>
-                <div className="text-gray-200 mt-6 text-xl font-bold">Overview:</div>
-                <div className="text-gray-200" style={{ margin: "2px" }}>
+                <div className="text-gray-200 mt-6 text-2xl font-bold mb-2">Overview</div>
+                <div className="text-gray-200 mb-6 text-lg">
                   {movieDetail.overview}
                 </div>
               </div>
             </div>
-            <button
-              className="border w-fit p-2 mt-10 hover:border-yellow-500 text-white hover:text-yellow-500"
-              onClick={() => movieReview(movieDetail.movie_id)}
-            >
-              Review This Movie
-            </button>
+            <div className="flex flex-col justify-center items-center">
+              <button
+                className="border w-fit p-2 mt-10 hover:border-yellow-500 text-white hover:text-yellow-500"
+                onClick={() => movieReview(movieDetail.movie_id)}
+              >
+                Review This Movie
+              </button>
+            </div>
           </div>
         </div>
       </div>

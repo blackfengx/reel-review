@@ -83,7 +83,7 @@ export default function ReviewList() {
       <h1 className="mt-2 text-2xl text-white ml-8 mr-8 font-mono">My Reviews</h1>
       <div className="mt-2 flex flex-col ">
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-          <div className="border-gray-200 sm:rounded-lg bg-darker p-4 rounded-lg border-8 border-card">
+          <div className=" sm:rounded-lg bg-darker p-4 rounded-lg border-8 border-card">
               <div className="text-white gap-4 ml-8 mr-8">
                 <table className="w-fullmin-w-full divide-y divide-gray-200 " style={{ borderCollapse: 'separate', borderSpacing: '0 10px' }}>
                   <thead className="text-2xl bg-gray-500 shadow-lg">
@@ -95,7 +95,7 @@ export default function ReviewList() {
                       <th className="pr-8 min-w-1/4 text-left rounded-r-lg">Comment</th>
                     </tr>
                   </thead>
-                  <tbody className="border-gray-200 shadow rounded-lg border-8 border-card">
+                  <tbody className="shadow rounded-lg border-8 border-card">
                     {filteredMovies.map((review) => (
                       <tr key={review.id}>
                         <td className="border-b border-slate-600 -space-y-4">

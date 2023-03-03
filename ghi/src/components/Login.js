@@ -17,11 +17,9 @@ const Login = () => {
     try {
       localStorage.setItem("username", username);
       await login(username, password);
-      // Login successful, do something (e.g. redirect to home page)
       navigate("/");
     } catch (e) {
       console.error(e);
-      // Login failed, show error message to user
       setErrorMessage("Incorrect username or password");
       setErrorFields(["username", "password"]);
     }

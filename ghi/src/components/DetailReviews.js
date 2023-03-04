@@ -32,7 +32,6 @@ export default function DetailReviews(props) {
       }
     }
     setDetailReviews(detailReviewList);
-    console.log(detailReviewList);
   };
 
   useEffect(() => {

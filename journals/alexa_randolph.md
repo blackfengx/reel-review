@@ -49,3 +49,7 @@ Our front-end is basically complete... we may add a few minor finishing touches 
 # **March 2nd, 2023:**
 
 The group asked an instructor to review our project and make suggestions on how we can improve it. They recommended we get our project deployed, add stories, add issues, and complete our unit test. Our group is now focused on working on these milestones to leave us in a good spot leading up to our last days before turning the project in. Today we continued to work on beautifying the website and began studying the deployment process.
+
+# **March 3rd, 2023:**
+
+Today I added a few conditional statements on the front end to enhance the user experience. This weekend I plan on studying more about unit testing, redux, and deployment.

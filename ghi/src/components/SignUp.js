@@ -128,7 +128,7 @@ export default function SignUp() {
               Sign up
             </button>
           </div>
-            <p className="text-center text-gray-500 text-xs">
+            <p className="text-center text-gray-500 text-xs pt-4">
               Already Have an account? <Link className="text-purple-500" to="/login">Login</Link>
             </p>
         </form>

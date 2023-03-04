@@ -26,7 +26,7 @@ class AccountsIn(BaseModel):
 
 
 class AccountsRepository:
-    def create(self, account: AccountsIn, hashed_password: str) -> AccountsOut:
+    def create(self, account: AccountsIn, hashed_password: str): #-> AccountsOut:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as cur:

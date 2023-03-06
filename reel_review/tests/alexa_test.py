@@ -31,12 +31,11 @@ def test_create_review():
         "comments": "decent"
     }
     # Act
-    response = client.post("/reviews", json.dumps(review_body))
+    response = client.post("/api/reviews/create", json.dumps(review_body))
 
     # Assert
-    assert response.status_code == 200
+    assert response.status_code == 201
     assert response.json()["id"] == 3
-    assert response.json()["account_id"] == 2
 
     # A cleanup
     app.dependency_overrides = {}

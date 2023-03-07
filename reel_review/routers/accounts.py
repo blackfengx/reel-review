@@ -1,4 +1,6 @@
-from fastapi import APIRouter, Depends, HTTPException, status, Response, Request
+from fastapi import (
+    APIRouter, Depends, HTTPException, status, Response, Request
+)
 from typing import Optional
 from queries.accounts import (
     AccountsIn,
@@ -30,7 +32,9 @@ router = APIRouter()
 
 @router.get("/api/protected", response_model=bool, tags=["accounts"])
 async def get_protected(
-    account_data: Optional[dict] = Depends(authenticator.try_get_current_account_data),
+    account_data: Optional[dict] = Depends(
+        authenticator.try_get_current_account_data
+    ),
 ):
     return True
 
@@ -48,7 +52,9 @@ async def get_token(
         }
 
 
-@router.delete("/api/accounts/{username}", response_model=bool, tags=["accounts"])
+@router.delete("/api/accounts/{username}",
+               response_model=bool,
+               tags=["accounts"])
 def delete_account(
     username: str,
     repo: AccountsRepository = Depends(),

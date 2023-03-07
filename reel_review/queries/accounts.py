@@ -28,7 +28,7 @@ class AccountsIn(BaseModel):
 
 
 class AccountsRepository:
-    def create(self, account: AccountsIn, hashed_password: str):  # -> AccountsOut:
+    def create(self, account: AccountsIn, hashed_password: str):
         try:
             with pool.connection() as conn:
                 with conn.cursor() as cur:
@@ -101,6 +101,7 @@ class AccountsRepository:
                     )
                     return True
         except Exception as e:
+            print(e)
             return False
 
     def record_to_account_out(self, record):

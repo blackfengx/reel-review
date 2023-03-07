@@ -1,9 +1,10 @@
-from fastapi import APIRouter, Depends
+# from fastapi import APIRouter, Depends
 from pydantic import BaseModel
-import requests
+# import requests
 from .movies_api import MovieQueries, SearchOut, MovieDetail
-from typing import Union, List
-from queries.pool import pool
+from typing import List
+# from typing import Union
+# from queries.pool import pool
 
 
 class Error(BaseModel):

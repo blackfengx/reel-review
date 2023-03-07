@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useToken } from "./useToken";
+import { useNavigate } from "react-router-dom";
 
 export default function MyReviews(props) {
   const [myReviews, setMyReviews] = useState([]);
+  const navigate = useNavigate();
   const { token } = useToken();
   const { filteredMovies } = props;
   const user = localStorage.getItem("username");
@@ -19,19 +21,19 @@ export default function MyReviews(props) {
   }, []);
 
   const handleDelete = async (review_id) => {
-    const auth = {
+    const fetchConfig = {
       headers: { Authorization: `Bearer ${token}` },
       credentials: "include",
+      method: "DELETE",
     };
-    const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/${review.review_id}`;
+    const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/${review_id}`;
     try {
-      await fetch(url, auth, {
-        method: "DELETE",
-      });
+      await fetch(url, fetchConfig);
       setMyReviews(myReviews.filter((a) => a.review_id !== review_id));
     } catch (e) {
       console.log("error", e);
     }
+    navigate("/");
   };
 
   return (
@@ -68,7 +70,7 @@ export default function MyReviews(props) {
           <td>
             <button
               className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 active:bg-red-700"
-              onClick={() => handleDelete(review.review_id)}
+              onClick={() => handleDelete(review.id)}
             >
               Delete
             </button>

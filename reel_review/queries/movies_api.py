@@ -27,7 +27,8 @@ class MovieQueries:
     def get_movie_list(self, title: str):
         returned_movies = []
         res = requests.get(
-            f"https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&language=en-US&query={title}&page=1&include_adult=false"
+            f"https://api.themoviedb.org/3/search/movie?api_key={API_KEY}\
+                &language=en-US&query={title}&page=1&include_adult=false"
         )
         data = res.json()
         for movie in data["results"]:
@@ -37,25 +38,29 @@ class MovieQueries:
 
     def movie_detail(self, id: int):
         res = requests.get(
-            f"https://api.themoviedb.org/3/movie/{id}?api_key={API_KEY}&language=en-US"
+            f"https://api.themoviedb.org/3/movie/{id}\
+                ?api_key={API_KEY}&language=en-US"
         )
         data = res.json()
         trailer_res = requests.get(
-            f"https://api.themoviedb.org/3/movie/{id}/videos?api_key={API_KEY}&language=en-US"
+            f"https://api.themoviedb.org/3/movie/{id}\
+                /videos?api_key={API_KEY}&language=en-US"
         )
         trailer_data = trailer_res.json()
         for trailer in trailer_data["results"]:
             try:
-                if trailer["type"] == "Trailer" and trailer["site"] == "YouTube":
+                if trailer["type"] == "Trailer" \
+                        and trailer["site"] == "YouTube":
                     data["trailer"] = trailer["key"]
-            except:
+            except KeyError:
                 pass
         data["movie_id"] = data["id"]
         return MovieDetail(**data)
 
     def trending_movies(self):
         res = requests.get(
-            f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}"
+            f"https://api.themoviedb.org/3/trending\
+                /movie/week?api_key={API_KEY}"
         )
         results = []
         movie_data = res.json()

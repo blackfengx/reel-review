@@ -59,7 +59,7 @@ class MovieQueries:
 
     def trending_movies(self):
         res = requests.get(
-            f"https://api.themoviedb.org/3/trending\
+            f"https://api.themoviedb.org/3/trending \
                 /movie/week?api_key={API_KEY}"
         )
         results = []

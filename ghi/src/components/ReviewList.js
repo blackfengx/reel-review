@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthContext } from "./useToken";
 import { useNavigate } from "react-router-dom";
 import MyReviews from "./MyReviews";
+import AllReviews from "./AllReviews";
 
 export default function ReviewList() {
   const [reviews, setReviews] = useState([]);
@@ -39,6 +40,7 @@ export default function ReviewList() {
   };
 
   const handleToggleChange = async (e) => {
+    console.log(e.target.value)
     setMyReviews(!myReviews)
   }
 
@@ -109,26 +111,7 @@ export default function ReviewList() {
                       <th className="pr-8 min-w-1/4 text-left rounded-r-lg">Comment</th>
                     </tr>
                   </thead>
-                  <tbody className="shadow rounded-lg border-8 border-card">
-                    {myReviews? <MyReviews filteredMovies={filteredMovies} token={token}/> : filteredMovies.map((review) => (
-                      <tr key={review.id}>
-                        <td className="border-b border-slate-600">
-                          <div className="object-scale-down h-72 w-36">
-                            <img
-                              src={`https://image.tmdb.org/t/p/original/${review.poster_path}`}
-                              alt=""
-                              className="border-4 border-card"
-                              onClick={() => sendToDetail(review.movie_id)}
-                            />
-                          </div>
-                        </td>
-                        <td onClick={() => sendToDetail(review.movie_id)} className="min-w-1/4 border-b border-slate-600 ">{review.title}</td>
-                        <td className="min-w-1/4 border-b border-slate-600">{review.display_name}</td>
-                        <td className="min-w-1/4 border-b border-slate-600">{review.rating}</td>
-                        <td className="min-w-1/4 border-b border-slate-600 break-all">{review.comments}</td>
-                      </tr>
-                    ))}
-                  </tbody>
+                    {myReviews? <MyReviews filteredMovies={filteredMovies}/> : <AllReviews sendToDetail={sendToDetail} filteredMovies={filteredMovies} />}
                 </table>
               </div>
             </div>

@@ -17,6 +17,22 @@ export default function Carousel(props) {
       autoplay={{ delay: 5000 }}
       className="mySwiper"
     >
+      <SwiperSlide key={trailer}>
+        <div className="h-full flex items-center justify-center mt-40">
+          <ReactPlayer
+            className="video"
+            url={`https://www.youtube.com/embed/${trailer}`}
+            width="720px"
+            height="405px"
+            margin="auto"
+            pip={true}
+            playing={true}
+            loop={true}
+            muted={false}
+            controls={true}
+          />
+        </div>
+      </SwiperSlide>
       <SwiperSlide key={posterPath}>
         <div>
           <img
@@ -38,22 +54,7 @@ export default function Carousel(props) {
           />
         </div>
       </SwiperSlide>
-      <SwiperSlide key={trailer}>
-        <div className="h-full flex items-center justify-center mt-40">
-          <ReactPlayer
-            className="video"
-            url={`https://www.youtube.com/embed/${trailer}`}
-            width="720px"
-            height="405px"
-            margin="auto"
-            pip={true}
-            playing={false}
-            loop={true}
-            muted={false}
-            controls={true}
-          />
-        </div>
-      </SwiperSlide>
+
       <SwiperSlide key={movie_id}>
         <div>
           <DetailReviews movie_id={movie_id} />

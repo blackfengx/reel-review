@@ -74,23 +74,17 @@ export default function ReviewList() {
   useEffect(() => {
     fetchMovieData();
   }, [reviews]);
+
   return (
     <div className="min-h-screen">
       <div className="relative max-w-sm mx-auto">
         <input
-          className="rounded p-1.5"
+          className="rounded p-1.5 mt-3"
           type="text"
           value={searchTerm}
           onChange={handleInputChange}
           placeholder="Search by title"
         />
-        <button
-          type="button"
-          onClick={filteredReviews}
-          className="text-white m-3 p-1.5 rounded-xl bg-gradient-to-br to-purple-500 via-black from-purple-500 bg-size-200 hover:bg-right-bottom"
-        >
-          Search
-        </button>
       </div>
       <div className="flex">
         <h1 className="mt-2 text-2xl text-white ml-8 mr-8 font-mono">

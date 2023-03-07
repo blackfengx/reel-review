@@ -25,7 +25,7 @@ def test_create_review():
         authenticator.get_current_account_data
     ] = get_current_account_mock
     review_body = {
-         "movie_id": 550,
+        "movie_id": 550,
         "display_name": "StarLord",
         "rating": 7.5,
         "comments": "decent"

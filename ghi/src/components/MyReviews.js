@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export default function MyReviews(props) {
     const[myReviews, setMyReviews] = useState([])
-    const { filteredMovies } = props;
+    const { filteredMovies, token } = props;
     const user = localStorage.getItem("username");
 
     const myFilteredReviews = async () => {
@@ -11,6 +11,17 @@ export default function MyReviews(props) {
     );
     setMyReviews(filteredMovieList);
   };
+
+  const deleteButton = async (id) => {
+    const url = (`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/${id}`)
+    const fetchConfig = {
+      method: 'DELETE',
+      credentials: "include",
+      headers:{Authorization: `Bearer ${token}`}
+    }
+    await fetch(url, fetchConfig);
+  }
+
 
     useEffect(() => {
     myFilteredReviews();
@@ -34,7 +45,7 @@ export default function MyReviews(props) {
         <td className="min-w-1/4 border-b border-slate-600">{review.rating}</td>
         <td className="min-w-1/4 border-b border-slate-600 break-all">{review.comments}</td>
         <td><button>Edit</button></td>
-        <td><button>Delete</button></td>
+        <td><button onClick={()=>deleteButton(review.id)}>Delete</button></td>
         </tr>
     ))}</div>
   )

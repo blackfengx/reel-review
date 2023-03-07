@@ -39,7 +39,6 @@ export default function ReviewList() {
   };
 
   const handleToggleChange = async (e) => {
-    console.log(e.target.value)
     setMyReviews(!myReviews)
   }
 
@@ -111,7 +110,7 @@ export default function ReviewList() {
                     </tr>
                   </thead>
                   <tbody className="shadow rounded-lg border-8 border-card">
-                    {myReviews? <MyReviews filteredMovies={filteredMovies}/> : filteredMovies.map((review) => (
+                    {myReviews? <MyReviews filteredMovies={filteredMovies} token={token}/> : filteredMovies.map((review) => (
                       <tr key={review.id}>
                         <td className="border-b border-slate-600">
                           <div className="object-scale-down h-72 w-36">

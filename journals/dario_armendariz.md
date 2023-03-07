@@ -39,3 +39,9 @@ Today we completed our front end. We added functionality to our backend to intro
 
 # **March 2nd, 2023:**
 Today we completed our tailwind and styling of our frontend. We implemented many QOL changes and features. We are adapting to pure stretch goals to make our app better. We installed a new feature to our frontend to improve our aesthetics. We shall start learning redux passively and do some final touches/deploy and complete the required features.
+
+# **March 3rd, 2023:**
+Today we worked on adding our features to other pages. We setup a carousel for display and refactored our login and sign up pages. We also stress tested our forms and found bugs that were fixed accordingly. We set up limit tests on our login and debugged back end codes as well. We plan to watch/learn basics of unit tests.
+
+# **March 6th, 2023:**
+Completed our project and fixed all our Red Errors in console. We set up our unit tests for our project. We fixed an error in loading options for our project. Extended learning will be for deployment.

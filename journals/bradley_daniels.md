@@ -38,4 +38,18 @@ Today we fixed the rest of the authentication on the front-end. We are continuin
 Our group finished the skeletal framework of the components and we are now filling the components with code to result in an actual flowing product. Once again, we split into groups of 2 and tackled different components, coming together to tackle any blockers the group may have faced.
 
 # **February 28th, 2023:**
-Today we finished the functionality part of the project and moved onto Tailwind. We took a few hours to watch videos and learn the intricate different commands that can be implemented using this framework. We also split once again to hone our knowledge and came back together to ensure our vision was matching and flowed as a gorup.
+Today we finished the functionality part of the project and moved onto Tailwind. We took a few hours to watch videos and learn the intricate different commands that can be implemented using this framework. We also split once again to hone our knowledge and came back together to ensure our vision was matching and flowed as a group.
+
+# **March 1st, 2023:**
+Our group continued to design the JSX of our components on the front-end using Tailwind, making more for certain pages that we wanted more detail on. We also added trailers in the Movie Detail section.
+
+# **March 2nd, 2023:**
+We continued adding small details that add to the flow of the website, such as links between pages, carousels, and more. Our group is starting to get an overall hang of Tailwind and we're liking our end result. We plan to study on deployment and act on that soon.
+
+# **March 3rd, 2023:**
+We decided to make sure we had our ducks in a row and test from the perspective of the user, ensuring there were no ways that bugs would pop up while navigating the website. I continued to limit test wild numbers and more in the fields to further bolster the thought that nothing would break or error.
+
+# **March 6th, 2023:**
+I wrote a unit test today that ensures that the token is received and returns a "200" status code. Then I decided to further research the depth of how unit tests completely run. After that our group purged the rest of the console errors, gearing up for deployment tomorrow.
+
+# **March 7th, 2023:**

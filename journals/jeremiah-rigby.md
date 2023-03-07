@@ -39,3 +39,19 @@ Today we made a lot of progress on our frontend. we now have a functioning trend
 
 # **February 28th, 2023:**
 Today we finished up a few of the functional pieces in our frontend. we fixed the search system from a few bugs. we also made it so the navbar is hidden on the login and signup pages as well as made it so that if we go to any non login page without having a token that it will redirect us to the welcome page so we can login. We then worked on tailwind in the afternoon. website is well on its way.
+
+
+# **March 1st, 2023:**
+Today we pretty much completed our frontend, there are things we will possibly add to the project, but it could be turned in as is as long as we remove all the console errors. We implemented functionality to get a youtube video for the movide detail page.
+
+
+# **March 2nd, 2023:**
+Today was mainly a tailwind day. We cleaned up some code and made the overall asthetic of the webpage look better. We also implemented a reviews page for the movie detail page that shows the (up to) 5 most recent movie reviews that don't exceed a certain length of characters
+
+
+# **March 3rd, 2023:**
+Today we implemented a carousel for trailer and reviews on movie detail. We also spent a large portion of the day fixing our login functionality that was bugging out with certain things put into the signup field. it ended up being a small error in the queries, but we spent most of the day tracking it down to fix it
+
+
+# **March 6th, 2023:**
+Today we had our practice test so we didn't have a ton of time. but we did clean up some of our code and work on a few small things. One of the things we worked on was removing all errors from the console. for example we had an error that was happening that basically part of the jsx was rendering before we had a fucntion render. so we fixed it with a conditional that temporarily sets the broken portion to null and then in the jsx there is and if null statement that temporarily sets it to something while its loading. we also wrote our individual unit tests.

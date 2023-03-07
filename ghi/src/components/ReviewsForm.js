@@ -107,7 +107,7 @@ export default function ReviewsForm() {
           <div className="w-full md:w-1/2 mb-6 md:mb-0">
             <label
               className="block text-white font-bold mb-2 mt-6"
-              for="rating"
+              htmlFor="rating"
             >
               Rating
             </label>

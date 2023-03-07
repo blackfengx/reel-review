@@ -7,7 +7,6 @@ export default function TrendingMovies() {
   const [trending, setTrending] = useState([]);
   const navigate = useNavigate();
 
-
   const fetchData = async () => {
     const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/movies/trending`;
     const response = await fetch(url, {

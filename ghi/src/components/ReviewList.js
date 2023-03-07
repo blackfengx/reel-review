@@ -40,7 +40,6 @@ export default function ReviewList() {
   };
 
   const handleToggleChange = async (e) => {
-    console.log(e.target.value)
     setMyReviews(!myReviews)
   }
 

@@ -50,7 +50,7 @@ export default function MyReviews(props) {
           <td>
             <button
               className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 active:bg-red-700"
-              onclick="this.classList.add('ring-2', 'ring-red-500', 'ring-opacity-50')"
+              onClick="this.classList.add('ring-2', 'ring-red-500', 'ring-opacity-50')"
             >
               Delete
             </button>

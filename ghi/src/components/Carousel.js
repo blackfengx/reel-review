@@ -5,7 +5,10 @@ import ReactPlayer from "react-player/youtube";
 import DetailReviews from "./DetailReviews";
 
 export default function Carousel(props) {
-  const { trailer, posterPath, movie_id } = props;
+  let { trailer, posterPath, movie_id } = props;
+  if (posterPath === undefined){
+    posterPath = null
+  }
 
   return (
     <Swiper

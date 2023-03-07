@@ -45,6 +45,5 @@ To fully enjoy this application on your local machine, please make sure to follo
 5. Run `docker volume create postgres-data`
 6. Run `docker compose build`
 7. Run `docker compose up`
-8. Run `docker exec -it smelli-belli-inventory-api-1 bash`
-9. Run `python manage.py loaddata products.json`
-10. Exit the container's CLI, and enjoy Smelli Belli to its fullest!
+8. Run `python -m migrations up` in reel-review docker container terminal
+9. Go to localhost:3000 and enjoy!

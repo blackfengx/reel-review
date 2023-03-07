@@ -36,11 +36,6 @@ export default function MyReviews(props) {
     navigate("/");
   };
 
-  const handleEditClick = (review) => {
-    const url = `/reviews/form/${review.id}?rating=${review.rating}&comments=${review.comments}`;
-    navigate(url);
-  };
-
   return (
     <tbody className="shadow rounded-lg border-8 border-card">
       {myReviews.map((review) => (
@@ -68,10 +63,7 @@ export default function MyReviews(props) {
             {review.comments}
           </td>
           <td>
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              onClick={handleEditClick}
-            >
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               Edit
             </button>
           </td>

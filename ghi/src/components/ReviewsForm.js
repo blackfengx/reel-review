@@ -125,7 +125,10 @@ export default function ReviewsForm() {
             />
           </div>
           <div className="w-full md:w-full mb-6 mt-6">
-            <label className="block text-white font-bold mb-2" htmlFor="comments">
+            <label
+              className="block text-white font-bold mb-2"
+              htmlFor="comments"
+            >
               Comments
             </label>
             <textarea

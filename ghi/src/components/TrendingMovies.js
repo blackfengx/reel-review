@@ -17,7 +17,6 @@ export default function TrendingMovies() {
     setTrending(trendingMovies);
   };
 
-
   const movieDetail = (movie_id) => {
     navigate(`/movie/detail/${movie_id}`);
   };
@@ -57,13 +56,14 @@ export default function TrendingMovies() {
               <div className="text-2xl font-bold">{movie.title}</div>
               <div className="mt-2">
                 <div className="flex items-center">
-                  <svg
+                  {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 text-yellow-500 mr-1"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                  ></svg>
+                    placeholder="clear"
+                  ></svg> */}
                   <span className="mr-auto text-lg text-gray-600">
                     Rating: {movie.vote_average.toFixed(1)} &#x2B50;
                   </span>

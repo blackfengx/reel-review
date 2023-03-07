@@ -53,3 +53,7 @@ The group asked an instructor to review our project and make suggestions on how 
 # **March 3rd, 2023:**
 
 Today I added a few conditional statements on the front end to enhance the user experience. This weekend I plan on studying more about unit testing, redux, and deployment.
+
+# **March 6th, 2023:**
+
+Today each member of the team completed their unit tests. Then we focused on resolving any "red" errors in the developer console. Tomorrow we're planning on working on the deployment process.

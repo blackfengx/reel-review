@@ -4,13 +4,11 @@ export default function MyReviews(props) {
   const [myReviews, setMyReviews] = useState([]);
   const { filteredMovies } = props;
   const user = localStorage.getItem("username");
-  console.log(props.filteredMovies);
 
   const myFilteredReviews = async () => {
     const filteredMovieList = filteredMovies.filter(
       (review) => review.display_name === user
     );
-    console.log(filteredMovieList);
     setMyReviews(filteredMovieList);
   };
 

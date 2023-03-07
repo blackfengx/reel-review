@@ -6,8 +6,8 @@ import DetailReviews from "./DetailReviews";
 
 export default function Carousel(props) {
   let { trailer, posterPath, movie_id } = props;
-  if (posterPath === undefined){
-    posterPath = null
+  if (posterPath === undefined) {
+    posterPath = null;
   }
 
   return (
@@ -56,7 +56,7 @@ export default function Carousel(props) {
       </SwiperSlide>
       <SwiperSlide key={movie_id}>
         <div>
-          <DetailReviews movie_id={movie_id}/>
+          <DetailReviews movie_id={movie_id} />
         </div>
       </SwiperSlide>
     </Swiper>

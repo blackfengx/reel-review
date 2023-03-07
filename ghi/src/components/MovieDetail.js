@@ -22,6 +22,7 @@ export default function MovieDetail() {
     });
     const movie = await response.json();
     setMovieDetail(movie);
+    console.log(movie);
   };
 
   const movieReview = (movie_id) => {
@@ -50,12 +51,18 @@ export default function MovieDetail() {
                   {movieDetail.title}
                 </div>
                 <div style={{ margin: "2px" }}>
-                  <div className="text-gray-200 mt-6 text-2xl font-bold mb-2">Runtime</div>
-                    <div className="text-lg">{movieDetail.runtime} minutes</div>
-                  <div className="text-gray-200 mt-6 text-2xl font-bold mb-2">Rating</div>
-                    <div className="text-lg">{movieDetail.vote_average}</div>
+                  <div className="text-gray-200 mt-6 text-2xl font-bold mb-2">
+                    Runtime
+                  </div>
+                  <div className="text-lg">{movieDetail.runtime} minutes</div>
+                  <div className="text-gray-200 mt-6 text-2xl font-bold mb-2">
+                    Rating
+                  </div>
+                  <div className="text-lg">{movieDetail.vote_average}</div>
                 </div>
-                <div className="text-gray-200 mt-6 text-2xl font-bold mb-2">Overview</div>
+                <div className="text-gray-200 mt-6 text-2xl font-bold mb-2">
+                  Overview
+                </div>
                 <div className="text-gray-200 mb-6 text-lg">
                   {movieDetail.overview}
                 </div>

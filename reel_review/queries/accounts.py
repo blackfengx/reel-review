@@ -2,6 +2,7 @@ from queries.pool import pool
 from pydantic import BaseModel
 from typing import Optional
 
+
 class DuplicateAccountError(ValueError):
     pass
 
@@ -17,6 +18,7 @@ class AccountsOut(BaseModel):
 class AccountsOutWithPassword(AccountsOut):
     hashed_password: str
 
+
 class AccountsIn(BaseModel):
     first_name: Optional[str]
     last_name: Optional[str]
@@ -26,7 +28,7 @@ class AccountsIn(BaseModel):
 
 
 class AccountsRepository:
-    def create(self, account: AccountsIn, hashed_password: str): #-> AccountsOut:
+    def create(self, account: AccountsIn, hashed_password: str):  # -> AccountsOut:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as cur:
@@ -47,8 +49,8 @@ class AccountsRepository:
                             account.last_name,
                             account.username,
                             account.email,
-                            hashed_password
-                        ]
+                            hashed_password,
+                        ],
                     )
                     id = result.fetchone()[0]
                     return AccountsOutWithPassword(
@@ -62,6 +64,7 @@ class AccountsRepository:
         except Exception as e:
             print(e)
             return None
+
     def get(self, username: str) -> Optional[AccountsOutWithPassword]:
         try:
             with pool.connection() as conn:
@@ -77,7 +80,7 @@ class AccountsRepository:
                         FROM accounts
                         WHERE username = %s
                         """,
-                        [username]
+                        [username],
                     )
                     record = result.fetchone()
                     return self.record_to_account_out(record)
@@ -94,12 +97,11 @@ class AccountsRepository:
                         DELETE FROM accounts
                         WHERE username = %s
                         """,
-                        [username]
+                        [username],
                     )
                     return True
         except Exception as e:
             return False
-
 
     def record_to_account_out(self, record):
         return AccountsOutWithPassword(
@@ -108,5 +110,5 @@ class AccountsRepository:
             last_name=record[2],
             username=record[3],
             email=record[4],
-            hashed_password=record[5]
+            hashed_password=record[5],
         )

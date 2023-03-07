@@ -14,11 +14,10 @@ class SearchIn(BaseModel):
     title: str
 
 
-
 class SearchRepository:
-    def search(self, title: str)-> List[SearchOut]:
+    def search(self, title: str) -> List[SearchOut]:
         movie = MovieQueries()
-        found_movies=movie.get_movie_list(title)
+        found_movies = movie.get_movie_list(title)
         return found_movies
 
     def detail(self, id: int) -> MovieDetail:

@@ -28,7 +28,7 @@ def test_create_review():
         "movie_id": 550,
         "display_name": "StarLord",
         "rating": 7.5,
-        "comments": "decent"
+        "comments": "decent",
     }
     # Act
     response = client.post("/api/reviews/create", json.dumps(review_body))

@@ -1,9 +1,16 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Response, Request
 from typing import Optional
-from queries.accounts import AccountsIn, AccountsRepository, AccountsOut, AccountsOutWithPassword, DuplicateAccountError
+from queries.accounts import (
+    AccountsIn,
+    AccountsRepository,
+    AccountsOut,
+    AccountsOutWithPassword,
+    DuplicateAccountError,
+)
 from jwtdown_fastapi.authentication import Token
 from authenticator import authenticator
 from pydantic import BaseModel
+
 
 class AccountForm(BaseModel):
     username: str
@@ -31,7 +38,7 @@ async def get_protected(
 @router.get("/token", response_model=AccountToken | None, tags=["accounts"])
 async def get_token(
     request: Request,
-    account: AccountsOut = Depends(authenticator.try_get_current_account_data)
+    account: AccountsOut = Depends(authenticator.try_get_current_account_data),
 ) -> AccountToken | None:
     if account and authenticator.cookie_name in request.cookies:
         return {
@@ -39,6 +46,7 @@ async def get_token(
             "type": "Bearer",
             "account": account,
         }
+
 
 @router.delete("/api/accounts/{username}", response_model=bool, tags=["accounts"])
 def delete_account(
@@ -50,7 +58,10 @@ def delete_account(
         raise HTTPException(status_code=401, detail="Not logged in")
     return repo.delete(username)
 
-@router.post("/api/accounts", response_model=AccountToken | HttpError, tags=["accounts"])
+
+@router.post(
+    "/api/accounts", response_model=AccountToken | HttpError, tags=["accounts"]
+)
 async def create_account(
     info: AccountsIn,
     request: Request,
@@ -69,9 +80,13 @@ async def create_account(
     token = await authenticator.login(response, request, form, repo)
     return AccountToken(account=account, **token.dict())
 
-@router.get("/api/accounts/{username}", response_model=AccountsOutWithPassword | None, tags=["accounts"])
+
+@router.get(
+    "/api/accounts/{username}",
+    response_model=AccountsOutWithPassword | None,
+    tags=["accounts"],
+)
 def get_account(
-    username: str,
-    repo: AccountsRepository = Depends()
+    username: str, repo: AccountsRepository = Depends()
 ) -> AccountsOutWithPassword | None:
     return repo.get(username)

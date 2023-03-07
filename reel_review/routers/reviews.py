@@ -8,7 +8,12 @@ from fastapi import HTTPException, status
 router = APIRouter()
 
 
-@router.post("/api/reviews/create", response_model=ReviewOut, tags=["reviews"], status_code=status.HTTP_201_CREATED)
+@router.post(
+    "/api/reviews/create",
+    response_model=ReviewOut,
+    tags=["reviews"],
+    status_code=status.HTTP_201_CREATED,
+)
 def create_review(
     review: ReviewIn,
     repo: ReviewRepository = Depends(),
@@ -19,7 +24,9 @@ def create_review(
     return repo.create(review)
 
 
-@router.delete("/api/reviews/{review_id}", tags=["reviews"], status_code=status.HTTP_204_NO_CONTENT)
+@router.delete(
+    "/api/reviews/{review_id}", tags=["reviews"], status_code=status.HTTP_204_NO_CONTENT
+)
 def delete_review(
     review_id: int,
     repo: ReviewRepository = Depends(),
@@ -49,6 +56,3 @@ def get_review(
     if account_data is None:
         raise HTTPException(status_code=401, detail="Not logged in")
     return repo.get_review(id)
-
-
-

@@ -31,6 +31,6 @@ def launch_details():
             "day": "9",
             "hour": 19,
             "min": 0,
-            "tz:": "PST"
+            "tz:": "PST",
         }
     }

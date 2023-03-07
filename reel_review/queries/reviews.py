@@ -33,11 +33,11 @@ class ReviewRepository:
                         RETURNING id;
                         """,
                         [
-                        review.movie_id,
-                        review.display_name,
-                        review.rating,
-                        review.comments
-                        ]
+                            review.movie_id,
+                            review.display_name,
+                            review.rating,
+                            review.comments,
+                        ],
                     )
                     id = result.fetchone()[0]
                     old_data = review.dict()
@@ -55,7 +55,7 @@ class ReviewRepository:
                         DELETE FROM reviews
                         WHERE id = %s
                         """,
-                        [id]
+                        [id],
                     )
                     return True
         except Exception as e:
@@ -80,18 +80,17 @@ class ReviewRepository:
                     result = []
                     for record in cur:
                         review = ReviewOut(
-                            id = record[0],
-                            movie_id = record[1],
-                            display_name = record[2],
-                            rating = record[3],
-                            comments = record[4],
+                            id=record[0],
+                            movie_id=record[1],
+                            display_name=record[2],
+                            rating=record[3],
+                            comments=record[4],
                         )
                         result.append(review)
                     return result
         except Exception as e:
             print(e)
             return {"message": "Error"}
-
 
     def get_review(self, id: int) -> Optional[ReviewOut]:
         try:
@@ -103,7 +102,7 @@ class ReviewRepository:
                         FROM reviews
                         WHERE id = %s
                         """,
-                        [id]
+                        [id],
                     )
                     record = result.fetchone()
                     if record is None:
@@ -115,9 +114,9 @@ class ReviewRepository:
 
     def record_to_review_out(self, record):
         return ReviewOut(
-            id = record[0],
-            movie_id = record[1],
-            display_name = record[2],
-            rating = record[3],
-            comments = record[4]
+            id=record[0],
+            movie_id=record[1],
+            display_name=record[2],
+            rating=record[3],
+            comments=record[4],
         )

@@ -57,3 +57,7 @@ Today I added a few conditional statements on the front end to enhance the user 
 # **March 6th, 2023:**
 
 Today each member of the team completed their unit tests. Then we focused on resolving any "red" errors in the developer console. Tomorrow we're planning on working on the deployment process.
+
+# **March 7th, 2023:**
+
+Today I worked on clearing any flake8 errors that came up in the `movies_api` file. Then in the afternoon I completed the delete review feature on the front end. Our group also re-watched the deployment lecture in order to prepare more for the deployment process.

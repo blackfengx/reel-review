@@ -45,3 +45,9 @@ Today we worked on adding our features to other pages. We setup a carousel for d
 
 # **March 6th, 2023:**
 Completed our project and fixed all our Red Errors in console. We set up our unit tests for our project. We fixed an error in loading options for our project. Extended learning will be for deployment.
+
+# **March 7th, 2023:**
+Today we fixed all our flak8 errors getting ready for deployment. We completed a few more red errors on alternate pages. We made some adjustments to codes and cleaned our code. We fixed some options to our filter system and setup for deployment. Tomorrow we will complete our deployment of our project. Our wall for today was what source name to put on our deployment keys.
+
+# **March 8th, 2023:**
+We have completed our deployment. We ran into a 502 error we troubleshot with the deployment process. After troubleshooting, our deployment was successfully completed. Woohoo!!

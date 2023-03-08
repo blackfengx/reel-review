@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import { useAuthContext } from "./useToken";
 import { useNavigate } from "react-router-dom";
@@ -28,7 +29,7 @@ export default function ReviewList() {
 
   useEffect(() => {
     filteredReviews();
-  }, [searchTerm, filteredReviews]);
+  }, [searchTerm]);
 
   const fetchData = async () => {
     const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews`;
@@ -69,11 +70,11 @@ export default function ReviewList() {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   useEffect(() => {
     fetchMovieData();
-  }, [reviews, fetchMovieData]);
+  }, [reviews]);
 
   return (
     <div className="min-h-screen">

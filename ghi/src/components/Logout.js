@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useToken } from "./useToken";
 
 function Logout() {

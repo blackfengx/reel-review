@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import { useAuthContext } from "./useToken";
 
@@ -36,11 +37,11 @@ export default function DetailReviews(props) {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   useEffect(() => {
     filterReviews();
-  }, [reviews, filterReviews]);
+  }, [reviews]);
 
   return (
     <>

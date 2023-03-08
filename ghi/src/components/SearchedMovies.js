@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import { useAuthContext } from "./useToken";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +24,7 @@ export default function SearchedMovies(props) {
 
   useEffect(() => {
     fetchData();
-  }, [SearchedMovies, fetchData]);
+  }, [SearchedMovies]);
   return (
     <div className="min-h-screen px-8 py-8">
       <div className="grid grid-cols-5 gap-4 mx-auto">

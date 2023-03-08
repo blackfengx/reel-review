@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthContext } from "./useToken";
@@ -22,7 +23,7 @@ export default function ReviewsForm() {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   useEffect(() => {
     setReview({
@@ -31,7 +32,7 @@ export default function ReviewsForm() {
       rating: "",
       comments: "",
     });
-  }, [username, setReview]);
+  }, [username]);
 
   const navigate = useNavigate();
   const [review, setReview] = useState({

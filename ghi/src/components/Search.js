@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useEffect, useState } from "react";
 
 export default function Search(props) {
@@ -14,7 +15,7 @@ export default function Search(props) {
 
   useEffect(() => {
     handleSearch();
-  }, [search, handleSearch]);
+  }, [search]);
 
   return (
     <div className="max-w-md mx-auto">

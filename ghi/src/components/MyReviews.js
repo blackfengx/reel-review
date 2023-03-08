@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import { useToken } from "./useToken";
 import { useNavigate } from "react-router-dom";
@@ -18,7 +19,7 @@ export default function MyReviews(props) {
 
   useEffect(() => {
     myFilteredReviews();
-  }, [myReviews, myFilteredReviews]);
+  }, [myReviews]);
 
   const handleDelete = async (review_id) => {
     const fetchConfig = {

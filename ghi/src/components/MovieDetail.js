@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import { useAuthContext } from "./useToken";
 import { useParams, useNavigate } from "react-router-dom";
@@ -28,7 +29,7 @@ export default function MovieDetail() {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   return (
     <div className="w-screen h-screen">

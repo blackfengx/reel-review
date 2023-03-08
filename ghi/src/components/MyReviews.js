@@ -46,7 +46,6 @@ export default function MyReviews(props) {
                 src={`https://image.tmdb.org/t/p/original/${review.poster_path}`}
                 alt=""
                 className="border-4 border-card"
-                // onClick={() => sendToDetail(review.movie_id)}
               />
             </div>
           </td>
@@ -61,11 +60,6 @@ export default function MyReviews(props) {
           </td>
           <td className="min-w-1/4 border-b border-slate-600 break-all">
             {review.comments}
-          </td>
-          <td>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Edit
-            </button>
           </td>
           <td>
             <button

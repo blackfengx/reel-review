@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import TrendingMovies from "./components/TrendingMovies";
 import Search from "./components/Search";
 import SearchedMovies from "./components/SearchedMovies";
-import { useToken } from "./components/useToken";
-import { useNavigate } from "react-router";
 
 export default function MainPage() {
   const [searching, setSearching] = useState(false);
@@ -18,7 +16,6 @@ export default function MainPage() {
     else {
       setSearching(false)
     }
-
   }
 
 

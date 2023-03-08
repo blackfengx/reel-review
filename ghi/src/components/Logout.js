@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useToken } from "./useToken";
 
 function Logout() {

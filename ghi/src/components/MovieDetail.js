@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useAuthContext } from "./useToken";
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import ReactPlayer from "react-player/youtube";
+import { useParams, useNavigate } from "react-router-dom";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import Carousel from "./Carousel";
 import "swiper/swiper-bundle.css";
-import DetailReviews from "./DetailReviews";
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 export default function MovieDetail() {

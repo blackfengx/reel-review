@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ErrorNotification from "./ErrorNotification";
 import "./App.css";
 import MainPage from "./MainPage.js";
@@ -13,7 +13,6 @@ import Nav from "./components/Nav.js";
 import ReviewList from "./components/ReviewList.js";
 
 function GetToken() {
-  // Get token from JWT cookie (if already logged in)
   useToken();
   return null;
 }
@@ -38,7 +37,6 @@ function App() {
             <Route path="/reviews/create/:id" element={<ReviewsForm />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/welcome" element={<WelcomePage />} />
           </Routes>
         </AuthProvider>
       </BrowserRouter>

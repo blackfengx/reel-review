@@ -1,7 +1,6 @@
 from queries.reviews import (
     ReviewOut, ReviewIn, ReviewRepository
 )
-# from queries.reviews import ReviewUpdateIn
 from fastapi import Depends, APIRouter
 from typing import List
 from authenticator import authenticator

@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
 import Logout from "./Logout";
-import { useAuthContext, useToken } from "./useToken";
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useAuthContext } from "./useToken";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 
 function Nav() {

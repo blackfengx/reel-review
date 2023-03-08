@@ -1,9 +1,6 @@
-from fastapi import APIRouter, Depends
 from pydantic import BaseModel
-import requests
-from .apimovies import MovieQueries
-from typing import Union, List
-from queries.pool import pool
+from .movies_api import MovieQueries, SearchOut, MovieDetail
+from typing import List
 
 
 class Error(BaseModel):
@@ -14,13 +11,18 @@ class SearchIn(BaseModel):
     title: str
 
 
-class SearchOut(BaseModel):
-    movie_id: int
-    title: str
-    poster_path: str
-    vote_average: float
-
 class SearchRepository:
-    async def search(self, title: SearchIn) -> Union[Error, List[SearchOut]]:
+    def search(self, title: str) -> List[SearchOut]:
         movie = MovieQueries()
-        movie.get_movie_by_name(title)
+        found_movies = movie.get_movie_list(title)
+        return found_movies
+
+    def detail(self, id: int) -> MovieDetail:
+        movie = MovieQueries()
+        movie_result = movie.movie_detail(id)
+        return movie_result
+
+    def trending(self) -> List[SearchOut]:
+        movie = MovieQueries()
+        trending_movies = movie.trending_movies()
+        return trending_movies

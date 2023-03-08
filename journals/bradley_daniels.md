@@ -18,3 +18,38 @@ Today we were stumped on PGAdmin setup for awhile and upon fixing it realized th
 
 # **February 15th, 2023:**
 Today we were able to get the authenticator solved and we have begun to move onto the rest of the queries and routers. We are trying to figure out how to properly route our endpoints using the API.
+
+# **February 16th, 2023:**
+Routing the API to our code has proven to be a tremendous pain, for some reason we have had exceeding issues with this route in specific, however, we were able to solve the crisis during the weekend. There was also an issue with our .env files and not properly registering our keys. Many instructor/SEIR sessions later, along with many docker compose downs/ups, we were able to repair it. I believe the original problem stemmed from us running checking errors in the VSCode terminal rather than Docker itself.
+
+# **February 21st, 2023:**
+Today we worked to write all of the routers and queries for reviews.py along with finishing the calls to the third party API. We planned to move on to our last bit of authentication, however, we discovered the rest of the auth is erroring.
+
+# **February 22nd, 2023:**
+Today we were able to fix our back-end authentication, it turns out it was working the whole time, however, we inserted new tables into our SQL database and forgot to migrate changes.
+
+# **February 23nd, 2023:**
+Today we were very stuck with authentication once again in the front-end, while we were stuck we fleshed out what routes/other parts of authentication we could.
+
+# **February 24th, 2023:**
+Today we fixed the rest of the authentication on the front-end. We are continuing to lay out the skeletal structure of the rest of our components along with putting in the meat of some of them as well. We split off into groups of 2 after auth and are grouping together to tackle any blockers.
+
+# **February 27th, 2023:**
+Our group finished the skeletal framework of the components and we are now filling the components with code to result in an actual flowing product. Once again, we split into groups of 2 and tackled different components, coming together to tackle any blockers the group may have faced.
+
+# **February 28th, 2023:**
+Today we finished the functionality part of the project and moved onto Tailwind. We took a few hours to watch videos and learn the intricate different commands that can be implemented using this framework. We also split once again to hone our knowledge and came back together to ensure our vision was matching and flowed as a group.
+
+# **March 1st, 2023:**
+Our group continued to design the JSX of our components on the front-end using Tailwind, making more for certain pages that we wanted more detail on. We also added trailers in the Movie Detail section.
+
+# **March 2nd, 2023:**
+We continued adding small details that add to the flow of the website, such as links between pages, carousels, and more. Our group is starting to get an overall hang of Tailwind and we're liking our end result. We plan to study on deployment and act on that soon.
+
+# **March 3rd, 2023:**
+We decided to make sure we had our ducks in a row and test from the perspective of the user, ensuring there were no ways that bugs would pop up while navigating the website. I continued to limit test wild numbers and more in the fields to further bolster the thought that nothing would break or error.
+
+# **March 6th, 2023:**
+I wrote a unit test today that ensures that the token is received and returns a "200" status code. Then I decided to further research the depth of how unit tests completely run. After that our group purged the rest of the console errors, gearing up for deployment tomorrow.
+
+# **March 7th, 2023:**

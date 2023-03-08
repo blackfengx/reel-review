@@ -9,7 +9,7 @@ export default function SignUp() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { token, signup } = useToken();
+  const { signup } = useToken();
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -125,9 +125,12 @@ export default function SignUp() {
               Sign up
             </button>
           </div>
-            <p className="text-center text-gray-500 text-xs pt-4">
-              Already Have an account? <Link className="text-purple-500" to="/login">Login</Link>
-            </p>
+          <p className="text-center text-gray-500 text-xs pt-4">
+            Already Have an account?{" "}
+            <Link className="text-purple-500" to="/login">
+              Login
+            </Link>
+          </p>
         </form>
         <p className="text-center text-gray-500 text-xs">
           &copy;2023 Popcorn Posse LLC. All rights reserved.

@@ -36,11 +36,11 @@ export default function DetailReviews(props) {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   useEffect(() => {
     filterReviews();
-  }, [reviews]);
+  }, [reviews, filterReviews]);
 
   return (
     <>

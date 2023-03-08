@@ -22,7 +22,7 @@ export default function ReviewsForm() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   useEffect(() => {
     setReview({
@@ -31,7 +31,7 @@ export default function ReviewsForm() {
       rating: "",
       comments: "",
     });
-  }, [username]);
+  }, [username, setReview]);
 
   const navigate = useNavigate();
   const [review, setReview] = useState({

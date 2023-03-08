@@ -18,17 +18,13 @@ function GetToken() {
 }
 
 function App() {
-  const [error, setError] = useState(null);
-
-
   return (
     <div>
       <BrowserRouter>
         <AuthProvider>
-
           <GetToken />
           <Nav></Nav>
-          <ErrorNotification error={error} />
+          <ErrorNotification error={null} />
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/welcome" element={<WelcomePage />} />

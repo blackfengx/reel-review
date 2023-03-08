@@ -14,7 +14,7 @@ export default function Search(props) {
 
   useEffect(() => {
     handleSearch();
-  }, [search]);
+  }, [search, handleSearch]);
 
   return (
     <div className="max-w-md mx-auto">

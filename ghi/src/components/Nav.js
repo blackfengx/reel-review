@@ -29,7 +29,7 @@ function Nav() {
 
   useEffect(() => {
     redirect();
-  }, [token]);
+  }, [token, redirect]);
 
   if (!token) {
     return null;

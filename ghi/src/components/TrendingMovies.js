@@ -23,7 +23,7 @@ export default function TrendingMovies() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return (
     <div className="min-h-screen px-8 py-8 flex flex-col justify-center items-center h-full bg-gradient-to-r from-bg-dark-blue to-blue-900">

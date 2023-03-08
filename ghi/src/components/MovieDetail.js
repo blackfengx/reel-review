@@ -28,7 +28,7 @@ export default function MovieDetail() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return (
     <div className="w-screen h-screen">

@@ -1,7 +1,7 @@
 import { useToken } from "./useToken";
 
 function Logout() {
-  const { token, logout } = useToken();
+  const { logout } = useToken();
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

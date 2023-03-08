@@ -18,7 +18,7 @@ export default function MyReviews(props) {
 
   useEffect(() => {
     myFilteredReviews();
-  }, [myReviews]);
+  }, [myReviews, myFilteredReviews]);
 
   const handleDelete = async (review_id) => {
     const fetchConfig = {

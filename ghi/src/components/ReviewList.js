@@ -28,7 +28,7 @@ export default function ReviewList() {
 
   useEffect(() => {
     filteredReviews();
-  }, [searchTerm]);
+  }, [searchTerm, filteredReviews]);
 
   const fetchData = async () => {
     const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews`;
@@ -69,11 +69,11 @@ export default function ReviewList() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   useEffect(() => {
     fetchMovieData();
-  }, [reviews]);
+  }, [reviews, fetchMovieData]);
 
   return (
     <div className="min-h-screen">

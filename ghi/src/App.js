@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ErrorNotification from "./ErrorNotification";
 import "./App.css";
 import MainPage from "./MainPage.js";

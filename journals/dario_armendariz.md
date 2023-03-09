@@ -51,3 +51,5 @@ Today we fixed all our flak8 errors getting ready for deployment. We completed a
 
 # **March 8th, 2023:**
 We have completed 90 percent of our deployment. We ran into a 502 error we troubleshot with the deployment process. After troubleshooting, we are set up with everything!! We are just waiting for the deployment process to be completed, which we will do in the days to come. We completed all our Flake8 and Lint fixes for a clean transition.
+
+# **March 9th, 2023:**

@@ -13,7 +13,9 @@ export default function Search(props) {
     props.searchingstuff(search);
   };
 
-  const clear = () => {
+  const clear = (e) => {
+    e.preventDefault();
+    console.log("submitted");
     setSearch("");
   };
 
@@ -23,7 +25,7 @@ export default function Search(props) {
 
   return (
     <div className="max-w-md mx-auto">
-      <form onSubmit={clear} className="relative flex items-center p-8">
+      <form className="relative flex items-center p-8">
         <input
           type="text"
           name="search"
@@ -34,8 +36,8 @@ export default function Search(props) {
           placeholder="Search Movies by Title"
         />
         <button
-          type="submit"
           className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-r-md shadow-sm text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          onClick={clear}
         >
           Clear
           <span className="sr-only">Search</span>

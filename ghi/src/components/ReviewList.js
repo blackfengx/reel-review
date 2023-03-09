@@ -65,7 +65,7 @@ export default function ReviewList() {
       movieTitleList.push(review);
     }
     setMovies(movieTitleList);
-    setFilteredMovies(movieTitleList);
+    setFilteredMovies(movieTitleList.reverse());
   };
 
   useEffect(() => {
@@ -122,7 +122,10 @@ export default function ReviewList() {
                   </tr>
                 </thead>
                 {myReviews ? (
-                  <MyReviews filteredMovies={filteredMovies} />
+                  <MyReviews
+                    filteredMovies={filteredMovies}
+                    sendToDetail={sendToDetail}
+                  />
                 ) : (
                   <AllReviews
                     sendToDetail={sendToDetail}

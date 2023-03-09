@@ -11,22 +11,10 @@
   ```
   [
   {
-  "movie_id": 0,
+  "movie_id": int,
   "title": "string",
   "poster_path": "string",
-  "vote_average": 0
-  }
-  {
-  "movie_id": 0,
-  "title": "string",
-  "poster_path": "string",
-  "vote_average": 0
-  }
-  {
-  "movie_id": 0,
-  "title": "string",
-  "poster_path": "string",
-  "vote_average": 0
+  "vote_average": int
   }
   ]
   ```
@@ -41,11 +29,11 @@
 - Response Shape (JSON):
   ```
   {
-  "movie_id": 0,
+  "movie_id": int,
   "title": "string",
   "poster_path": "string",
-  "runtime": 0,
-  "vote_average": 0,
+  "runtime": int,
+  "vote_average": float,
   "overview": "string",
   "trailer": "string"
   }
@@ -62,22 +50,10 @@
   ```
   [
   {
-  "movie_id": 0,
+  "movie_id": int,
   "title": "string",
   "poster_path": "string",
-  "vote_average": 0
-  }
-  {
-  "movie_id": 0,
-  "title": "string",
-  "poster_path": "string",
-  "vote_average": 0
-  }
-  {
-  "movie_id": 0,
-  "title": "string",
-  "poster_path": "string",
-  "vote_average": 0
+  "vote_average": float
   }
   ]
   ```
@@ -94,9 +70,9 @@
 
   ```
   {
-  "movie_id": 0,
+  "movie_id": int,
   "display_name": "string",
-  "rating": 0,
+  "rating": float,
   "comments": "string"
   }
   ```
@@ -107,11 +83,11 @@
   - Authorization: Bearer token
 - Request Shape (JSON):
   {
-  "movie_id": 0,
+  "movie_id": int,
   "display_name": "string",
-  "rating": 0,
+  "rating": float,
   "comments": "string",
-  "id": 0
+  "id": int
   }
 
 ### **Update a Review**
@@ -123,9 +99,9 @@
 - Request Shape (JSON):
   ```
   {
-  "movie_id": 0,
+  "movie_id": int,
   "display_name": "string",
-  "rating": 0,
+  "rating": float,
   "comments": "string"
   }
   ```
@@ -135,11 +111,11 @@
 - Response Shape (JSON):
   ```
   {
-  "movie_id": 0,
+  "movie_id": int,
   "display_name": "string",
-  "rating": 0,
+  "rating": float,
   "comments": "string",
-  "id": 0
+  "id": int
   }
   ```
 
@@ -166,11 +142,11 @@
   ```
   [
   {
-    "movie_id": 0,
+    "movie_id": int,
     "display_name": "string",
-    "rating": 0,
+    "rating": float,
     "comments": "string",
-    "id": 0
+    "id": int
   }
   ]
   ```
@@ -185,11 +161,11 @@
 - Response Shape (JSON):
   ```
   {
-  "movie_id": 0,
+  "movie_id": int,
   "display_name": "string",
-  "rating": 0,
+  "rating": float,
   "comments": "string",
-  "id": 0
+  "id": int
   }
   ```
 
@@ -248,7 +224,7 @@
   "access_token": "string",
   "token_type": "Bearer",
   "account": {
-  "id": 0,
+  "id": int,
   "first_name": "string",
   "last_name": "string",
   "username": "string",
@@ -278,7 +254,7 @@
   "access_token": "string",
   "token_type": "Bearer",
   "account": {
-    "id": 0,
+    "id": int,
     "first_name": "string",
     "last_name": "string",
     "username": "string",

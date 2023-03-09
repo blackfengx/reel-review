@@ -10,6 +10,10 @@ export default function Search(props) {
   };
 
   const handleSearch = async (e) => {
+    props.searchingstuff(search);
+  };
+
+  const clear = () => {
     setSearch("");
   };
 
@@ -19,7 +23,7 @@ export default function Search(props) {
 
   return (
     <div className="max-w-md mx-auto">
-      <form onSubmit={handleSearch} className="relative flex items-center p-8">
+      <form onSubmit={clear} className="relative flex items-center p-8">
         <input
           type="text"
           name="search"

@@ -12,14 +12,14 @@ export default function AllReviews(props) {
               <img
                 src={`https://image.tmdb.org/t/p/original/${review.poster_path}`}
                 alt=""
-                className="border-4 border-card"
+                className="border-4 border-card hover:cursor-pointer"
                 onClick={() => sendToDetail(review.movie_id)}
               />
             </div>
           </td>
           <td
             onClick={() => sendToDetail(review.movie_id)}
-            className="min-w-1/4 border-b border-slate-600 "
+            className="min-w-1/4 border-b border-slate-600 hover:cursor-pointer"
           >
             {review.title}
           </td>

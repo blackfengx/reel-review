@@ -122,7 +122,10 @@ export default function ReviewList() {
                   </tr>
                 </thead>
                 {myReviews ? (
-                  <MyReviews filteredMovies={filteredMovies} />
+                  <MyReviews
+                    filteredMovies={filteredMovies}
+                    sendToDetail={sendToDetail}
+                  />
                 ) : (
                   <AllReviews
                     sendToDetail={sendToDetail}

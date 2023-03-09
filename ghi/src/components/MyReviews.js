@@ -7,7 +7,7 @@ export default function MyReviews(props) {
   const [myReviews, setMyReviews] = useState([]);
   const navigate = useNavigate();
   const { token } = useToken();
-  const { filteredMovies } = props;
+  const { filteredMovies, sendToDetail } = props;
   const user = localStorage.getItem("username");
 
   const myFilteredReviews = async () => {
@@ -46,11 +46,15 @@ export default function MyReviews(props) {
               <img
                 src={`https://image.tmdb.org/t/p/original/${review.poster_path}`}
                 alt=""
-                className="border-4 border-card"
+                className="border-4 border-card hover:cursor-pointer"
+                onClick={() => sendToDetail(review.movie_id)}
               />
             </div>
           </td>
-          <td className="min-w-1/4 border-b border-slate-600 ">
+          <td
+            className="min-w-1/4 border-b border-slate-600 hover:cursor-pointer"
+            onClick={() => sendToDetail(review.movie_id)}
+          >
             {review.title}
           </td>
           <td className="min-w-1/4 border-b border-slate-600">

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import { useAuthContext } from "./useToken";
 import { useParams, useNavigate } from "react-router-dom";

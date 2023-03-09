@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useToken } from "./useToken";
@@ -10,8 +11,6 @@ const Login = () => {
   const [errorFields, setErrorFields] = useState([]);
   const { login } = useToken();
   const navigate = useNavigate();
-
-  const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -90,9 +89,12 @@ const Login = () => {
             >
               Login
             </button>
-              <p className="text-center text-gray-500 text-xs pt-4">
-                Do not have an Account? <Link className="text-purple-500" to="/signup">Sign up</Link>
-              </p>
+            <p className="text-center text-gray-500 text-xs pt-4">
+              Do not have an Account?{" "}
+              <Link className="text-purple-500" to="/signup">
+                Sign up
+              </Link>
+            </p>
           </form>
         </div>
       </div>

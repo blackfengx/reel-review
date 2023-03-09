@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Logout from "./Logout";
 import { useAuthContext } from "./useToken";
 import { useNavigate, useLocation, Link } from "react-router-dom";

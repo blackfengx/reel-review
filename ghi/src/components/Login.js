@@ -16,7 +16,7 @@ const Login = () => {
     event.preventDefault();
     try {
       localStorage.setItem("username", username);
-      await login(username, password);
+      await login(username.toLowerCase(), password);
       navigate("/");
     } catch (e) {
       console.error(e);

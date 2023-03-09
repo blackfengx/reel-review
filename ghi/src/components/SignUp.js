@@ -16,7 +16,13 @@ export default function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await signup(firstName, lastName, username, email, password);
+      await signup(
+        firstName,
+        lastName,
+        username.toLowerCase(),
+        email,
+        password
+      );
       localStorage.setItem("username", username);
       navigate("/");
     } catch (e) {

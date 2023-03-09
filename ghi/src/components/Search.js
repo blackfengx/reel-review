@@ -10,7 +10,7 @@ export default function Search(props) {
   };
 
   const handleSearch = async (e) => {
-    props.searchingstuff(search);
+    setSearch("");
   };
 
   useEffect(() => {

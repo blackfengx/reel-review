@@ -61,3 +61,7 @@ Today each member of the team completed their unit tests. Then we focused on res
 # **March 7th, 2023:**
 
 Today I worked on clearing any flake8 errors that came up in the `movies_api` file. Then in the afternoon I completed the delete review feature on the front end. Our group also re-watched the deployment lecture in order to prepare more for the deployment process.
+
+# **March 8th, 2023:**
+
+Today I helped the group with working on the deployment process. We had to get our project deployed and then work on front end formatting. I learned a lot about the deployment process today; for example, I learned about how even the smallest error or detail to formatting can affect the site's ability to function properly. I also read up on how minutes work and why it's important for engineering teams to be able to test/run the pipeline process once an application is deployed.

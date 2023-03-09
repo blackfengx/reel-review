@@ -32,6 +32,7 @@ function App() {
             <Route path="/reviews/create/:id" element={<ReviewsForm />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/edit-review/:reviewId" element={<ReviewsForm />} />
           </Routes>
         </AuthProvider>
       </BrowserRouter>

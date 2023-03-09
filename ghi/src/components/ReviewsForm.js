@@ -3,11 +3,13 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthContext } from "./useToken";
 
-export default function ReviewsForm() {
+export default function ReviewsForm(props) {
   const { token } = useAuthContext();
   const { id } = useParams();
+  const { review_id } = props;
   const [title, setTitle] = useState("");
   const [username, setUsername] = useState("");
+  const [isUpdate, setIsUpdate] = useState(false); // added state to track whether form is for update or create
 
   const fetchData = async () => {
     const user = localStorage.getItem("username");
@@ -34,6 +36,30 @@ export default function ReviewsForm() {
     });
   }, [username]);
 
+  useEffect(
+    (review_id) => {
+      const fetchReviewData = async () => {
+        const reviewUrl = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/${review_id}`;
+        console.log(review_id);
+        const fetchConfig = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          credentials: "include",
+        };
+        const response = await fetch(reviewUrl, fetchConfig);
+        const reviewData = await response.json();
+        if (reviewData.display_name) {
+          // if review exists, populate form with existing review data
+          setIsUpdate(true);
+          setReview(reviewData);
+        }
+      };
+      fetchReviewData();
+    },
+    [token, id]
+  );
+
   const navigate = useNavigate();
   const [review, setReview] = useState({
     movie_id: id,
@@ -53,9 +79,12 @@ export default function ReviewsForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const reviewUrl = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/create`;
+    const reviewUrl = isUpdate
+      ? `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/${review_id}`
+      : `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews`;
+
     const fetchConfig = {
-      method: "post",
+      method: isUpdate ? "put" : "post", // use "put" method for updating a review
       body: JSON.stringify(review),
       headers: {
         "Content-Type": "application/json",
@@ -145,7 +174,7 @@ export default function ReviewsForm() {
               className="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
-              Submit Review
+              {review.id ? "Update Review" : "Submit Review"}
             </button>
           </div>
         </form>

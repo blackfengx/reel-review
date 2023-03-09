@@ -2,9 +2,12 @@
 import React, { useEffect, useState } from "react";
 import { useToken } from "./useToken";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function MyReviews(props) {
   const [myReviews, setMyReviews] = useState([]);
+  const [review, setReview] = useState([]);
+  const [editing, setEditing] = useState([]);
   const navigate = useNavigate();
   const { token } = useToken();
   const { filteredMovies } = props;
@@ -20,6 +23,24 @@ export default function MyReviews(props) {
   useEffect(() => {
     myFilteredReviews();
   }, []);
+
+  const editReview = async (review_id) => {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/${review_id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          credentials: "include",
+        },
+        console.log(review_id)
+      );
+      const data = await response.json();
+      setReview(data);
+      setEditing(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleDelete = async (review_id) => {
     const fetchConfig = {
@@ -63,7 +84,9 @@ export default function MyReviews(props) {
             {review.comments}
           </td>
           <td>
-            <button>Edit</button>
+            <Link to={`/edit-review/${review.id}`}>
+              <button onClick={() => editReview(review.id)}>Edit</button>
+            </Link>
           </td>
           <td>
             <button

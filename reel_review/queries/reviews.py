@@ -112,6 +112,33 @@ class ReviewRepository:
             print(e)
             return {"message": "Error"}
 
+    def update(self, review_id: int, review: ReviewIn) -> ReviewOut:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as cur:
+                    result = cur.execute(
+                        """
+                        UPDATE reviews
+                        SET movie_id = %s
+                        , display_name = %s
+                        , rating = %s
+                        , comments = %s
+                        WHERE id = %s
+                        """,
+                        [
+                        review.movie_id,
+                        review.display_name,
+                        review.rating,
+                        review.comments,
+                        review_id
+                        ]
+                    )
+                    old_data = review.dict()
+                    return ReviewOut(id=review_id, **old_data)
+        except Exception as e:
+            print(e)
+            return {"message": "Could not update that review"}
+
     def record_to_review_out(self, record):
         return ReviewOut(
             id=record[0],

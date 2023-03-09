@@ -1,5 +1,5 @@
 from queries.reviews import (
-    ReviewOut, ReviewIn, ReviewRepository
+    ReviewOut, ReviewIn, ReviewRepository, ReviewUpdateIn
 )
 from fastapi import Depends, APIRouter
 from typing import List
@@ -62,3 +62,13 @@ def get_review(
     if account_data is None:
         raise HTTPException(status_code=401, detail="Not logged in")
     return repo.get_review(id)
+
+@router.put("/api/reviews/{review_id}", response_model=ReviewOut, tags=["reviews"])
+def update_review(review_id: int,
+                  review: ReviewIn,
+                  repo: ReviewRepository = Depends(),
+                  account_data: dict = Depends(authenticator.get_current_account_data)
+) -> ReviewOut:
+    if account_data is None:
+        raise HTTPException(status_code=401, detail="Not logged in")
+    return repo.update(review_id, review)

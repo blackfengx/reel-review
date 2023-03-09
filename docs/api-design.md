@@ -181,7 +181,7 @@
       "message": Token has been deleted and user has been signed out.
    }
 
-### **Get Profile Details**
+### **Get Token**
  * Endpoint path: /token
  * Endpoint method: GET
  * Headers:
@@ -209,44 +209,4 @@
       "username": str,
       "password": str,
       "email": str,
-   }
-
-
-# Profile
-
-### **Edit Profile**
- * Endpoint path: /profile/{id}
- * Endpoint method: PUT
- * Request Shape (JSON):
-   ```
-   {
-      "name": str,
-      "username": str,
-      "password": str,
-      "email": str
-   }
- * Headers:
-    * Authorization: Bearer token
- * Response: Update/edit field/fields on profile
- * Response Example:
- * Response shape (JSON):
-   ```
-   {
-      "id": int,
-      "name": str,
-      "username": str,
-      "password": str,
-      "email": str
-   }
-
-### **Delete Profile**
- * Endpoint path: /profile/{id}
- * Endpoint method: DELETE
- * Headers:
-    * Authorization: Bearer token
- * Response: Delete/Deactivate Account
- * Response shape (JSON):
-   ```
-   {
-      "message": "Token has been successfully deleted and user has been logged out."
    }

@@ -53,3 +53,10 @@ We decided to make sure we had our ducks in a row and test from the perspective 
 I wrote a unit test today that ensures that the token is received and returns a "200" status code. Then I decided to further research the depth of how unit tests completely run. After that our group purged the rest of the console errors, gearing up for deployment tomorrow.
 
 # **March 7th, 2023:**
+Today we began deployment and have been following the CI/CD recording on Slack along with the CapRover docs. We also edited our gitlab yaml file, made different caprover apps and more.
+
+# **March 8th, 2023:**
+Today we continued deployment and the day was frequented with trips to the instructors room. By the end of the day we managed to get the website semi-up-and-running, and hopefully we will be able to finish tomorrow.
+
+# **March 9th, 2023:**
+Today we were able to completely deploy and make sure that bugs dont arise during the host change.

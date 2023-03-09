@@ -1,6 +1,4 @@
-from queries.reviews import (
-    ReviewOut, ReviewIn, ReviewRepository
-)
+from queries.reviews import ReviewOut, ReviewIn, ReviewRepository
 from fastapi import Depends, APIRouter
 from typing import List
 from authenticator import authenticator
@@ -29,7 +27,7 @@ def create_review(
 @router.delete(
     "/api/reviews/{review_id}",
     tags=["reviews"],
-    status_code=status.HTTP_204_NO_CONTENT
+    status_code=status.HTTP_204_NO_CONTENT,
 )
 def delete_review(
     review_id: int,
@@ -51,9 +49,9 @@ def get_review_list(
     return repo.get_reviews()
 
 
-@router.get("/api/reviews/{review_id}",
-            response_model=ReviewOut,
-            tags=["reviews"])
+@router.get(
+    "/api/reviews/{review_id}", response_model=ReviewOut, tags=["reviews"]
+)
 def get_review(
     id: int,
     repo: ReviewRepository = Depends(),

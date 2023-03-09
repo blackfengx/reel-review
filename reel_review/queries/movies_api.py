@@ -49,8 +49,10 @@ class MovieQueries:
         trailer_data = trailer_res.json()
         for trailer in trailer_data["results"]:
             try:
-                if trailer["type"] == "Trailer" \
-                        and trailer["site"] == "YouTube":
+                if (
+                    trailer["type"] == "Trailer"
+                    and trailer["site"] == "YouTube"
+                ):
                     data["trailer"] = trailer["key"]
             except KeyError:
                 pass

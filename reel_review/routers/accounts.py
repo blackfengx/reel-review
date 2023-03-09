@@ -1,5 +1,10 @@
 from fastapi import (
-    APIRouter, Depends, HTTPException, status, Response, Request
+    APIRouter,
+    Depends,
+    HTTPException,
+    status,
+    Response,
+    Request,
 )
 from typing import Optional
 from queries.accounts import (
@@ -52,9 +57,9 @@ async def get_token(
         }
 
 
-@router.delete("/api/accounts/{username}",
-               response_model=bool,
-               tags=["accounts"])
+@router.delete(
+    "/api/accounts/{username}", response_model=bool, tags=["accounts"]
+)
 def delete_account(
     username: str,
     repo: AccountsRepository = Depends(),

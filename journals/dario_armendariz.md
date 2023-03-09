@@ -45,3 +45,5 @@ Today we worked on adding our features to other pages. We setup a carousel for d
 
 # **March 6th, 2023:**
 Completed our project and fixed all our Red Errors in console. We set up our unit tests for our project. We fixed an error in loading options for our project. Extended learning will be for deployment.
+
+# **March 7th, 2023:**

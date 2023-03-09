@@ -25,7 +25,7 @@ export default function DetailReviews(props) {
     );
     const detailReviewList = [];
     let counter = 0;
-    for (let i = detailReviewFilter.length - 1; i > 0; i -= 1) {
+    for (let i = detailReviewFilter.length - 1; i >= 0; i -= 1) {
       counter += 1;
       detailReviewList.push(detailReviewFilter[i]);
       if (counter === 5) {

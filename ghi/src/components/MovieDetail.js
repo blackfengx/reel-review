@@ -20,7 +20,6 @@ export default function MovieDetail() {
     });
     const movie = await response.json();
     setMovieDetail(movie);
-    console.log(movie);
   };
 
   const movieReview = (movie_id) => {

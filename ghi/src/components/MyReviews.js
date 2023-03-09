@@ -19,7 +19,7 @@ export default function MyReviews(props) {
 
   useEffect(() => {
     myFilteredReviews();
-  }, [myReviews]);
+  }, []);
 
   const handleDelete = async (review_id) => {
     const fetchConfig = {
@@ -61,6 +61,9 @@ export default function MyReviews(props) {
           </td>
           <td className="min-w-1/4 border-b border-slate-600 break-all">
             {review.comments}
+          </td>
+          <td>
+            <button>Edit</button>
           </td>
           <td>
             <button

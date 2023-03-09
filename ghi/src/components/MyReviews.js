@@ -41,7 +41,7 @@ export default function MyReviews(props) {
     <tbody className="shadow rounded-lg border-8 border-card">
       {myReviews.map((review) => (
         <tr key={review.id}>
-          <td className="border-b border-slate-600">
+          <td className="border-b border-slate-600 transform hover:-translate-y-1 hover:scale-105">
             <div className="object-scale-down h-72 w-36">
               <img
                 src={`https://image.tmdb.org/t/p/original/${review.poster_path}`}

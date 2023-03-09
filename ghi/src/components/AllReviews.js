@@ -7,7 +7,7 @@ export default function AllReviews(props) {
     <tbody>
       {filteredMovies.map((review) => (
         <tr key={review.id}>
-          <td className="border-b border-slate-600">
+          <td className="border-b border-slate-600 transition duration-300 transform hover:-translate-y-1 hover:scale-105">
             <div className="object-scale-down h-72 w-36">
               <img
                 src={`https://image.tmdb.org/t/p/original/${review.poster_path}`}

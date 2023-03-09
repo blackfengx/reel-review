@@ -234,80 +234,55 @@
   }
   ```
 
-### **Get Profile Details**
+### **Get Token**
 
 - Endpoint path: /token
 - Endpoint method: GET
 - Headers:
   - Authorization: Bearer token
-- Response: Display the logged in users deatails on the page.
+- Response: Display the logged in users details on the page.
 - Response Shape (JSON):
+
+```
+  {
+  "access_token": "string",
+  "token_type": "Bearer",
+  "account": {
+  "id": 0,
+  "first_name": "string",
+  "last_name": "string",
+  "username": "string",
+  "email": "string"
+  }
+  }
+```
 
 ### **Sign Up**
 
-- Endpoint path: /accounts
+- Endpoint path: /api//accounts
 - Endpoint method: POST
 - Request Shape (JSON):
   ```
   {
-     "name": str,
-     "username": str,
-     "password": str,
-     "email": str
+  "first_name": "string",
+  "last_name": "string",
+  "username": "string",
+  "email": "string",
+  "password": "string"
   }
   ```
 - Response: Creates a new account
 - Response Shape (JSON):
   ```
   {
-     "id": int
-     "name": str,
-     "username": str,
-     "password": str,
-     "email": str,
+  "access_token": "string",
+  "token_type": "Bearer",
+  "account": {
+    "id": 0,
+    "first_name": "string",
+    "last_name": "string",
+    "username": "string",
+    "email": "string"
   }
-  ```
-
-# Profile
-
-### **Edit Profile**
-
-- Endpoint path: /profile/{id}
-- Endpoint method: PUT
-- Request Shape (JSON):
-  ```
-  {
-     "name": str,
-     "username": str,
-     "password": str,
-     "email": str
-  }
-  ```
-- Headers:
-  - Authorization: Bearer token
-- Response: Update/edit field/fields on profile
-- Response Example:
-- Response shape (JSON):
-  ```
-  {
-     "id": int,
-     "name": str,
-     "username": str,
-     "password": str,
-     "email": str
-  }
-  ```
-
-### **Delete Profile**
-
-- Endpoint path: /profile/{id}
-- Endpoint method: DELETE
-- Headers:
-  - Authorization: Bearer token
-- Response: Delete/Deactivate Account
-- Response shape (JSON):
-  ```
-  {
-     "message": "Token has been successfully deleted and user has been logged out."
   }
   ```

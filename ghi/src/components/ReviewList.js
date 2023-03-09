@@ -65,7 +65,7 @@ export default function ReviewList() {
       movieTitleList.push(review);
     }
     setMovies(movieTitleList);
-    setFilteredMovies(movieTitleList);
+    setFilteredMovies(movieTitleList.reverse());
   };
 
   useEffect(() => {

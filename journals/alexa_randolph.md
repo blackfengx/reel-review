@@ -65,3 +65,7 @@ Today I worked on clearing any flake8 errors that came up in the `movies_api` fi
 # **March 8th, 2023:**
 
 Today I helped the group with working on the deployment process. We had to get our project deployed and then work on front end formatting. I learned a lot about the deployment process today; for example, I learned about how even the smallest error or detail to formatting can affect the site's ability to function properly. I also read up on how minutes work and why it's important for engineering teams to be able to test/run the pipeline process once an application is deployed.
+
+# **March 9th, 2023:**
+
+Today I assisted with finding bugs once the site was deployed as well as fixing some front end formatting. I also continued working on an update review feature on a separate branch.

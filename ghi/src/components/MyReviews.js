@@ -26,14 +26,16 @@ export default function MyReviews(props) {
 
   const editReview = async (review_id) => {
     try {
-      const response = await fetch(
-        `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/${review_id}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-          credentials: "include",
+      const fetchConfig = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
-        console.log(review_id)
-      );
+        method: "GET",
+        credentials: "include",
+      };
+      const reviewUrl = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/${review_id}`;
+      const response = await fetch(reviewUrl, fetchConfig);
       const data = await response.json();
       setReview(data);
       setEditing(true);

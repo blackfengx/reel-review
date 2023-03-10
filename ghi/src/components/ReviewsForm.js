@@ -3,6 +3,25 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthContext } from "./useToken";
 
+function showReviewForm(title, review_id) {
+  // Get the form element and set the title
+  const form = document.getElementById("review-form");
+  const formTitle = document.getElementById("review-form-title");
+  formTitle.textContent = title;
+
+  // Populate the form fields with the existing review data
+  const review = getReviewById(review_id);
+  if (review) {
+    form.review_id.value = review_id;
+    form.display_name.value = review.username;
+    form.rating.value = review.rating;
+    form.comments.value = review.comments;
+  }
+
+  // Show the form
+  form.classList.remove("hidden");
+}
+
 export default function ReviewsForm(props) {
   const { token } = useAuthContext();
   const { id } = useParams();
@@ -81,7 +100,7 @@ export default function ReviewsForm(props) {
 
     const reviewUrl = isUpdate
       ? `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/${review_id}`
-      : `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews`;
+      : `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/reviews/create`;
 
     const fetchConfig = {
       method: isUpdate ? "put" : "post", // use "put" method for updating a review

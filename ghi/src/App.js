@@ -32,7 +32,14 @@ function App() {
             <Route path="/reviews/create/:id" element={<ReviewsForm />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/edit-review/:reviewId" element={<ReviewsForm />} />
+            <Route path="/edit-review/:review_id">
+              {({ match }) => (
+                <ReviewsForm
+                  review_id={match.params.review_id}
+                  editing={true}
+                />
+              )}
+            </Route>
           </Routes>
         </AuthProvider>
       </BrowserRouter>
